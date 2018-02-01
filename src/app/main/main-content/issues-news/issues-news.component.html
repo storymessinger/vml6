@@ -1,0 +1,58 @@
+<div class="flex-content">
+  <div class="content col-sm container-fluid">
+
+    <div class="modal fade" id="selectedImageModal" >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img *ngIf="selectedImage" default="./../../../../assets/Contents/imgs/no_image.jpg" [srcset]="imgPath + selectedImage">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let news of news$ | async" class="row list">
+      <!--<h2 class="year-title" [id]='id' >{{id}}</h2>-->
+      <div class="col-sm-12 year display-4" [id]='news[0].year'>
+        {{news[0].year}}
+      </div>
+
+    <!-- <div *ngIf="news$; else loadingIssues;"> -->
+    
+      <div *ngFor="let item of news" class="data-box">
+
+        <div class="data-date">
+          <h2 class="text-center date">{{item.day}}</h2>
+          <h5 class="text-center date">{{item.month | numToMonth }}</h5>
+          <p class="text-center date">{{item.year}}</p>
+        </div>
+
+        <div class="data-img">
+          <img default="./../../../../assets/Contents/imgs/no_image.jpg"  
+          [srcset]=" imgPath + item.img"
+          [src]=" imgPath + item.img"
+          data-toggle="modal" data-target="#selectedImageModal"
+          (click)=setSelectedImage(item.img)>
+
+        </div>
+        <div class="data-desc">
+          <h3 >{{item.title}}</h3>
+          <p>{{item.desc}}</p>
+        </div>
+
+      </div>
+
+      <hr>
+    </div>
+    
+    <ng-template #loadingIssues>
+      <div>Loading ...</div>
+    </ng-template> 
+
+  </div>
+</div>

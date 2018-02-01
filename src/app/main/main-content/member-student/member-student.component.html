@@ -1,0 +1,254 @@
+
+<router-outlet></router-outlet>
+
+<div class="flex-content">
+  <div class="content col-sm container-fluid">
+    <div class="row content-row no-gutters">
+
+          <div *ngIf="data_professor | async" class="people col-sm-12">
+            <div class="people-status col-sm-12">
+              <h2 id="faculty">
+                FACULTY
+              </h2>
+            </div>
+            
+            <div *ngFor="let person of data_professor | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <img default="./assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
+                </div>
+              </div>
+    
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.team}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+    
+            </div>
+          </div>
+
+          <div *ngIf="data_postdoc | async" class="people col-sm-12">
+            <div class="people-status col-sm-12">
+              <h2 id="post">
+                Post Doctors
+              </h2>
+            </div>
+            <!-- card container-->
+            <div *ngFor="let person of data_postdoc | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              
+              
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
+                </div>
+              </div>
+              
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.team}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+            </div>
+          </div>
+    
+    
+          <div *ngIf="data_doctor | async" class="people col-sm-12">
+            <div class="people-status col-sm-12">
+              <h2 id="phd">
+                Ph.d Student
+              </h2>
+            </div>
+            <!-- card container-->
+            <div *ngFor="let person of data_doctor | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
+                  
+                </div>
+              </div>
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.team}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+    
+            </div>
+          </div>
+    
+    
+          <div *ngIf="data_master | async" class="people col-sm-12">
+            <h2 class="people-status col-sm-12" id="master">
+              Master Students
+            </h2>
+            <!-- card container-->
+            <div *ngFor="let person of data_master | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <!--<img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">-->
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [src]=" imgPath + person.img">
+                  
+                </div>
+              </div>
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.team}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+    
+            </div>
+          </div>
+    
+    
+          <div *ngIf="data_researcher | async" class="people col-sm-12">
+            <h2 class="people-status col-sm-12" id="researcher">
+              Researchers
+            </h2>
+            <!-- card container-->
+            <div *ngFor="let person of data_researcher | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">
+                  
+                </div>
+              </div>
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.team}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+    
+            </div>
+          </div>
+    
+          <div *ngIf="data_intern | async" class="people col-sm-12">
+            <h2 class="people-status col-sm-12" id="intern">
+              Interns
+            </h2>
+            <!-- card container-->
+            <div *ngFor="let person of data_intern | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">
+                  
+                </div>
+              </div>
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.team}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+    
+            </div>
+          </div>
+    
+          <div *ngIf="data_alumni_phd | async" class="people col-sm-12">
+            <h2 class="people-status col-sm-12" id="alumni_phd">
+              Ph.D Alumni
+            </h2>
+            <!-- card container-->
+            <div *ngFor="let person of data_alumni_phd | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">
+                  
+                </div>
+              </div>
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+    
+            </div>
+          </div>
+    
+          <div *ngIf="data_alumni_master | async" class="people col-sm-12">
+            <h2 class="people-status col-sm-12" id="alumni_master">
+              Master Alumni
+            </h2>
+            <!-- card container-->
+            <div *ngFor="let person of data_alumni_master | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">
+                  
+                </div>
+              </div>
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.team}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+    
+            </div>
+          </div>
+    
+          <div *ngIf="data_former | async" class="people col-sm-12">
+            <h2 class="people-status col-sm-12" id="former">
+              Former Members
+            </h2>
+            <!-- card container-->
+            <div *ngFor="let person of data_former | async" class="people-box col-sm-12 col-md-6 col-lg-4">
+              <div class="people-img">
+                <div (click)="routing(person.id)" class="people-img-box">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">
+                  
+                </div>
+              </div>
+              <div class="people-text">
+                <h3 class="name">{{person.name}}</h3>
+                <p class="text-center menu01">
+                  {{person.topics}} <br>
+                  {{person.email}} <br>
+                  {{person.team}} <br>
+                  {{person.affiliation_name}}
+                </p>
+                <sub class="menu01">{{person.status}}</sub>
+              </div>
+    
+            </div>
+          </div>
+          
+    </div>
+  </div>
+</div>

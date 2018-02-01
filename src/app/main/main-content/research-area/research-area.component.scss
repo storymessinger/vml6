@@ -1,0 +1,37 @@
+.row {
+    margin: 0
+}
+.area {
+    position: relative;
+}
+
+.area-desc {
+
+    display:flex;
+    flex-flow:column;
+    min-height: 33vh;
+    justify-content: center;
+    h2 {
+        color: rgba(255,255,255,0.8);
+    }
+    text-decoration: none;
+}
+.area-desc:hover {
+    filter: brightness(1.1);
+}
+
+.desc-01 {
+    background: url('/assets/Contents/ResearchArea/img/Front_RA_EVE.png');
+    background-position: center center;
+    background-size: cover;
+}
+.desc-02 {
+    background: url('/assets/Contents/ResearchArea/img/Front_RA_Character.png');
+    background-position: center center;
+    background-size: cover;
+}
+.desc-03 {
+    background: url('/assets/Contents/ResearchArea/img/Front_RA_CFL2.png');
+    background-position: center center;
+    background-size: cover;
+}

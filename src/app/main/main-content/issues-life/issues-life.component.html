@@ -1,0 +1,98 @@
+<div class="flex-content">
+  <div class="content col-sm container-fluid">
+
+    <div class="modal fade" id="selectedImageModal" >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img *ngIf="selectedImage" default="./assets/imgs/no_image.jpg" [srcset]="imgPath + selectedImage">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div *ngFor="let data of lifes$ | async" class="row life-row"> -->
+    <div class="row life-row">
+
+      <!-- <div class="col-12 year display-4" [id]='data[0].year'>
+        {{data[0].year}}
+      </div> -->
+
+      <div *ngFor="let lifes of lifes$ | async" class="life-row col-12">
+
+        <h3 class="life-title">{{lifes.title}}</h3>
+        <h3 class="life-title">this is key: {{lifes.key}}</h3>
+
+        <div class="life-content">
+          <div class="data-date">
+            <h2 class="text-center date">{{lifes.day}}</h2>
+            <h5 class="text-center date">{{lifes.month | numToMonth }}</h5>
+            <p class="text-center date">{{lifes.year}}</p>
+          </div>
+          <div class="card-columns">
+              <div *ngIf="lifes.link" class="card">
+                <img videoThumbnail [videoUrl]='lifes.link' 
+                    sizes="(min-width:990px) 300px, 800px">
+
+              </div>
+              <div *ngIf="lifes.image1" class="card">
+                <img default="./assets/imgs/no_image.jpg"
+                      class="card-img img-fluid" 
+                      [srcset] ="imgPath + lifes.image1" 
+                      [src] ="imgPath + lifes.image1" 
+                    data-toggle="modal" data-target="#selectedImageModal"
+                    (click)=setSelectedImage(lifes.image1)>
+              </div>
+              <div *ngIf="lifes.image2" class="card">
+                <img default="./assets/imgs/no_image.jpg"
+                      class="card-img img-fluid" 
+                      [srcset] ="imgPath + lifes.image2" 
+                      [src] ="imgPath + lifes.image2" 
+                    data-toggle="modal" data-target="#selectedImageModal"
+                    (click)=setSelectedImage(lifes.image2)>
+              </div>
+              <div *ngIf="lifes.image3" class="card">
+                <img default="./assets/imgs/no_image.jpg"
+                      class="card-img img-fluid" 
+                      [srcset] ="imgPath + lifes.image3" 
+                      [src] ="imgPath + lifes.image3" 
+                    data-toggle="modal" data-target="#selectedImageModal"
+                    (click)=setSelectedImage(lifes.image3)>
+              </div>
+              <div *ngIf="lifes.image4" class="card">
+                <img default="./assets/imgs/no_image.jpg"
+                      class="card-img img-fluid" 
+                      [srcset] ="imgPath + lifes.image4" 
+                      [src] ="imgPath + lifes.image4" 
+                    data-toggle="modal" data-target="#selectedImageModal"
+                    (click)=setSelectedImage(lifes.image4)>
+              </div>
+          </div>
+        </div>
+
+      </div>
+
+    <hr>
+    </div>
+
+
+
+    <!--<div class="row">
+      <div class="card-columns">
+          <div *ngFor="let image of datasource2" class="card">
+            <img default="./assets/imgs/no_image.jpg"
+                  class="card-img img-fluid" 
+                  [srcset] ="image.url" alt="Card image"
+                data-toggle="modal" data-target="#selectedImageModal"
+                (click)=setSelectedImage(image)>
+
+          </div>
+      </div>
+  </div>-->
+</div>
+

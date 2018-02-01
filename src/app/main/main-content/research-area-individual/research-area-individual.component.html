@@ -1,0 +1,67 @@
+<div class="flex-content">
+  <div *ngFor="let team of team$ | async" class="content col-sm container-fluid">
+
+    <div class="col-sm-12 imgDiv" [style.background-image]="'url(' + imgPath + team.img + ')'">
+
+    </div>
+
+    <div class="row no-gutters">
+
+      <div class="col-sm-12 team">
+        <h2>{{team.shortname}} Team</h2>
+
+        <p class="yellow">{{team.fullname}}</p>
+        <p>{{team.desc}}</p>
+      </div>
+
+      <div class="col-sm-12 related">
+        <h2>Related Thesis</h2>
+
+        <div *ngFor='let publication of team.publications'>
+          <a [routerLink]="['/main/international/individual/' + publication.id]" class="links">{{publication.title}}, <span>{{publication.year}}</span></a>
+        </div>
+
+      </div>
+
+      <div class="col-sm-12 related">
+        <h2>Related Projects</h2>
+
+        <div *ngFor='let project of team.projects'>
+          <a *ngIf="project.fullname" [routerLink]="['/main/projects/individual/' + project.id]" class="links">{{project.fullname}}, <span>{{project.year}}</span></a>
+        </div>
+
+      </div>
+
+
+      <div class="col-12 project-manager">
+        <h2 class="people-status col-sm-12">
+
+          Members
+        </h2>
+
+        <div class="box-flex row">
+          <div (click)="routing(person.id)" *ngFor="let person of team.people" class="people-box pad col-6">
+            <div class="people-img">
+              <div class="people-img-box">
+                <img default="./assets/imgs/no_image.jpg" 
+                    [srcset]=" imgPath + person.img"
+                    [src]=" imgPath + person.img"
+                    >
+              </div>
+            </div>
+
+            <h5 class="people-text">
+              <p class="menu02">name</p> 
+              {{person.name}}
+              <p class="menu02">topics</p>
+              <p>{{person.topics}}</p>
+              <p class="menu02">email</p>
+              {{person.email}}
+            </h5>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

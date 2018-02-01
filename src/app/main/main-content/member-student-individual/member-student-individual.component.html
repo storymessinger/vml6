@@ -1,0 +1,233 @@
+<div class="flex-content">
+
+  <div class="content col-sm-12 container-fluid">
+    
+    <div *ngFor="let person of person$ | async" class="row">
+      <div class="person-img">
+        <img default="./assets/imgs/no_image.jpg" 
+            [srcset]=" imgPath + person.img"
+            [src]=" imgPath + person.img"
+            >
+
+        <h3 *ngIf="person.email">E-mail</h3>
+        <p>{{person.email}}</p>
+
+      </div>
+
+      <div class="person-desc">
+        <h1>{{person.name}}</h1>
+        <p>{{person.type | typeChange}}</p>
+        <p>Visual Media Lab <br> 
+           Graduate School of Culture and Technology, KAIST</p>
+        <hr/>
+
+        <h3>Research Interest</h3>
+        <div>
+          <p class="topics">{{person.topics}}</p>
+        </div>
+        <hr/>
+
+        <!--<div class="test" *ngIf="person.innerHTML" [innerHTML]="person.innerHTML"></div>-->
+        <div class="test" [innerHTML]="(individual$ | async)?.innerHTML | safeHtml"></div>
+
+        <div *ngIf="person.publications.length != 0 && person.id != 1" >
+          <h3>Publications</h3>
+          <table class="table">
+            <tbody>
+              <tr *ngFor="let pub of person.publications">
+                <td class="table-left">{{pub.conference}}</td>
+                <td>
+                  <p>{{pub.title}}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr/>
+        </div>
+        
+        <div>
+          <!--<h3>Education</h3>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="table-left">05/2002</td>
+                <td>
+                  <p>Ph.D. Computer Science University of Southern California, advisor Prof. Ulrich Neumann</p>
+                  <sub>- Thesis "Facial Animation by Expression Cloning"</sub>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-left">05/1996</td>
+                <td>
+                  <p>M.S. Computer Engineering University of Southern California, advisor Prof. George Bekey</p>
+                  <sub>- Robotics research laboratory</sub>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-left">05/1994</td>
+                <td>
+                  <p>B.S. Electrical Engineering University of Southern California</p>
+                  <sub>- Magna Cum Laude, Engineering Honors Program</sub>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr/>
+        </div>
+
+
+        <div>
+          <h3>Appointments</h3>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="table-left">	05/2016-Present</td>
+                <td>
+                  <p>Chairman</p>
+                  <sub>- Graduate School of Culture Technology, KAIST, Korea</sub>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-left">09/2014-Present</td>
+                <td>
+                  <p>Full Professor</p>
+                  <sub>- Graduate School of Culture Technology, KAIST, Korea</sub>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-left">11/2013-Present</td>
+                <td>
+                  <p>Adjunct Professor</p>
+                  <sub>- Culture Technology Research Institute, KAIST, Korea</sub>
+                </td>
+              </tr>
+              
+              <tr>
+                <td class="table-left">04/2012-Present</td>
+                <td>
+                  <p>Adjunct Professor</p>
+                  <sub>- Department of Computer Science, KAIST, Korea</sub>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-left">03/2012-07/2014</td>
+                <td>
+                  <p>Associate Dean</p>
+                  <sub>- Graduate School of Culture Technology, KAIST, Kore</sub>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-left">2012-Present</td>
+                <td>
+                  <p>Member of Board of Directors</p>
+                  <sub>- Korea Computer Graphics Society (KCGS)</sub>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td class="table-left">11/2011-08/2012</td>
+                <td>
+                  <p>Industry Consultant</p>
+                  <sub>- CJ PowerCast, Korea</sub>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-left">09/2011-Present</td>
+                <td>
+                  <p>Industry Consultant</p>
+                  <sub>- Kolon, Korea</sub>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-left">09/2011-Present</td>
+                <td>
+                  <p>Adjunct Professor</p>
+                  <sub>- Lifestyle Innovation Center, KAIST, Korea</sub>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr/>-->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div *ngIf="person.projects">
+          <h3 >Projects</h3>
+          <div class="projects">
+            <div class="project-item">
+              <h5>{{person.projects.name}} ({{person.projects.year}})</h5>
+            </div>
+          </div>
+          <hr/>
+        </div>
+
+        <div *ngIf="person.seminars.length != 0">
+          <h3>Seminars</h3>
+          <div class="projects">
+            <div *ngFor="let seminar of person.seminars " class="video-item">
+              <img videoThumbnail [videoUrl]='seminar.link' 
+                  sizes="(min-width:990px) 300px, 800px" class="videos">
+              <p>{{seminar.title}}</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--<h3>List Title</h3>
+<div>
+  <p>list one</p>
+  <p>list two</p>
+  <p>list three</p>
+</div>
+<hr/>
+
+<h3>Table Title</h3>
+<table class="table">
+  <tbody>
+    <tr>
+      <td class="table-left">Table left column</td>
+      <td>
+        <p>Table right column, first line</p>
+        <p>Table right column, second line</p>
+        <p class="menu02">Table right column, thrid line, small text</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="table-left">Table left column</td>
+      <td>
+        <p>Table right column, first line</p>
+        <p>Table right column, second line</p>
+        <p class="menu02">Table right column, thrid line, small text</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="table-left">Table left column</td>
+      <td>
+        <p>Table right column, first line</p>
+        <p>Table right column, second line</p>
+        <p class="menu02">Table right column, thrid line, small text</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr/>-->
+
+
+

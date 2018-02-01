@@ -1,0 +1,65 @@
+<div class="flex-content">
+  <div class="content col-sm container-fluid">
+
+    <div class="modal fade" id="selectedImageModal" >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img *ngIf="selectedImage" default="./assets/imgs/no_image.jpg" [srcset]="imgPath + selectedImage">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div *ngFor="let issues of issues$ | async" class="row list">
+      
+      <div class="col-sm-12 year display-4" [id]='issues[0].year'>
+        {{issues[0].year}}
+      </div>
+      
+  <!-- <div *ngIf="issues$; else loadingIssues;"> -->
+    
+      <div *ngFor="let media of issues" class="data-box">
+
+        <div class="data-date">
+          <h2 class="text-center date">{{media.day}}</h2>
+          <h5 class="text-center date">{{media.month | numToMonth }}</h5>
+          <p class="text-center date">{{media.year}}</p>
+        </div>
+
+        <div class="data-img">
+          <img default="./assets/imgs/no_image.jpg" 
+          [srcset]=" imgPath + media.img"
+          [src]=" imgPath + media.img"
+          data-toggle="modal" data-target="#selectedImageModal"
+          (click)=setSelectedImage(media.img)>
+        </div>
+
+        <div class="data-desc">
+          <div>
+            <h3 >{{media.title}}</h3>
+            <p>{{media.desc}}</p>
+          </div>
+          <div>
+            <p>{{media.source}}</p>
+            <a target="_blank" [href]='media.sourcelink'>Read the full story</a>
+          </div>
+        </div>
+
+      </div>
+    <hr>
+    </div>
+    
+    <ng-template #loadingIssues>
+      <div>Loading ...</div>
+    </ng-template> 
+
+  </div>
+</div>

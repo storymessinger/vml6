@@ -1,0 +1,643 @@
+@import '../../assets/css/_variables.scss';
+@import '../../assets/css/_materialShadow.scss';
+#nav-animation {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+#navbar {
+  opacity: 0;
+}
+
+.main {
+  margin-top: 0 !important;
+}
+
+.menu_btn {
+  display: none;
+}
+
+.search-nav {
+  list-style: none;
+  .search {
+    display: none !important;
+    position: absolute;
+    right: 3rem;
+    .search_btn {
+      cursor: pointer;
+    }
+    input {
+      width: 55px;
+      transition: width 0.25s ease-in-out;
+      border: none;
+      background: transparent;
+      margin-left: 0.5rem;
+      border-bottom: 1.8px $primary_orange solid;
+      color: $primary_orange;
+      font-weight: 300;
+      font-size: 0.95rem;
+    }
+    input:focus {
+      outline: none;
+      width: 150px;
+    }
+  }
+}
+
+.navbar {
+  // opacity: 0;
+  // top: -80px;
+  background-color: rgba(255, 255, 255, 0);
+  .navbar-brand {
+    img {
+      filter: contrast(0) brightness(100);
+    }
+  } // flexbox
+  display: flex;
+  flex-flow:row;
+  align-items: center; // material-like shadow
+  @include card(1);
+  padding-bottom: 0;
+  padding-top: 0;
+  height: $navbar_height;
+  img {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  ul.navbar-nav {
+    flex-grow: 1;
+    flex-flow: row;
+    a {
+      font-weight: 500;
+    }
+  }
+  .form {
+    flex-grow: 0;
+  }
+  .nav-link {
+    color: $primary_white;
+    padding: 0 3rem;
+  }
+}
+
+// From under 750px,
+// Navbar leaves only the logo and the menu btn
+@media (max-width: 991px) {
+  .menu_btn {
+    display: unset;
+    margin: 0 0 0 1rem;
+    color: $primary_white;
+    cursor: pointer;
+  }
+  .menu_btn:active {
+    top: 2rem;
+  }
+  .navbar {
+    .navbar-brand,
+    .navbar-nav {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-nav {
+    display: none;
+  }
+}
+
+// for overlay noscroll issue
+.noscroll {
+  overflow: hidden; // this is for ios
+  height: 100%;
+}
+
+
+
+.header {
+  position: relative;
+  background-position: 50% center;
+  background-size: cover; // for this page to be 'scroll-available'
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+
+  video {
+    // display: block;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+  }
+
+  .title-arrow {
+    // cursor: pointer;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.6);
+    position: absolute;
+    bottom: 9%;
+    left: 50%;
+    width: 100px;
+    transform: translate(-50%, 0);
+    cursor:pointer;
+  }
+
+  .title-arrow:hover {
+    color: rgba(255,255,255,1);
+  }
+
+  .title {
+    background-color: rgba(10,10,10,0.2);
+    padding: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    p {
+      color: $primary_white;
+
+
+
+      /// not now
+      display:none;
+    }
+    .display-2 {
+      color: $primary_white;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      color: $primary_yellow;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .title p {
+    display: none;
+  }
+  .title {
+    h2 {
+      font-size: 1.25rem;
+    }
+    .display-2 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.content {
+  padding: 5rem 2rem 5rem 2rem;
+  .news {
+    max-width: 1050px;
+    margin: auto;
+  }
+  .Heading {
+    padding: 6rem 0 4rem 0;
+    h1 { font-weight: 600 }
+  }
+  .card-deck-wrapper {
+    margin: auto;
+    .card-deck {
+      justify-content: center;
+      .card {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  .card-columns {
+    margin: auto;
+    .issueCard {
+      max-width:300px;
+      margin: auto;
+      margin-bottom: 1.5rem;
+      img.sel-img {
+        // -webkit-animation: sel-img-animation 0.3s 1;
+        filter: brightness(30%);
+      }
+    }
+  }
+}
+.publication-card {
+  margin-bottom: 2.5rem;
+}
+
+.section-desc {
+  max-width: 600px;
+  margin: auto;
+}
+
+.partners-columns {
+  display:flex;
+  flex-flow: row wrap;
+
+  .partner-img-box {
+    margin:auto;
+    .partner-img {
+      max-width: 200px;
+      margin: 0 1.5rem;
+    }
+  }
+}
+.partners-more {
+  .myButton {
+      background-color:#848484;
+      -moz-border-radius:28px;
+      -webkit-border-radius:28px;
+      border-radius:28px;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-size:0.8rem;
+      padding:13px 21px;
+      text-decoration:none;
+    }
+    .myButton:hover {
+      background-color:#565656;
+    }
+    .myButton:active {
+      position:relative;
+      top:1px;
+    }
+}
+
+
+
+@media (min-width: 676px) {
+  .card-columns {
+    max-height:2300px;
+  }
+}
+
+.card-area {
+  max-height:400px;
+  overflow:hidden; 
+}
+
+.width300 {
+  max-width: 300px;
+}
+
+.pub-pad {
+  padding: 0 !important;
+  
+}
+
+.pad {
+  padding: 1rem;
+  background-color: $primary_white;
+  border: 1px solid $primary_light_grey;
+  cursor: pointer;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pad:hover {
+  .card-block {
+    overflow:hidden;
+    h4,
+    p {
+      color: inherit;
+    }
+  }
+  h2,
+  h3,
+  h5,
+  p {
+    color: inherit;
+    .text-muted {
+      color: inherit;
+    }
+  }
+  border: 1px solid rgba(240, 91, 40, 0.8);
+  background-color: rgba(240, 91, 40, 0.8);
+  box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.1) !important;
+  color: rgba(255, 255, 255, 0.8);
+  img {
+    filter: grayscale(100%) contrast(80%);
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie11-issue {
+    display:inline !important;
+    text-align: center;
+    .pad {
+      display: inline-block;
+    }
+  }
+}
+.ie11-issue {
+  // display:block;
+  display:flex;
+  flex-flow:row wrap;
+}
+
+.img-fluid {
+  min-height:1px;
+}
+
+.news-img {
+  width: 100%;
+}
+
+@media (max-width: 575px) {
+  .card {
+    margin: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .card {
+    .card-title {
+      font-size: 20px;
+    }
+    .desc {
+      font-size: 0.81rem;
+      overflow-x:hidden;
+    }
+  }
+}
+
+
+.menu_btn {
+  z-index: 6000;
+}
+
+.collapse,
+.collapsing {
+  z-index: 3001;
+  .menu-title {
+    padding-left: 1rem;
+  }
+  .bg-inverse {
+    padding: 0 1rem 2rem 1rem !important;
+  }
+  .btn-box {
+    height: 76px;
+    display: flex;
+    align-items: center;
+  }
+  .list-group-item {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: $primary_white;
+  }
+}
+
+@media (min-width: 991px) {
+  .show {
+    display: none
+  }
+}
+
+// .test { width: 100%;
+//     height: 100vh;
+// }
+// video { 
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     min-width: 100%;
+//     min-height: 100%;
+//     width: auto;
+//     height: auto;
+//     z-index: 1;
+//     transform: translateX(-50%) translateY(-50%);
+//  background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+//   background-size: cover;
+//   transition: 1s opacity;
+// }
+// .stopfade { 
+//    opacity: .5;
+// }
+
+
+
+
+// .footer {
+//   // need some space around the footer box
+//   padding: 3rem 5rem 3rem 5rem;
+//   background-color: $primary_dark_grey;
+//   color: $primary_white;
+//   margin: 0;
+//   height: 400px;
+// }
+
+footer {
+  background: #262626;
+  padding: 3.5rem 2rem;
+}
+
+footer p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer a {
+  color: $primary_orange;
+}
+
+footer a:hover {
+  color: $primary_orange;
+}
+
+footer .footer-title {
+  position: relative;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+}
+
+footer .footer-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: $primary_orange;
+  margin-top: 8px;
+}
+
+footer .right-border {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer .left-border {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 991px) {
+  footer .copyright {
+    margin-top: 40px;
+    text-align: center;
+  }
+  footer .right-border {
+    border-right: none;
+  }
+}
+
+@media (max-width: 767px) {
+    footer .right-border {
+        order: 3;
+    }
+    footer .footer-about {
+        display:none;
+    }
+  footer .right-border {
+    border-right: none;
+  }
+  footer .left-border {
+    border-left: none;
+  }
+}
+
+footer .footer-about {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+}
+
+footer .contact-info {
+    margin-top: 40px;
+}
+
+footer .contact-info {
+  padding-bottom: 2rem;
+}
+
+footer .contact-info .single {
+  margin: 15px 0;
+}
+
+footer .contact-info .single i {
+  display: block;
+  float: left;
+  color: $primary_orange;
+  margin-right: 10px;
+  line-height: 22px;
+}
+
+footer .contact-info .single p {
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+}
+
+footer .social-icon {
+  margin-top: 40px;
+}
+
+footer .social-icon li a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+footer .social-icon li a:hover {
+  border-color: $primary_orange;
+  color: $primary_orange;
+}
+
+footer .social-icon li a i {
+  line-height: 32px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+footer .navigation li a {
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+footer .navigation li a:hover {
+  color: $primary_orange;
+}
+
+footer .copyright {
+  padding-top: 40px;
+}
+
+.md-light {
+    color: $primary_white;
+}
+
+/* HIDE IPHONE PLAY BUTTON FOR VIDEOS */
+/* This used to work for parent element of button divs */
+/* But it is not enough now, below dont hide play button parent div */
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+/* Old shadow dom for play button */
+*::--webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+/* New shadow dom for play button */
+/* This one works */
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+
+
+
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+// #vidtop-content {
+// 	top: 0;
+// 	color: #fff;
+// }
+// .vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+// .vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+// .vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}

@@ -1,0 +1,88 @@
+@import '../../../../assets/css/_variables.scss';
+
+.front-image-max {
+    position:relative;
+    flex-grow:1;
+    margin-left:-$sidebar-width;
+    img {
+        margin-left:0;
+        width: 100vw;
+        padding-left:250px;
+    }
+}
+
+@media (max-width: 1479px) {
+    .front-image-max {
+        img {
+            margin-left:$sidebar-width;
+            padding-left:0px;
+        }
+    }
+}
+
+.column-title {
+    margin-bottom: 2rem;
+}
+
+.project-desc {
+    .team {
+        display: inline-block;
+        margin-bottom:1rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+    .display-4 {
+        margin-bottom: 2rem;
+    }
+}
+.pad {
+    h2, h3, h5, p {
+        color:inherit;
+        p { color:inherit;}
+    }
+    padding:1rem;
+    background-color:$primary_white;
+    border: 1px solid $primary_light_grey;
+    cursor:pointer;
+    margin-right:2rem;
+    margin-bottom:2rem;
+}
+
+.pad:hover {
+    border: 1px solid rgba(240,91,40,0.8);
+    background-color: rgba(240,91,40,0.8);
+    box-shadow: 2px 5px 5px 0px rgba(0,0,0,0.1) !important;
+    color: rgba(255,255,255,0.8);
+    img {
+        filter: grayscale(100%) contrast(80%);
+    }
+}
+
+.project-manager, .project-partners {
+    .people-box {
+        display:flex;
+        max-width:600px;
+
+        .people-img {
+            display: flex;
+            align-items: center;
+            img {
+                margin: 0 auto;
+                width: 180px;
+            }
+        }
+        .people-text {
+            margin-left:2rem;
+            padding:0;
+            .menu02 {
+                margin: 0.5rem 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .row {
+        margin: 3.5rem 3.5rem 6rem 3.5rem;
+    }
+}
