@@ -1,0 +1,55 @@
+<div class="flex-content">
+  <div class="make_dimmer"></div>
+  <div class="content col-sm container-fluid">
+    <div class="row">
+      <div class="logo">
+        <img src="./../../../../assets/Contents/imgs/logo.svg" width="180"/>
+      </div>
+
+      <p class="display-2 col-12 publication-title">{{datas.title}}</p>
+
+      <div class="desc col-12">
+        <div class="author-box">
+          <div *ngFor="let author of datas.authors_array" class="authors">
+            <h5>{{author.name}}</h5>
+          </div>
+        </div>
+
+        <h5 *ngIf="datas.conference">{{datas.conference}}</h5>
+
+        <h5 *ngIf="datas.journal">{{datas.journal}}</h5>
+
+        <h5 *ngIf="datas.thesisInfo">{{datas.thesisInfo}}</h5>
+
+        <p>
+          <a *ngIf="datas.paper" target="_blank" download type="application/octet-stream" [href]='imgPath +datas.paper' target="_blank">Download Paper</a>  
+          <!--<a href="#">Slides (PPTX, 204.3MB)</a> / 
+          <a href="#">Videos</a> / 
+          <a href="#">Supplemental document</a> /
+          <a href="#">Code (ZIP, 43.2MB)</a> / 
+          <a href="#">Datasets</a>-->
+        </p>
+
+        <div class="imgDiv">
+          <img default="./assets/imgs/no_image.jpg" [srcset]=" imgPath + datas.img" [src]=" imgPath + datas.img" class="max-img">
+        </div>
+      </div>
+
+      <!-- Examples -->
+
+      <div class="col-12">
+        <p class="display-4">Abstact</p>
+        <p>{{datas.description}}</p>
+      </div>
+
+      <!-- <div class="col-12" [innerHTML]="(individual$ | async)?.innerHTML | safeHtml"></div> -->
+
+      <!--</div>-->
+
+
+      <!--<div class="col-sm-12 videoWrapper">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/ZVEAHutpv0M" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </div>-->
+    </div>
+  </div>
+</div>

@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     this.setScrollMagic();
     this.arrowMove();
     this.issues = this.newsMediaService.findAllIssues();
-    this.publications$ = this.publicationsService.findArgPublications('international');
+    this.publications$ = this.publicationsService.findPublicationsForHome('international');
     this.teams$ = this.teamsService.findAllTeams();
     this.partners$ = this.partnersSponsershipService.findMainPartner();
   }

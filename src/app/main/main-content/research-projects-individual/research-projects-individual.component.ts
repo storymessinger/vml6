@@ -18,6 +18,7 @@ export class ResearchProjectsIndividualComponent implements OnInit {
   related_datas:any;
   current_id:number;
   id: number;
+
   
   project$: Observable<any[]>;
 

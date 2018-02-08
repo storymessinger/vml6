@@ -1,3 +1,4 @@
+import { ResearchPublicateComponent } from './main-content/research-publicate/research-publicate.component';
 import { AboutSponserComponent } from './main-content/about-sponser/about-sponser.component';
 import { AboutAdmissionComponent } from './main-content/about-admission/about-admission.component';
 import { AboutPartnersComponent } from './main-content/about-partners/about-partners.component';
@@ -13,6 +14,10 @@ import { ResearchAreaComponent } from './main-content/research-area/research-are
 import { ResearchAreaIndividualComponent } from './main-content/research-area-individual/research-area-individual.component';
 import { ResearchProjectsComponent } from './main-content/research-projects/research-projects.component';
 import { ResearchProjectsIndividualComponent } from './main-content/research-projects-individual/research-projects-individual.component';
+import { ResearchPublicateIndividualComponent } from './main-content/research-publicate-individual/research-publicate-individual.component';
+import { ResearchPublicateKrComponent } from './main-content/research-publicate-kr/research-publicate-kr.component';
+import { ResearchThesisComponent } from './main-content/research-thesis/research-thesis.component';
+import { ArchiveDownloadsComponent } from './main-content/archive-downloads/archive-downloads.component';
 
 const APP_ROUTES: Routes = [
      { 
@@ -77,45 +82,45 @@ const APP_ROUTES: Routes = [
                     }
                 ]
             },
-        //     {   path: 'international', 
-        //         component: ResearchPublicateComponent, 
-        //         data: { breadcrumb: "Publications (Intl.)" }
-        //     },
-        //     {   path: 'international', 
-        //         data: { breadcrumb: "Publications (Intl.)" }, 
-        //         children: [
-        //             {   path: 'individual/:id', 
-        //                 component: ResearchPublicateIndividualComponent,
-        //                 data: { breadcrumb: "Individual" }
-        //             }
-        //         ]
-        //     },
-        //     {   path: 'domestic', 
-        //         component: ResearchPublicateKrComponent, 
-        //         data: { breadcrumb: "Publications (Domestic)" }
-        //     },
-        //     {   path: 'domestic', 
-        //         data: { breadcrumb: "Publications (Domestic)" }, 
-        //         children: [
-        //             {   path: 'individual/:id', 
-        //                 component: ResearchPublicateIndividualComponent,
-        //                 data: { breadcrumb: "Individual" }
-        //             }
-        //         ]
-        //     },
-        //     {   path: 'thesis', 
-        //         component: ResearchThesisComponent, 
-        //         data: { breadcrumb: "Theses" }
-        //     },
-        //     {   path: 'thesis', 
-        //         data: { breadcrumb: "Theses" }, 
-        //         children: [
-        //             {   path: 'individual/:id', 
-        //                 component: ResearchPublicateIndividualComponent,
-        //                 data: { breadcrumb: "Individual" }
-        //             }
-        //         ]
-        //     },
+            {   path: 'international', 
+                component: ResearchPublicateComponent, 
+                data: { breadcrumb: "Publications (Intl.)" }
+            },
+            {   path: 'international', 
+                data: { breadcrumb: "Publications (Intl.)" }, 
+                children: [
+                    {   path: 'individual/:id', 
+                        component: ResearchPublicateIndividualComponent,
+                        data: { breadcrumb: "Individual" }
+                    }
+                ]
+            },
+            {   path: 'domestic', 
+                component: ResearchPublicateKrComponent, 
+                data: { breadcrumb: "Publications (Domestic)" }
+            },
+            {   path: 'domestic', 
+                data: { breadcrumb: "Publications (Domestic)" }, 
+                children: [
+                    {   path: 'individual/:id', 
+                        component: ResearchPublicateIndividualComponent,
+                        data: { breadcrumb: "Individual" }
+                    }
+                ]
+            },
+            {   path: 'thesis', 
+                component: ResearchThesisComponent, 
+                data: { breadcrumb: "Theses" }
+            },
+            {   path: 'thesis', 
+                data: { breadcrumb: "Theses" }, 
+                children: [
+                    {   path: 'individual/:id', 
+                        component: ResearchPublicateIndividualComponent,
+                        data: { breadcrumb: "Individual" }
+                    }
+                ]
+            },
             {   path: 'news', 
                 component: IssuesNewsComponent,
                 data: { breadcrumb: "News" }
@@ -127,12 +132,12 @@ const APP_ROUTES: Routes = [
             {   path: 'life', 
                 component: IssuesLifeComponent, 
                 data: { breadcrumb: "VML Life" }
+            },
+            {   path: 'downloads', 
+                component: ArchiveDownloadsComponent, 
+                data: { breadcrumb: "Downloads" },
+                pathMatch: 'full'
             }
-        //     {   path: 'downloads', 
-        //         component: ArchiveDownloadsComponent, 
-        //         data: { breadcrumb: "Downloads" },
-        //         pathMatch: 'full'
-        //     },
         //     {   path: 'seminar', 
         //         component: ArchiveSeminarComponent, 
         //         data: { breadcrumb: "Weekly Seminars" },

@@ -35,12 +35,12 @@
 
       <div *ngIf="pro.partners" class="project-partners col-12">
         <h5 class="column-title">Funding Partners</h5>
-        <div *ngFor="let partner of pro.partners | async" (click)="navigateTo('partner', 0, partner.link)" class="pad people-box">
+        <div *ngFor="let partner of pro.partners " (click)="navigateTo('partner', 0, partner.link)" class="pad people-box">
           <div class="people-img">  
             <div class="people-img-box">
               <img default="./../../../../assets/Contents/imgs/no_image.jpg"  
-              [srcset]=" imgPath + pro.people.img"
-              [src]=" imgPath + pro.people.img">
+              [srcset]=" imgPath + partner.logo"
+              [src]=" imgPath + partner.logo">
             </div>
           </div>
           <h5 class="people-text">

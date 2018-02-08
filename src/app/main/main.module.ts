@@ -55,6 +55,12 @@ import { ResearchAreaIndividualComponent } from './main-content/research-area-in
 import { ResearchProjectsComponent } from './main-content/research-projects/research-projects.component';
 import { ResearchProjectsIndividualComponent } from './main-content/research-projects-individual/research-projects-individual.component';
 import { TeamsService } from '../services/teams.service';
+import { ResearchPublicateComponent } from './main-content/research-publicate/research-publicate.component';
+import { ResearchPublicateIndividualComponent } from './main-content/research-publicate-individual/research-publicate-individual.component';
+import { ResearchThesisComponent } from './main-content/research-thesis/research-thesis.component';
+import { ResearchPublicateKrComponent } from './main-content/research-publicate-kr/research-publicate-kr.component';
+import { ArchiveDownloadsComponent } from './main-content/archive-downloads/archive-downloads.component';
+import { DownloadsService } from '../services/downloads.service';
 // import { SearchResultComponent } from './main-content/search-result/search-result.component';
 // import { MainComponent } from './main.component';
 
@@ -83,14 +89,14 @@ import { TeamsService } from '../services/teams.service';
     ResearchAreaIndividualComponent,
     ResearchProjectsComponent,
     ResearchProjectsIndividualComponent,
-    // ResearchPublicateComponent,
-    // ResearchPublicateKrComponent,
-    // ResearchPublicateIndividualComponent,
-    // ResearchThesisComponent,
+    ResearchPublicateComponent,
+    ResearchPublicateKrComponent,
+    ResearchPublicateIndividualComponent,
+    ResearchThesisComponent,
     IssuesNewsComponent,
     IssuesMediaComponent,
     IssuesLifeComponent,
-    // ArchiveDownloadsComponent,
+    ArchiveDownloadsComponent,
     // ArchiveSeminarComponent,
     // SearchResultComponent,
     
@@ -115,7 +121,8 @@ import { TeamsService } from '../services/teams.service';
       SidebarScrollService,
       MembersService,
       PartnersSponsershipService,
-      ProjectsService
+      ProjectsService,
+      DownloadsService
       
     // PageScrollService,
     // IndividualHttpService,

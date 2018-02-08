@@ -100,8 +100,8 @@
             <div *ngFor="let person of data_master | async" class="people-box col-sm-12 col-md-6 col-lg-4">
               <div class="people-img">
                 <div (click)="routing(person.id)" class="people-img-box">
-                  <!--<img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">-->
-                  <img default="./../../../../assets/Contents/imgs/default_person.png" [src]=" imgPath + person.img">
+
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
                   
                 </div>
               </div>
@@ -128,7 +128,7 @@
             <div *ngFor="let person of data_researcher | async" class="people-box col-sm-12 col-md-6 col-lg-4">
               <div class="people-img">
                 <div (click)="routing(person.id)" class="people-img-box">
-                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
                   
                 </div>
               </div>
@@ -154,7 +154,7 @@
             <div *ngFor="let person of data_intern | async" class="people-box col-sm-12 col-md-6 col-lg-4">
               <div class="people-img">
                 <div (click)="routing(person.id)" class="people-img-box">
-                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img">
+                  <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
                   
                 </div>
               </div>

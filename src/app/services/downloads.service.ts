@@ -9,13 +9,12 @@ import 'rxjs/add/operator/groupBy';
 import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
-export class ProjectsService {
+export class DownloadsService {
 
   constructor(private db:AngularFireDatabase) { }
 
-
-  findAllProjects():Observable<any[]>{
-    return this.db.list('projects')
+  findAllDownloads():Observable<any[]>{
+    return this.db.list('downloads')
     .valueChanges()
     
     .mergeMap(arr => Observable.from(arr)
@@ -24,15 +23,7 @@ export class ProjectsService {
       .toArray()
       .map(arr => arr.reverse())
     )
-  }
-
-
-  findProjectById(id): Observable<any[]> {
-    return this.db.list('projects', ref => ref.orderByChild('id').equalTo(id))
-    .valueChanges()
-    .first()
     .do(console.log)
   }
 
 }
-
