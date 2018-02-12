@@ -6,23 +6,23 @@
         <img src="./../../../../assets/Contents/imgs/logo.svg" width="180"/>
       </div>
 
-      <p class="display-2 col-12 publication-title">{{datas.title}}</p>
+      <p class="display-2 col-12 publication-title">{{pubs[0].title}}</p>
 
       <div class="desc col-12">
         <div class="author-box">
-          <div *ngFor="let author of datas.authors_array" class="authors">
+          <div *ngFor="let author of pubs[0].authors" class="authors">
             <h5>{{author.name}}</h5>
           </div>
         </div>
 
-        <h5 *ngIf="datas.conference">{{datas.conference}}</h5>
+        <h5 *ngIf="pubs[0].conference">{{pubs[0].conference}}</h5>
 
-        <h5 *ngIf="datas.journal">{{datas.journal}}</h5>
+        <h5 *ngIf="pubs[0].journal">{{pubs[0].journal}}</h5>
 
-        <h5 *ngIf="datas.thesisInfo">{{datas.thesisInfo}}</h5>
+        <h5 *ngIf="pubs[0].thesisInfo">{{pubs[0].thesisInfo}}</h5>
 
         <p>
-          <a *ngIf="datas.paper" target="_blank" download type="application/octet-stream" [href]='imgPath +datas.paper' target="_blank">Download Paper</a>  
+          <a *ngIf="pubs[0].paper" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].paper' target="_blank">Download Paper</a>  
           <!--<a href="#">Slides (PPTX, 204.3MB)</a> / 
           <a href="#">Videos</a> / 
           <a href="#">Supplemental document</a> /
@@ -31,7 +31,7 @@
         </p>
 
         <div class="imgDiv">
-          <img default="./assets/imgs/no_image.jpg" [srcset]=" imgPath + datas.img" [src]=" imgPath + datas.img" class="max-img">
+          <img default="./assets/imgs/no_image.jpg" [srcset]=" imgPath + pubs[0].img" [src]=" imgPath + pubs[0].img" class="max-img">
         </div>
       </div>
 
@@ -39,8 +39,134 @@
 
       <div class="col-12">
         <p class="display-4">Abstact</p>
-        <p>{{datas.description}}</p>
+        <p>{{pubs[0].description}}</p>
       </div>
+      
+
+      <div class="col-12">
+      <table width="700px">
+        <tr>
+            <td>
+
+                <p>
+                    <a href="2016JungjinLee_TOG.pdf">Paper (25.6M PDF)</a> /
+                    <a href="./2016JungjinLee_TOG/SIG16_Rich360_vml.pptx">Slides (786.3MB)</a> <!--<img src="../../../img/new.png">--> /
+                    <a href="#Videos">Videos</a> / <!--<img src="../../../img/new.png">-->
+                    <a href="#Datasets">Datasets</a> <!--<img src="../../../img/new.png">--> <br>
+                </p>
+
+                <img src="../../../img/research/publications/2016/2016_JungjinLee_SIG.png" width="840"><br>
+                <!-------------------------------------------------------------->
+                <h2>Abstract</h2>
+                <p align="justify">
+                    This paper presents Rich360, a novel system for creating and viewing a 360 panoramic video obtained from multiple cameras placed on a structured rig.
+                    Rich360 provides an as-rich-as-possible 360 viewing experience by effectively resolving two issues that occur in the existing pipeline.
+                    First, a deformable spherical projection surface is utilized to minimize the parallax from multiple cameras.
+                    The surface is deformed spatio-temporally according to the depth constraints estimated from the overlapping video regions. This enables
+                    fast and efficient parallax-free stitching independent of the number of views. Next, a non-uniform spherical ray sampling is performed.
+                    The density of the sampling varies depending on the importance of the image region. Finally, for interactive viewing, the nonuniformly
+                    sampled video is mapped onto a uniform viewing sphere using a UV map. This approach can preserve the richness of the
+                    input videos when the resolution of the final 360 panoramic video is smaller than the overall resolution of the input videos, which is
+                    the case for most 360 panoramic videos. We show various results from Rich360 to demonstrate the richness of the output video and
+                    the advancement in the stitching results.
+                </p>
+
+                <!-------------------------------------------------------------->
+                <a name="Videos"> <h2>Videos</h2></a>
+                <a href="2016JungjinLee_TOG.mp4">Video Results (495.9M MP4)</a> /
+                <a href="./2016JungjinLee_TOG/Rich360_SIG16_FF60s.mp4">FastForward Video (151.5M MP4)</a> <!--<img src="../../../img/new.png">--> <br><br>
+                <p>
+                    <iframe width="840" height="473" src="https://www.youtube.com/embed/gNYZBKdNLg4" frameborder="0" allowfullscreen></iframe>
+                </p>
+                <p>
+                    <iframe width="840" height="473" src="https://www.youtube.com/embed/nUFCt3-4qnw" frameborder="0" allowfullscreen></iframe>
+                </p>
+
+
+                <!-------------------------------------------------------------->
+                <a name="Datasets"><h2>Datasets</h2></a>
+                <p align="justify">
+                    Dataset consisting of input/output data and camera parameters used for stitching results in Rich360: Optimized Spherical Representation from Structured Panoramic Camera Arrays
+                </p><br>
+
+                We provide the following as part of the datasets(<a href="./2016JungjinLee_TOG/Dataset/ReadMe.txt">README</a>):
+                <ul>
+                    <li>Input: set of input images for each camera (JPG sequence)</li>
+                    <li>Output: stitching results from Rich360 (the equirectangular projection with linear blending, non-uniform ray sampling was not applied.)</li>
+                    <li>CamParams.txt: 3D calibration data of all cameras.</li>
+                </ul>
+
+                <table cellpadding="10">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="./2016JungjinLee_TOG/Dataset/Carillon.png" alt="Carillon Image Thumbnail" width="350">
+                            </td>
+                            <td valign="top">
+                                <div>
+                                    <h3>Carillon </h3><!--<img src="../../../img/new.png"></h3>-->
+                                    <a href="./2016JungjinLee_TOG/Dataset/Carillon/Carillon_input-jpg.zip">Input images (ZIP, 4.92 GB)</a> — 301×6(2704×2028) images<br>
+                                    <a href="./2016JungjinLee_TOG/Dataset/Carillon/Carillon_output.zip">Output images (ZIP, 879.8 MB)</a> — 301(2048×1024) images<br>
+                                    <a href="./2016JungjinLee_TOG/Dataset/Carillon/Carillon_CamParams.txt">Calibration data (TXT, 2.99 KB)</a> — 6(GoPro) cameras<br>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./2016JungjinLee_TOG/Dataset/StoneTower.png" alt="StoneTower Image Thumbnail" width="350">
+                            </td>
+                            <td valign="top">
+                                <div>
+                                    <h3>StoneTower </h3><!--<img src="../../../img/new.png">-->
+                                    <a href="./2016JungjinLee_TOG/Dataset/StoneTower/StoneTower_input-jpg.zip">Input images (ZIP, 6.33 GB)</a> — 450×6(2704×2028) images<br>
+                                    <a href="./2016JungjinLee_TOG/Dataset/StoneTower/StoneTower_output.zip">Output images (ZIP, 1.15 GB)</a> — 450(2048×1024) images<br>
+                                    <a href="./2016JungjinLee_TOG/Dataset/StoneTower/StoneTower_CamParams.txt">Calibration data (TXT, 2.99 KB)</a> — 6(GoPro) cameras<br>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./2016JungjinLee_TOG/Dataset/GolfCenter.png" alt="GolfCenter Image Thumbnail" width="350">
+                            </td>
+                            <td valign="top">
+                                <div>
+                                    <h3>GolfCenter </h3><!--<img src="../../../img/new.png"></h3>-->
+                                    <a href="./2016JungjinLee_TOG/Dataset/GolfCenter/GolfCenter_input-jpg.zip">Input images (ZIP, 4.46 GB)</a> — 301×6(2704×2028) images<br>
+                                    <a href="./2016JungjinLee_TOG/Dataset/GolfCenter/GolfCenter_output.zip">Output images (ZIP, 811.1 MB)</a> — 301(2048×1024) images<br>
+                                    <a href="./2016JungjinLee_TOG/Dataset/GolfCenter/GolfCenter_CamParams.txt">Calibration data (TXT, 2.99 KB)</a> — 6(GoPro) cameras<br>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-------------------------------------------------------------->
+                <h2>Citation</h2>
+                Please cite "Rich360" in your publications when using this dataset:<br>
+                <p align="justify">
+                    <b>Rich360: Optimized Spherical Representation from Structured Panoramic Camera Arrays</b>,
+                    <i>Jungjin Lee, Bumki Kim, Kyehyun Kim, Younghui Kim, Junyong Noh,</i>
+                    ACM Transaction on Graphics (Proc. of ACM SIGGRAPH 2016), Volume 35, Issue 4, p.63:1-63:11, July 2016
+                    [ <a href="2016JungjinLee_TOG/Rich360_BibTeX.txt">BibTeX</a> ]<br>
+                </p>
+
+                <!-------------------------------------------------------------->
+                <h2>
+                    License
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                </h2>
+                All data is under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+
+
+
+
+
 
       <!-- <div class="col-12" [innerHTML]="(individual$ | async)?.innerHTML | safeHtml"></div> -->
 

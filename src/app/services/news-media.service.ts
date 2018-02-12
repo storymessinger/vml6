@@ -41,6 +41,7 @@ export class NewsMediaService {
     // .valueChanges()
     // .map(arr => arr.reverse())
     
+
     return this.db.list('issues/' + category)
     // return this.db.list('issues/' + category, ref => ref.orderByChild('date'))
     .valueChanges()

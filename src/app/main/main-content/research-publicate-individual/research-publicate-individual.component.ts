@@ -19,6 +19,7 @@ export class ResearchPublicateIndividualComponent implements OnInit {
   // individual$: Observable<any>;
 
   pubs$: Observable<any[]>;
+  pubs;
 
   constructor(
     private activatedRoute:ActivatedRoute,
@@ -28,11 +29,12 @@ export class ResearchPublicateIndividualComponent implements OnInit {
     this.subscription = this.activatedRoute.params //
       .subscribe( param => {
         let ID :number = parseInt(param['id']);
-        // this.pubs$ = this.publicationService.findPublicationById(ID)
+        this.pubs$ = this.publicationService.findPublicationById(ID)
       })
   }
 
   ngOnInit() {
+    this.pubs$.subscribe( val => this.pubs = val);
     // this.mockDataService.getPublication('whole',this.id);
     // this.datas = this.mockDataService.publication_individual;
 

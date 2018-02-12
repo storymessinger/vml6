@@ -1,3 +1,4 @@
+import { SeminarsService } from './../services/seminars.service';
 import { ProjectsService } from './../services/projects.service';
 import { PartnersSponsershipService } from './../services/partners-sponsership.service';
 import { MembersService } from './../services/members.service';
@@ -61,6 +62,7 @@ import { ResearchThesisComponent } from './main-content/research-thesis/research
 import { ResearchPublicateKrComponent } from './main-content/research-publicate-kr/research-publicate-kr.component';
 import { ArchiveDownloadsComponent } from './main-content/archive-downloads/archive-downloads.component';
 import { DownloadsService } from '../services/downloads.service';
+import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-seminar.component';
 // import { SearchResultComponent } from './main-content/search-result/search-result.component';
 // import { MainComponent } from './main.component';
 
@@ -97,7 +99,7 @@ import { DownloadsService } from '../services/downloads.service';
     IssuesMediaComponent,
     IssuesLifeComponent,
     ArchiveDownloadsComponent,
-    // ArchiveSeminarComponent,
+    ArchiveSeminarComponent,
     // SearchResultComponent,
     
     // KeysPipe,
@@ -122,7 +124,8 @@ import { DownloadsService } from '../services/downloads.service';
       MembersService,
       PartnersSponsershipService,
       ProjectsService,
-      DownloadsService
+      DownloadsService,
+      SeminarsService
       
     // PageScrollService,
     // IndividualHttpService,

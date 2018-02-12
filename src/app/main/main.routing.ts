@@ -18,6 +18,7 @@ import { ResearchPublicateIndividualComponent } from './main-content/research-pu
 import { ResearchPublicateKrComponent } from './main-content/research-publicate-kr/research-publicate-kr.component';
 import { ResearchThesisComponent } from './main-content/research-thesis/research-thesis.component';
 import { ArchiveDownloadsComponent } from './main-content/archive-downloads/archive-downloads.component';
+import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-seminar.component';
 
 const APP_ROUTES: Routes = [
      { 
@@ -137,12 +138,12 @@ const APP_ROUTES: Routes = [
                 component: ArchiveDownloadsComponent, 
                 data: { breadcrumb: "Downloads" },
                 pathMatch: 'full'
+            },
+            {   path: 'seminar', 
+                component: ArchiveSeminarComponent, 
+                data: { breadcrumb: "Weekly Seminars" },
+                pathMatch: 'full'
             }
-        //     {   path: 'seminar', 
-        //         component: ArchiveSeminarComponent, 
-        //         data: { breadcrumb: "Weekly Seminars" },
-        //         pathMatch: 'full'
-        //     },
         //     {   path: 'search/:id', 
         //         component: SearchResultComponent,
         //         data: { breadcrumb: "Search Result" },

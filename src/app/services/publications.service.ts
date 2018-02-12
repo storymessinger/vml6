@@ -21,7 +21,7 @@ export class PublicationsService {
   }
 
   findArgPublications(arg): Observable<any[]> {
-    return this.db.list('publications/' + arg)
+    return this.db.list('publications', ref=> ref.orderByChild('type').equalTo(arg))
       .valueChanges()
       .mergeMap(arr => Observable.from(arr)
         .groupBy( event => event['year'] )
@@ -31,8 +31,8 @@ export class PublicationsService {
       )
   }
 
-  findPublicationById(arg, id): Observable<any[]> {
-    return this.db.list('publications/' + arg, ref => ref.orderByChild('id').equalTo(id))
+  findPublicationById(id): Observable<any[]> {
+    return this.db.list('publications', ref => ref.orderByChild('id').equalTo(id))
     .valueChanges()
     .first()
     .do(console.log)
