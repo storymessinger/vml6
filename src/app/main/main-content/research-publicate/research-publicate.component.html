@@ -19,14 +19,17 @@
         <div class="data-desc">
           <a [routerLink]='[ "individual", publication.id]' class="h3" >{{publication.title}}</a>
           <div class="people_name">
-            <a [routerLink]='["../people", "person", author.id]' *ngFor="let author of publication.authors_array">
-              {{author.name}},
-            </a>
+            <p *ngFor="let author of publication.authors; let isLast=last">
+              {{author}}{{isLast ? '' : ', '}}
+            </p>
           </div>
           <p class="menu01" *ngIf='publication.conference'>Conference: {{publication.conference}}</p>
           <p class="menu01" *ngIf='publication.journal'>Journal: {{publication.journal}}</p>
-          <p class="menu01"><a [routerLink]="[ '/main/international/individual/', publication.id ]">Project Page</a> / 
-          <a *ngIf="publication.paper" target="_blank" download type="application/octet-stream" [href]='imgPath + publication.paper' target="_blank">Paper</a></p>
+
+          <!-- <p class="menu01"> <a href='./../../../../assets/test.html' target="_blank">Open Project Page</a> -->
+          <p class="menu01"> <a *ngIf="publication.file" [href]='publication.file' target="_blank">Open Project Page</a></p>
+          <p class="menu01"> <a *ngIf="publication.paper" target="_blank" download type="application/octet-stream" [href]='imgPath + publication.paper' target="_blank"> Download Paper</a></p>
+
         </div>
       </div>
 

@@ -3,11 +3,13 @@
 
     <div *ngIf="data" class="row list">
       <!--<h2 class="year-title" [id]='id' >{{id}}</h2>-->
+
       <div class="col-sm-12 year display-4" id="{{data[0].date| slice:0:4}}">
-        {{data[0].date }}
+        {{ data[0].date| slice:0:4 }}
       </div>
 
       <div *ngFor="let seminar of data" class="data-box">
+
         <div class="data-img">
           <img videoThumbnail [videoUrl]='seminar.link' 
               sizes="(min-width:990px) 300px, 800px" >
@@ -22,7 +24,7 @@
           </div>
         </div>
         <div class="data-type">
-          <img default="./assets/imgs/default_person.png" [srcset]=" imgPath + seminar.people.img" [src]=" imgPath + seminar.people.img">
+          <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + seminar.people.img" [src]=" imgPath + seminar.people.img">
         </div>
       </div>
 

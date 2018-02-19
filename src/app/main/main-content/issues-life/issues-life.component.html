@@ -10,7 +10,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <img *ngIf="selectedImage" default="./assets/imgs/no_image.jpg" [srcset]="imgPath + selectedImage">
+            <img *ngIf="selectedImage" default="./../../../../assets/imgs/no_image.jpg" [srcset]="imgPath + selectedImage">
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
 
               </div>
               <div *ngIf="lifes.image1" class="card">
-                <img default="./assets/imgs/no_image.jpg"
+               <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
                       [srcset] ="imgPath + lifes.image1" 
                       [src] ="imgPath + lifes.image1" 
@@ -49,7 +49,7 @@
                     (click)=setSelectedImage(lifes.image1)>
               </div>
               <div *ngIf="lifes.image2" class="card">
-                <img default="./assets/imgs/no_image.jpg"
+               <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
                       [srcset] ="imgPath + lifes.image2" 
                       [src] ="imgPath + lifes.image2" 
@@ -57,7 +57,7 @@
                     (click)=setSelectedImage(lifes.image2)>
               </div>
               <div *ngIf="lifes.image3" class="card">
-                <img default="./assets/imgs/no_image.jpg"
+               <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
                       [srcset] ="imgPath + lifes.image3" 
                       [src] ="imgPath + lifes.image3" 
@@ -65,7 +65,7 @@
                     (click)=setSelectedImage(lifes.image3)>
               </div>
               <div *ngIf="lifes.image4" class="card">
-                <img default="./assets/imgs/no_image.jpg"
+               <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
                       [srcset] ="imgPath + lifes.image4" 
                       [src] ="imgPath + lifes.image4" 

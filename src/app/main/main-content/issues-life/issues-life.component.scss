@@ -7,7 +7,7 @@ hr {
 
 //modal
 .modal-lg {
-    max-width: 1200px;
+    max-width: 80vw;
 }
 
 .modal-content {
@@ -81,5 +81,10 @@ hr {
 @media (max-width: 576px) {
     .card {
         margin-bottom: 1rem;
+    }
+
+
+    .modal-lg {
+        width: unset;
     }
 }

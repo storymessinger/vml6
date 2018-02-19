@@ -32,10 +32,12 @@ export class VideoThumbnailDirective implements OnInit {
       this.srcset = smallImg;
     } else if ( urlArr.some(item => item === "player.vimeo.com")) {
       const videoId = (urlArr[urlArr.length -1 ]);
-      this.srcset = "./assets/imgs/no_image.jpg";
+      this.srcset = "./../../assets/Contents/imgs/no_image.jpg";
       // const smallImg = "https://img.youtube.com/vi/" + videoId + "/mqdefault.jpg";
       // const bigImg = "https://img.youtube.com/vi/" + videoId + "/hqdefault.jpg";
       // this.srcset = smallImg + " 800w, " + bigImg + " 300w ";
+    } else {
+      this.srcset = "./../../assets/Contents/imgs/no_image.jpg";
     }
   }
 

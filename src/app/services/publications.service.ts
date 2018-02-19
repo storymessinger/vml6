@@ -35,6 +35,5 @@ export class PublicationsService {
     return this.db.list('publications', ref => ref.orderByChild('id').equalTo(id))
     .valueChanges()
     .first()
-    .do(console.log)
   }
 }

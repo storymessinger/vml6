@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict">
+<!-- saved from url=(0076)http://vml.kaist.ac.kr/publication/journal/2017/2017SeunghwaJeong_TPAMI.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+        Object Segmentation Ensuring Consistency across Multi-viewpoint Images
+    </title>
+    <link rel="stylesheet" type="text/css" href="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/notosanskr.css">
+    <style type="text/css">
+        a:link {
+            color: #F05A29;
+            text-decoration =none;
+        }
+
+        a:visited {
+            color: #FAAF40;
+            text-decoration =none;
+        }
+
+        a:active {
+            color: #0000FF;
+            text-decoration =none;
+        }
+
+        a:hover {
+            color: #FF3300;
+            text-decoration =none;
+        }
+
+        body {
+            font-family: 'Noto Sans KR';
+            font-size: 11pt;
+            margin: 80px;
+            margin-top: 70px;
+            margin-bottom: 70px;
+            color: #5a5a5a;
+        }
+
+        h1 {
+            font-size: 200%;
+            margin-top 20px;
+            margin-bottom: 20px;
+            color: #645367;
+        }
+
+        h2 {
+            font-size: 150%;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #645367;
+        }
+
+        h3 {
+            font-size: 120%;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 0em;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table width="700px">
+            <tbody><tr>
+                <td>
+                    <p>
+                        <a target="_blank" onclick="this.blur()" href="http://vml.kaist.ac.kr/index.html">
+                            <img src="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/vm_logo_200.png" border="0">
+                        </a>
+                    </p>
+
+                    <p>
+                        </p><h1>Object Segmentation Ensuring Consistency across Multi-viewpoint Images</h1>
+                        <h4>
+                            <a href="mailto:seunghwajeong@kaist.ac.kr">Seunghwa Jeong</a>,
+                            <a href="mailto:jj.lee@kaistudio.co.kr">Jungjin Lee</a>,
+                            <a href="mailto:bumkikim@kaist.ac.kr">Bumki Kim</a>,
+                            <a href="mailto:yh.kim@kaistudio.co.kr">Younghui Kim</a>,
+                            <a href="mailto:junyongnoh@kaist.ac.kr">Junyong Noh</a>
+                            <br><br>
+                            Journal: IEEE Transactions on Pattern Analysis and Machine Intelligence, Voulme PP, Issue 99, September 2017<br>
+                            <!--Conference : <br>-->
+                        </h4>
+                    <p></p>
+
+                    <p>
+                        <a href="http://vml.kaist.ac.kr/publication/journal/2017/2017SeunghwaJeong_TPAMI.pdf">Paper (17.8M PDF)</a> /
+                        <a href="http://vml.kaist.ac.kr/publication/journal/2017/2017SeunghwaJeong_TPAMI_Supplemantary_Material.pdf">Supplemantary Material (17.9MB)</a><br>
+                    </p>
+
+                    
+                    <!-------------------------------------------------------------->
+                    <h2>Abstract</h2>
+                    <p align="justify">
+                       We present a hybrid approach that segments an object by using both color and depth information obtained from views
+                       captured from a low-cost RGBD camera and sparsely-located color cameras. Our system begins with generating dense depth
+                       information of each target image by using Structure from Motion and Joint Bilateral Upsampling. We formulate the multi-view object
+                       segmentation as the Markov Random Field energy optimization on the graph constructed from the superpixels. To ensure inter-view
+                       consistency of the segmentation results between color images that have too few color features, our local mapping method generates
+                       dense inter-view geometric correspondences by using the dense depth images. Finally, the pixel-based optimization step refines the
+                       boundaries of the results obtained from the superpixel-based binary segmentation. We evaluate the validity of our method under
+                       various capture conditions such as numbers of views, rotations, and distances between cameras. We compared our method with the
+                       state-of-the-art methods that use the standard multi-view datasets. The comparison verified that the proposed method works very
+                       efficiently especially in a sparse wide-baseline capture environment
+                    </p>
+                    
+                    <h2>System Overview</h2>
+                    <img src="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/2017SeunghwaJeong_TPAMI.jpg" width="840"><br>
+                    <p align="justify">
+                        Fig. 1: System overview. Our method performs system setup first to obtain dense geometric information in each image
+                        coordinate by using SFM and JBU. Superpixel-based binary segmentation is performed that considers spatial and interview
+                        correspondences. By applying pixel-based boundary refinement, the quality of our segmentation improves especially
+                        near the segmentation boundaries.
+                    </p>
+
+                    <h2>Camera calibratiion and depth registration</h2>
+                    <img src="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/2017SeunghwaJeong_TPAMI_Fig2A.jpg" width="372">
+                    <img src="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/2017SeunghwaJeong_TPAMI_Fig2B.jpg" width="457"><br>
+                    <p align="justify">
+                        Fig. 2: Camera calibration and depth registration. We use the parameters of a customized RGBD camera(①) to obtain a
+                        depth image for the reference color camera. The application of the SFM algorithm recovers the parameters of the target
+                        cameras (­②). By processes ① and ­ (Eq. 1), we obtain the rotation and the translation matrix between the two 3D coordinates
+                        (③)
+                    </p>
+                    <h2>Results</h2>
+                    <img src="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/2017SeunghwaJeong_TPAMI_Fig9.PNG" width="840"><br>
+                    <p align="justify">
+                        Fig. 9: Comparison of the results produced after the application of each energy term. (a) One of the target images. (b) The
+                        ground truth image. (c) and (d) Binary segmentation results with and without multi-view energy term, respectively. (e) A
+                        final result image after refinement. (f) The boundary are for the calculation of the boundary accuracy(White area). (g), (h),
+                        (i) and (j) are zoomed in images of (b), (c), (d) and (e), respectively.
+                    </p><br>
+
+                    <img src="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/2017SeunghwaJeong_TPAMI_Fig10.PNG" width="840"><br>
+                    <p align="justify">
+                        Fig. 10: Comparison of the results produced after the application of each multi-view energy term. (a) Target images.
+                        Segmentation results produced (b) using only a single-view image term (Section 5.3), (c) when omitting the projection
+                        probability term (Section 5.4.1), (d) when omitting the 3D-color similarity term (Section 5.4.2), (e) when omitting the
+                        disparity term (Section 5.4.3) and (f) when using all of the multi-view image terms
+                    </p>
+                    <!-------------------------------------------------------------->
+                    <h2>
+                        License
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/80x15.png"></a>
+                    </h2>
+                    All data is under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>
+                </td>
+            </tr>
+        </tbody></table>
+
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script src="./Object Segmentation Ensuring Consistency across Multi-viewpoint Images_files/ga.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var pageTracker = _gat._getTracker("UA-2440030-1");
+            pageTracker._initData();
+            pageTracker._trackPageview();
+        </script>
+
+
+</center></body></html>

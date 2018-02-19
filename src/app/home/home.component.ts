@@ -6,7 +6,7 @@ import { PublicationsService } from './../services/publications.service';
 import { TeamsService } from '../services/teams.service';
 import { PartnersSponsershipService } from '../services/partners-sponsership.service';
 
-declare var TweenLite, TweenMax, TimelineLite, TimelineMax, Ease, Expo, ScrollMagic, Power2 :any;
+declare var TweenLite, TweenMax, TimelineMax, Ease, Expo, ScrollMagic, Power2 :any;
 
 @Component({
   selector: 'app-home',

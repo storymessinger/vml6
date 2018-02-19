@@ -9,23 +9,24 @@
 
       <div *ngFor="let publication of data" class="data-box">
         <div class="data-img">
-          <img default="./../../../../assets/Contents/imgs/no_image.jpg" 
-              [srcset]= 'imgPath + publication.img + " 800w, " +
-                        imgPath+ publication.smallimg + " 300w "'
-              sizes="(min-width:990px) 300px, 800px">
+          <img default="./../../../../assets/Contents/imgs/no_image.jpg" [srcset]='imgPath + publication.img + " 800w, " +
+                        imgPath+ publication.smallimg + " 300w "' sizes="(min-width:990px) 300px, 800px">
 
         </div>
         <div class="data-desc">
-          <h3 >{{publication.title}}</h3>
+          <h3>{{publication.title}}</h3>
           <div class="people_name">
-            <a [routerLink]='["../people", "person", author.id]' *ngFor="let author of publication.authors_array">
-              {{author.name}},
-            </a>
+            <p *ngFor="let author of publication.authors; let isLast=last">
+              {{author}}{{isLast ? '' : ', '}}
+            </p>
           </div>
           <p *ngIf="publication.conference" class="menu01">Conference: {{publication.conference}}</p>
           <p class="menu01">Journal: {{publication.journal}}</p>
-          <p class="menu01"><a [routerLink]="[ '/main/domestic/individual/', publication.id ]">Project Page</a> / 
-          <a *ngIf="publication.paper" target="_blank" download type="application/octet-stream" [href]='imgPath + publication.paper' target="_blank">Paper</a></p>
+          <p class="menu01">
+            <a href='./../../../../assets/test.html' target="_blank">Open Project Page</a>
+            <a *ngIf="publication.paper" target="_blank" download type="application/octet-stream" [href]='imgPath + publication.paper'
+              target="_blank"> / Paper</a>
+          </p>
         </div>
       </div>
 

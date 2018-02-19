@@ -23,7 +23,7 @@ export class NewsMediaService {
   }
 
   findAllIssues(): Observable<any[]> {
-    return this.db.list('issues/news', ref => ref.limitToLast(10))
+    return this.db.list('issues/news', ref => ref.limitToLast(7))
       .valueChanges()
       .first()
       .map(array => array.reverse())

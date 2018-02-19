@@ -63,6 +63,8 @@ import { ResearchPublicateKrComponent } from './main-content/research-publicate-
 import { ArchiveDownloadsComponent } from './main-content/archive-downloads/archive-downloads.component';
 import { DownloadsService } from '../services/downloads.service';
 import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-seminar.component';
+import { SearchResultComponent } from './main-content/search-result/search-result.component';
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
 // import { SearchResultComponent } from './main-content/search-result/search-result.component';
 // import { MainComponent } from './main.component';
 
@@ -100,7 +102,7 @@ import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-
     IssuesLifeComponent,
     ArchiveDownloadsComponent,
     ArchiveSeminarComponent,
-    // SearchResultComponent,
+    SearchResultComponent,
     
     // KeysPipe,
     NumToMonthPipe,
@@ -115,7 +117,7 @@ import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-
     BrowserAnimationsModule,
     CommonModule,
     routing,
-    
+    Ng2PageScrollModule,
     MatIconModule,
     MatInputModule
   ],
@@ -126,8 +128,6 @@ import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-
       ProjectsService,
       DownloadsService,
       SeminarsService
-      
-    // PageScrollService,
     // IndividualHttpService,
     // ProjectpageHttpService
 ]

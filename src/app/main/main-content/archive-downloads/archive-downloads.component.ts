@@ -1,5 +1,4 @@
 import { Router } from '@angular/router';
-// import { MockDataService } from './../../../shared/mockdata.service';
 import { Subscription } from 'rxjs/Rx';
 // import { DOCUMENT } from '@angular/platform-browser';
 // import { PageScrollService, PageScrollInstance, PageScrollConfig } from 'ng2-page-scroll';

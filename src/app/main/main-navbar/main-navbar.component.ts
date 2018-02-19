@@ -4,7 +4,7 @@ import "rxjs/add/operator/filter";
 import { Observable } from 'rxjs/Observable';
 import { BreadCrumb } from '../../model/breadcrumb';
 
-declare var TweenLite, TweenMax, TimelineLite, TimeliteMax, Ease, Power3, ScrollMagic :any;
+declare var TweenLite, TweenMax, TimelineMax, Ease, Power3, ScrollMagic :any;
 
 interface IBreadcrumb {
   label: string;
@@ -58,10 +58,10 @@ export class MainNavbarComponent implements OnInit {
 
   ngOnInit() {
 
-    this.tl_btn = new TimelineLite({paused:true})
+    this.tl_btn = new TimelineMax({paused:true})
       .set('.open-search', { display: "none" })
       .set('.close-search', { display: "unset" })
-    this.tl_search = new TimelineLite({paused:true})
+    this.tl_search = new TimelineMax({paused:true})
       .set('.search', { display: "unset" })
       .to( '.breadcrumb', 0.7, {
         opacity: "0"
@@ -76,7 +76,7 @@ export class MainNavbarComponent implements OnInit {
       self._inputElement.nativeElement.focus();
     }
 
-    this.tl_navbar = new TimelineLite()
+    this.tl_navbar = new TimelineMax()
       .from( '#navbar-animation', 1.5, {
         backgroundColor: "#fafafa",
         boxShadow: "0 1.5px 4px rgba(0,0,0,0.05)",

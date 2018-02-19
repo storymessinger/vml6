@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.png"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -27,14 +27,10 @@
       ],
       "scripts": [
         "../node_modules/gsap/src/minified/TweenLite.min.js",
-        "../node_modules/gsap/src/minified/TimelineLite.min.js",
         "../node_modules/gsap/src/minified/TweenMax.min.js",
         "../node_modules/gsap/src/minified/TimelineMax.min.js",
-        "../node_modules/gsap/src/minified/plugins/ScrollToPlugin.min.js",
-        "../node_modules/gsap/src/minified/plugins/AttrPlugin.min.js",
         "../node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js",
         "../node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js",
-        "../node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js",
         "../node_modules/fuse.js/dist/fuse.min.js"
       ],
       "environmentSource": "environments/environment.ts",

@@ -41,5 +41,6 @@ export class ResearchPublicateIndividualComponent implements OnInit {
     // this.individual$ = this.projectpageHttpService.findById(this.id);
   }
 
-
 }
+
+

@@ -1,3 +1,4 @@
+import { SearchResultComponent } from './main-content/search-result/search-result.component';
 import { ResearchPublicateComponent } from './main-content/research-publicate/research-publicate.component';
 import { AboutSponserComponent } from './main-content/about-sponser/about-sponser.component';
 import { AboutAdmissionComponent } from './main-content/about-admission/about-admission.component';
@@ -143,11 +144,11 @@ const APP_ROUTES: Routes = [
                 component: ArchiveSeminarComponent, 
                 data: { breadcrumb: "Weekly Seminars" },
                 pathMatch: 'full'
+            },
+            {   path: 'search/:id', 
+                component: SearchResultComponent,
+                data: { breadcrumb: "Search Result" },
             }
-        //     {   path: 'search/:id', 
-        //         component: SearchResultComponent,
-        //         data: { breadcrumb: "Search Result" },
-        //     }
 
         ]
     }
