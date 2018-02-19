@@ -18,7 +18,9 @@
         <h2>Related Thesis</h2>
 
         <div *ngFor='let publication of team.publications'>
-          <a [routerLink]="['/main/international/individual/' + publication.id]" class="links">{{publication.title}}, <span>{{publication.year}}</span></a>
+          <a [routerLink]="['/main/international/individual/' + publication.id]" class="links">{{publication.title}},
+            <span>{{publication.year}}</span>
+          </a>
         </div>
 
       </div>
@@ -27,7 +29,9 @@
         <h2>Related Projects</h2>
 
         <div *ngFor='let project of team.projects'>
-          <a *ngIf="project.fullname" [routerLink]="['/main/projects/individual/' + project.id]" class="links">{{project.fullname}}, <span>{{project.year}}</span></a>
+          <a *ngIf="project.fullname" [routerLink]="['/main/projects/individual/' + project.id]" class="links">{{project.fullname}},
+            <span>{{project.year}}</span>
+          </a>
         </div>
 
       </div>
@@ -40,18 +44,15 @@
         </h2>
 
         <div class="box-flex row">
-          <div (click)="routing(person.id)" *ngFor="let person of team.people" class="people-box pad col-6">
+          <div (click)="routing(person.id)" *ngFor="let person of team.people" class="people-box pad col-sm-12 col-md-6">
             <div class="people-img">
               <div class="people-img-box">
-                <img default="./assets/imgs/no_image.jpg" 
-                    [srcset]=" imgPath + person.img"
-                    [src]=" imgPath + person.img"
-                    >
+                <img default="./../../../../assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
               </div>
             </div>
 
             <h5 class="people-text">
-              <p class="menu02">name</p> 
+              <p class="menu02">name</p>
               {{person.name}}
               <p class="menu02">topics</p>
               <p>{{person.topics}}</p>

@@ -1,3 +1,4 @@
+import { OrderBy } from './../pipes/order-by.pipe';
 import { SeminarsService } from './../services/seminars.service';
 import { ProjectsService } from './../services/projects.service';
 import { PartnersSponsershipService } from './../services/partners-sponsership.service';
@@ -109,7 +110,8 @@ import {Ng2PageScrollModule} from 'ng2-page-scroll';
     DefaultImageDirective,
     VideoThumbnailDirective,
     TypeChangePipe,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    OrderBy
     ],
   imports: [
     FormsModule,

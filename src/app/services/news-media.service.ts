@@ -33,6 +33,7 @@ export class NewsMediaService {
   findAllLife(): Observable<any[]> {
   return this.db.list('lifes', ref => ref.orderByChild('year'))
     .valueChanges()   
+    .map(array => array.reverse())
   }
   
   

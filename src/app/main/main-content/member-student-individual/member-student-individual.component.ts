@@ -19,6 +19,9 @@ export class MemberStudentIndividualComponent implements OnInit {
   person$: Observable<any>;
   individual$: Observable<any>;
 
+  order = "year";
+  ascending = false;
+
   constructor(
     // private mockDataService:MockDataService,
     private activatedRoute:ActivatedRoute,
@@ -32,13 +35,9 @@ export class MemberStudentIndividualComponent implements OnInit {
     
     this.subscription = this.activatedRoute.params //
       .subscribe( param => {
-        // this.id = parseInt(param['id']);
         let ID :number = parseInt(param['id']);
         this.person$ = this.membersService.findMemberById(ID)
       })
-    // this.mockDataService.getMembers(this.id);
-    // this.datas = this.mockDataService.people_person;
-    // this.individual$ = this.individualHttpService.findById(this.id);
   }
 
 }

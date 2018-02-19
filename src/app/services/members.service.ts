@@ -17,7 +17,6 @@ export class MembersService {
     return this.db.list('people')
       .valueChanges()
       .first()
-      .do(console.log);
   }
   
   findMemberByStatus(status:string): Observable<any[]> {
@@ -32,6 +31,7 @@ export class MembersService {
     return this.db.list('people', ref => ref.orderByChild('id').equalTo(id))
     .valueChanges()
     .first()
+    .do(console.log);
   }
 
 }

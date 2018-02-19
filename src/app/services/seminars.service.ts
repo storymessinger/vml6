@@ -11,10 +11,13 @@ export class SeminarsService {
   constructor(private db:AngularFireDatabase) { }
 
   findAllSeminar():Observable<any[]> {
-    return this.db.list('seminars', ref => ref.orderByChild('date'))
+    return this.db.list('seminars')
     .valueChanges()
-    .map(arr => arr.reverse())
-    .first()
+      .mergeMap(arr => Observable.from(arr)
+        .groupBy( event => event['year'] )
+        .mergeMap(group => group.toArray()).map(arr => arr.sort().reverse())
+        .toArray()
+        // .map(arr => arr.reverse()) 
+      )
   }
-
 }

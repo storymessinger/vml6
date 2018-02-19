@@ -41,7 +41,8 @@ hr {
         display:flex;
         flex-flow:column;
         justify-content: space-between;
-        p {
+        a {
+            color: black;
             margin-bottom: 0.3rem;
         }
     }

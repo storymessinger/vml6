@@ -1,12 +1,17 @@
 <div class="flex-content">
   <div class="content col-sm container-fluid">
 
-    <div *ngIf="data" class="row list">
+    <div *ngFor="let data of seminars$ | async" class="row list">
       <!--<h2 class="year-title" [id]='id' >{{id}}</h2>-->
-
-      <div class="col-sm-12 year display-4" id="{{data[0].date| slice:0:4}}">
-        {{ data[0].date| slice:0:4 }}
+      <div class="col-sm-12 year display-4" [id]='data[0].year'>
+        {{data[0].year}}
       </div>
+
+    <!-- <div *ngIf="data" class="row list"> -->
+
+      <!-- <div class="col-sm-12 year display-4" id="{{data[0].date| slice:0:4}}">
+        {{ data[0].date| slice:0:4 }}
+      </div> -->
 
       <div *ngFor="let seminar of data" class="data-box">
 
@@ -18,13 +23,13 @@
         <div class="data-desc">
           <h3 >{{seminar.title}}</h3>
           <div>
-            <p>Presenter: {{seminar.people.name}} <span class="menu02">({{seminar.people.type | typeChange}})</span> </p>
+            <a [routerLink]="['/main/people/person/', seminar.people.id ]"> Presenter: {{seminar.people.name}} <span class="menu02">({{seminar.people.type | typeChange}})</span> </a>
             <p class="menu01">{{seminar.date}}</p>
 
           </div>
         </div>
         <div class="data-type">
-          <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + seminar.people.img" [src]=" imgPath + seminar.people.img">
+          <!-- <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + seminar.people.img" [src]=" imgPath + seminar.people.img"> -->
         </div>
       </div>
 

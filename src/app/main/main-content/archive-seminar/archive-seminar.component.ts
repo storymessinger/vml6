@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { SeminarsService } from './../../../services/seminars.service';
 import { DOCUMENT } from '@angular/platform-browser';
 // import { PageScrollService, PageScrollInstance, PageScrollConfig } from 'ng2-page-scroll';
@@ -14,7 +15,7 @@ import { SidebarScrollService } from '../../../services/sidebar-scroll.service';
 export class ArchiveSeminarComponent implements OnInit {
 
 
-  data:any;
+  seminars$:Observable<any[]>;
   id: string;
   subscription: Subscription;
   imgPath:string = './assets/Contents/';
@@ -34,11 +35,8 @@ export class ArchiveSeminarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.seminarsService.findAllSeminar()
-      .subscribe( val => this.data = val)
+    this.seminars$ = this.seminarsService.findAllSeminar();
 
-    // this.mockDataService.getSeminars();
-    // this.datas = this.mockDataService.seminars;
   }
 
   // clickScrollTo(name) {

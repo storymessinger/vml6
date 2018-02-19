@@ -17,8 +17,12 @@
       <div class="person-desc">
         <h1>{{person.name}}</h1>
         <p>{{person.type | typeChange}}</p>
-        <p>Visual Media Lab <br> 
-           Graduate School of Culture and Technology, KAIST</p>
+        <div *ngIf="person.affiliation;then content else other_content">here is ignored</div>
+
+        <ng-template #content><p>{{person.affiliation}}</p></ng-template>
+        <ng-template #other_content><p>Visual Media Lab <br> Graduate School of Culture and Technology, KAIST</p></ng-template>
+
+        
         <hr/>
 
         <h3>Research Interest</h3>
@@ -28,13 +32,13 @@
         <hr/>
 
         <!--<div class="test" *ngIf="person.innerHTML" [innerHTML]="person.innerHTML"></div>-->
-        <div class="test" [innerHTML]="(individual$ | async)?.innerHTML | safeHtml"></div>
+        <!-- <div class="test" [innerHTML]="(individual$ | async)?.innerHTML | safeHtml"></div> -->
 
-        <div *ngIf="person.publications.length != 0 && person.id != 1" >
+        <div *ngIf="person.publications" >
           <h3>Publications</h3>
           <table class="table">
             <tbody>
-              <tr *ngFor="let pub of person.publications">
+              <tr *ngFor="let pub of person.publications | orderBy:order:ascending">
                 <td class="table-left">{{pub.conference}}</td>
                 <td>
                   <p>{{pub.title}}</p>
@@ -46,28 +50,16 @@
         </div>
         
         <div>
-          <!--<h3>Education</h3>
+        </div>
+
+        <div *ngIf="person.projects" >
+          <h3>Projects</h3>
           <table class="table">
             <tbody>
-              <tr>
-                <td class="table-left">05/2002</td>
+              <tr *ngFor="let pro of person.projects | orderBy:order:ascending">
+                <td class="table-left">{{pro.year}}</td>
                 <td>
-                  <p>Ph.D. Computer Science University of Southern California, advisor Prof. Ulrich Neumann</p>
-                  <sub>- Thesis "Facial Animation by Expression Cloning"</sub>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-left">05/1996</td>
-                <td>
-                  <p>M.S. Computer Engineering University of Southern California, advisor Prof. George Bekey</p>
-                  <sub>- Robotics research laboratory</sub>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-left">05/1994</td>
-                <td>
-                  <p>B.S. Electrical Engineering University of Southern California</p>
-                  <sub>- Magna Cum Laude, Engineering Honors Program</sub>
+                  <p>{{pro.name}}</p>
                 </td>
               </tr>
             </tbody>
@@ -75,103 +67,21 @@
           <hr/>
         </div>
 
-
-        <div>
-          <h3>Appointments</h3>
-          <table class="table">
-            <tbody>
-              <tr>
-                <td class="table-left">	05/2016-Present</td>
-                <td>
-                  <p>Chairman</p>
-                  <sub>- Graduate School of Culture Technology, KAIST, Korea</sub>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-left">09/2014-Present</td>
-                <td>
-                  <p>Full Professor</p>
-                  <sub>- Graduate School of Culture Technology, KAIST, Korea</sub>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-left">11/2013-Present</td>
-                <td>
-                  <p>Adjunct Professor</p>
-                  <sub>- Culture Technology Research Institute, KAIST, Korea</sub>
-                </td>
-              </tr>
-              
-              <tr>
-                <td class="table-left">04/2012-Present</td>
-                <td>
-                  <p>Adjunct Professor</p>
-                  <sub>- Department of Computer Science, KAIST, Korea</sub>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-left">03/2012-07/2014</td>
-                <td>
-                  <p>Associate Dean</p>
-                  <sub>- Graduate School of Culture Technology, KAIST, Kore</sub>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-left">2012-Present</td>
-                <td>
-                  <p>Member of Board of Directors</p>
-                  <sub>- Korea Computer Graphics Society (KCGS)</sub>
-                </td>
-              </tr>
-
-
-              <tr>
-                <td class="table-left">11/2011-08/2012</td>
-                <td>
-                  <p>Industry Consultant</p>
-                  <sub>- CJ PowerCast, Korea</sub>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-left">09/2011-Present</td>
-                <td>
-                  <p>Industry Consultant</p>
-                  <sub>- Kolon, Korea</sub>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-left">09/2011-Present</td>
-                <td>
-                  <p>Adjunct Professor</p>
-                  <sub>- Lifestyle Innovation Center, KAIST, Korea</sub>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <hr/>-->
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-        <div *ngIf="person.projects">
+        <!-- <div *ngIf="person.projects">
           <h3 >Projects</h3>
           <div class="projects">
             <div class="project-item">
               <h5>{{person.projects.name}} ({{person.projects.year}})</h5>
+              <h5>asdfsafsfasdfsadfasfs</h5>
+            </div>
+            <div class="project-item">
+              adfadfasfsfsfdsa
             </div>
           </div>
           <hr/>
-        </div>
+        </div> -->
 
-        <div *ngIf="person.seminars.length != 0">
+        <div *ngIf="person.seminars">
           <h3>Seminars</h3>
           <div class="projects">
             <div *ngFor="let seminar of person.seminars " class="video-item">

@@ -19,6 +19,15 @@
 }
 
 @media (max-width: 556px) {
+    .people-box {
+        width: unset;
+        flex-flow: column;
+        .people-text {
+            margin-left: 0;
+            margin-top: 2rem;
+        }
+    }
+    
     .imgDiv {
         min-height: 40vh;
         .title {
