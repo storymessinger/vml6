@@ -49,19 +49,23 @@ export class NewsMediaService {
     
     .mergeMap(arr => Observable.from(arr)
     .groupBy( event => event['year'] )
-    .mergeMap(group => group.toArray()).map(arr => arr.sort().reverse())
+    .mergeMap(group => group.toArray()).map(arr => arr.sort(compare).reverse())
     .toArray()
     .map(arr => arr.reverse())
   )
-   
-    // .subscribe( ( groupedObservable ) => {
-    //     groupedObservable.subscribe(val => {
-    //         console.log(groupedObservable.key, val);
-    //     });
-    // })
-  }
-    // .map(res => res.json().payload)
-    // .do(lessons => this.subject.next(lessons))
-    // .publishLast().refCount();
+}
 
+}
+
+function compare(a, b) {
+  const dateA = parseInt(a.date);
+  const dateB = parseInt(b.date);
+
+  let comparison = 0;
+  if (dateA > dateB) {
+    comparison = 1;
+  } else if (dateA < dateB) {
+    comparison = -1;
+  }
+  return comparison;
 }

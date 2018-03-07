@@ -21,3 +21,17 @@ export class SeminarsService {
       )
   }
 }
+
+function compare(a, b) {
+  const dateA = parseInt(a.date);
+  const dateB = parseInt(b.date);
+
+  let comparison = 0;
+  if (dateA > dateB) {
+    comparison = 1;
+  } else if (dateA < dateB) {
+    comparison = -1;
+  }
+  return comparison;
+}
+

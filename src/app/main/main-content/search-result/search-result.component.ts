@@ -127,12 +127,11 @@ export class SearchResultComponent implements OnInit, DoCheck {
   }
 
   findPublications (query) {
-    this.result_publications = this.fuse_people.search(query);
-    console.log(this.result_publications);
+    this.result_publications = this.fuse_publications.search(query);
   }
 
   findProjects (query) {
-    this.result_projects = this.fuse_people.search(query);
+    this.result_projects = this.fuse_projects.search(query);
   }
   
   routing(arg, id, diff = null) {

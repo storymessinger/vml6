@@ -26,8 +26,12 @@
     transition: all 0.25s ease-out;
     cursor:pointer;
 }
-
+.object-box :hover {
+    text-decoration: none;
+}
 .object-box {
+    text-decoration: none;
+    color: $primary_dark_grey;
     max-width: 400px;
     margin-bottom: 1.5rem;
     .object-desc {
