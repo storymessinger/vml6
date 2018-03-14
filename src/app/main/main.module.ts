@@ -66,6 +66,7 @@ import { DownloadsService } from '../services/downloads.service';
 import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-seminar.component';
 import { SearchResultComponent } from './main-content/search-result/search-result.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import { ProffessorComponent } from './main-content/proffessor/proffessor.component';
 // import { SearchResultComponent } from './main-content/search-result/search-result.component';
 // import { MainComponent } from './main.component';
 
@@ -111,7 +112,8 @@ import {Ng2PageScrollModule} from 'ng2-page-scroll';
     VideoThumbnailDirective,
     TypeChangePipe,
     SafeHtmlPipe,
-    OrderBy
+    OrderBy,
+    ProffessorComponent
     ],
   imports: [
     FormsModule,

@@ -1,3 +1,4 @@
+import { ProffessorComponent } from './main-content/proffessor/proffessor.component';
 import { SearchResultComponent } from './main-content/search-result/search-result.component';
 import { ResearchPublicateComponent } from './main-content/research-publicate/research-publicate.component';
 import { AboutSponserComponent } from './main-content/about-sponser/about-sponser.component';
@@ -51,6 +52,11 @@ const APP_ROUTES: Routes = [
             {   path: 'people', 
                 data: { breadcrumb: "People" }, 
                 children: [
+                    {   path: 'person/1', 
+                        component: ProffessorComponent,
+                        data: { breadcrumb: "Individual Page" }
+
+                    },
                     {   path: 'person/:id', 
                         component: MemberStudentIndividualComponent,
                         data: { breadcrumb: "Individual Page" }

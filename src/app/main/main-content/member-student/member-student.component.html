@@ -5,10 +5,10 @@
   <div class="content col-sm container-fluid">
     <div class="row content-row no-gutters">
 
-          <div *ngIf="data_professor | async" class="people col-sm-12">
+          <div *ngIf="(data_professor | async)?.length > 0" class="people col-sm-12">
             <div class="people-status col-sm-12">
               <h2 id="faculty">
-                FACULTY
+                Faculty
               </h2>
             </div>
             
@@ -33,7 +33,7 @@
             </div>
           </div>
 
-          <div *ngIf="data_postdoc | async" class="people col-sm-12">
+          <div *ngIf="(data_postdoc | async)?.length > 0" class="people col-sm-12">
             <div class="people-status col-sm-12">
               <h2 id="post">
                 Post Doctors
@@ -60,10 +60,15 @@
                 <sub class="menu01">{{person.status}}</sub>
               </div>
             </div>
+
+            <ng-template #templateForEmpty>
+
+           </ng-template>
+
           </div>
     
     
-          <div *ngIf="data_doctor | async" class="people col-sm-12">
+          <div *ngIf="(data_doctor | async)?.length > 0" class="people col-sm-12">
             <div class="people-status col-sm-12">
               <h2 id="phd">
                 Ph.d Student
@@ -92,7 +97,7 @@
           </div>
     
     
-          <div *ngIf="data_master | async" class="people col-sm-12">
+          <div *ngIf="(data_master | async)?.length > 0" class="people col-sm-12">
             <h2 class="people-status col-sm-12" id="master">
               Master Students
             </h2>
@@ -120,7 +125,7 @@
           </div>
     
     
-          <div *ngIf="data_researcher | async" class="people col-sm-12">
+          <div *ngIf="(data_researcher | async)?.length > 0" class="people col-sm-12">
             <h2 class="people-status col-sm-12" id="researcher">
               Researchers
             </h2>
@@ -146,7 +151,7 @@
             </div>
           </div>
     
-          <div *ngIf="data_intern | async" class="people col-sm-12">
+          <div *ngIf="(data_intern | async)?.length > 0" class="people col-sm-12">
             <h2 class="people-status col-sm-12" id="intern">
               Interns
             </h2>
@@ -172,7 +177,7 @@
             </div>
           </div>
     
-          <div *ngIf="data_alumni_phd | async" class="people col-sm-12">
+          <div *ngIf="(data_alumni_phd | async)?.length > 0" class="people col-sm-12">
             <h2 class="people-status col-sm-12" id="alumni_phd">
               Ph.D Alumni
             </h2>
@@ -197,7 +202,7 @@
             </div>
           </div>
     
-          <div *ngIf="data_alumni_master | async" class="people col-sm-12">
+          <div *ngIf="(data_alumni_master | async)?.length > 0" class="people col-sm-12">
             <h2 class="people-status col-sm-12" id="alumni_master">
               Master Alumni
             </h2>
@@ -222,8 +227,9 @@
     
             </div>
           </div>
+
     
-          <div *ngIf="data_former | async" class="people col-sm-12">
+          <div *ngIf="(data_former | async)?.length > 0" class="people col-sm-12">
             <h2 class="people-status col-sm-12" id="former">
               Former Members
             </h2>

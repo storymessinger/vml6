@@ -6,9 +6,9 @@
       <li>
         <mat-icon class="sb_menu" (click)='onClicked()'>menu</mat-icon>
       </li>
-      <li class="breadcrumb-item"><a class="bodyText" routerLink="">Home</a></li>
+      <li class="breadcrumb-item"><a class="bodyText" routerLink="">HOME</a></li>
       <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs">
-        <a class="bodyText" routerLink="{{breadcrumb.url}}">{{breadcrumb.label}}</a>
+        <a class="bodyText" routerLink="{{breadcrumb.url}}">{{breadcrumb.label | uppercase}}</a>
       </li>
 
     </ol>

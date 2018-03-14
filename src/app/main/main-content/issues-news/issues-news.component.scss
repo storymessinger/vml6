@@ -1,5 +1,25 @@
 @import '../../../../assets/css/_variables.scss';
 
+//modal
+.modal-lg {
+    max-width: 1200px;
+}
+
+.modal-content {
+    width: 100%;
+
+    .modal-header {
+        justify-content: flex-end;
+    }
+
+    .modal-body {
+        img {
+            width:100%;
+        }
+    }
+}
+//
+
 .content {
     display:flex;
     flex-flow:column;

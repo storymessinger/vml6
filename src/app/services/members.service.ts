@@ -18,12 +18,14 @@ export class MembersService {
       .valueChanges()
       .first()
   }
+
   
   findMemberByStatus(status:string): Observable<any[]> {
     return this.db.list('people', ref => ref.orderByChild('type').equalTo(status))
     // .map( data => data[0])
     .valueChanges()
-    .map(arr => arr.sort(compare).reverse())
+    .map(arr => arr.sort().reverse())
+    .do(console.log)
     .first()
   }
 

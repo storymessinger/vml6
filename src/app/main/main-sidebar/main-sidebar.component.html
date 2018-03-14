@@ -2,15 +2,15 @@
     <div class="sidebarInner">
       <nav>
         <dl *ngFor="let link of sbLinks">
-          <dt class="menu01" (click)="toggleMenu(link.firstLink[1])">{{link.firstLink[1]}}</dt>
+          <dt class="menu01" (click)="toggleMenu(link.firstLink[1])">{{link.firstLink[1] | uppercase}}</dt>
           <div class="hideOverflow">
             <dd [ngClass]="{'open': activeLink == link.firstLink[1]}" >
               <dl (click)="toggleSubMenu(subLink.data, subLink.scroll)" routerLinkActive="active" *ngFor="let subLink of link.secondLink" >
-                <a [routerLink]="[subLink.url]" class="menu01 secondMenu" >{{subLink.data}}</a>
+                <a [routerLink]="[subLink.url]" class="menu01 secondMenu" >{{subLink.data | uppercase}}</a>
                 <div class="hideOverflow">
                     <dd [ngClass]="{'open': subActiveLink == subLink.data }" >
                       <dl *ngFor="let inner of subLink.innerLink" (click)="sidebarNavConnect()" >
-                        <a (click)="clickSubSubMenu($event, inner)" [routerLink]="[subLink.url]" class="thirdMenu" >{{inner}}</a>
+                        <a (click)="clickSubSubMenu($event, inner)" [routerLink]="[subLink.url]" class="thirdMenu" >{{inner | uppercase}}</a>
                       </dl>
                     </dd>
                 </div>
