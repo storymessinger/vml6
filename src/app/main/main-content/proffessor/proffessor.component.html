@@ -2,64 +2,54 @@
 
   <div class="content col-sm-12 container-fluid">
     
-    <div *ngFor="let person of person$ | async" class="row">
-      <div class="person-img">
-        <img default="./assets/imgs/no_image.jpg" 
+    <div class="row">
+      <div *ngFor="let person of person$ | async"  class="person-img">
+        <img class="personimg" default="./assets/imgs/no_image.jpg" 
             [srcset]=" imgPath + person.img"
             [src]=" imgPath + person.img"
             >
 
-        <h3 *ngIf="person.email">E-mail</h3>
+        <h5 *ngIf="person.email">E-mail</h5>
         <p>{{person.email}}</p>
+
+        <h5 *ngIf="person.email">Book</h5>
+        <p>틀을 깨려는 용기가 필요해 </p>
+        <img src="http://image.kyobobook.co.kr/images/book/large/501/l9788956244501.jpg" class="book">
 
       </div>
 
+
       <div class="person-desc">
-        <h1>{{person.name}}</h1>
-        <p>{{person.type | typeChange}}</p>
-        <div *ngIf="person.affiliation;then content else other_content">here is ignored</div>
+        <div *ngFor="let person of person$ | async">
+          <h1>{{person.name}}</h1>
+          <p>{{person.type | typeChange}}</p>
+          <div *ngIf="person.affiliation;then content else other_content">here is ignored</div>
 
-        <ng-template #content><p>{{person.affiliation}}</p></ng-template>
-        <ng-template #other_content><p>Visual Media Lab <br> Graduate School of Culture and Technology, KAIST</p></ng-template>
+          <ng-template #content><p>{{person.affiliation}}</p></ng-template>
+          <ng-template #other_content><p>Visual Media Lab <br> Graduate School of Culture and Technology, KAIST</p></ng-template>
 
-        
-        <hr/>
+          
+          <hr/>
 
-        <h3>Research Interest</h3>
-        <div>
-          <p class="topics">{{person.topics}}</p>
-        </div>
-        <hr/>
-
-        <!--<div class="test" *ngIf="person.innerHTML" [innerHTML]="person.innerHTML"></div>-->
-        <!-- <div class="test" [innerHTML]="(individual$ | async)?.innerHTML | safeHtml"></div> -->
-
-        <div *ngIf="person.publications" >
-          <h3>Publications</h3>
-          <table class="table">
-            <tbody>
-              <tr *ngFor="let pub of person.publications">
-                <td class="table-left">{{pub.conference}}</td>
-                <td>
-                  <p>{{pub.title}}</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Research Interest</h3>
+          <div>
+            <p class="topics">{{person.topics}}</p>
+          </div>
           <hr/>
         </div>
-        
-        <div>
-        </div>
 
-        <div *ngIf="person.projects" >
-          <h3>Projects</h3>
+        <div>
+          <h3>Education</h3>
           <table class="table">
             <tbody>
-              <tr *ngFor="let pro of person.projects">
-                <td class="table-left">{{pro.year}}</td>
+              <tr *ngFor="let edu of education$ | async">
+                <td class="table-left">
+                  <span *ngIf='(edu.since).length > 0 '>{{edu.since}}</span>
+                  <span *ngIf='(edu.until).length > 0 '>{{edu.until}}</span>
+                </td>
                 <td>
-                  <p>{{pro.name}}</p>
+                  <p>{{edu.main}}</p>
+                  <sub>{{edu.sub}}</sub>
                 </td>
               </tr>
             </tbody>
@@ -67,78 +57,29 @@
           <hr/>
         </div>
 
-        <!-- <div *ngIf="person.projects">
-          <h3 >Projects</h3>
-          <div class="projects">
-            <div class="project-item">
-              <h5>{{person.projects.name}} ({{person.projects.year}})</h5>
-              <h5>asdfsafsfasdfsadfasfs</h5>
-            </div>
-            <div class="project-item">
-              adfadfasfsfsfdsa
-            </div>
-          </div>
+        <div>
+          <h3>Appointment</h3>
+          <table class="table">
+            <tbody>
+              <tr *ngFor="let app of appointment$ | async">
+                <td class="table-left">
+                  <span *ngIf='(app.since).length > 0 '>{{app.since}} </span>
+                  <span>- </span>
+                  <span *ngIf='(app.until).length > 0 '>{{app.until}}</span>
+                </td>
+                <td>
+                  <p>{{app.main}}</p>
+                  <sub>{{app.sub}}</sub>
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <hr/>
-        </div> -->
-
-        <div *ngIf="person.seminars">
-          <h3>Seminars</h3>
-          <div class="projects">
-            <div *ngFor="let seminar of person.seminars " class="video-item">
-              <img videoThumbnail [videoUrl]='seminar.link' 
-                  sizes="(min-width:990px) 300px, 800px" class="videos">
-              <p>{{seminar.title}}</p>
-            </div>
-          </div>
         </div>
-
 
       </div>
     </div>
   </div>
 </div>
-
-
-
-<!--<h3>List Title</h3>
-<div>
-  <p>list one</p>
-  <p>list two</p>
-  <p>list three</p>
-</div>
-<hr/>
-
-<h3>Table Title</h3>
-<table class="table">
-  <tbody>
-    <tr>
-      <td class="table-left">Table left column</td>
-      <td>
-        <p>Table right column, first line</p>
-        <p>Table right column, second line</p>
-        <p class="menu02">Table right column, thrid line, small text</p>
-      </td>
-    </tr>
-    <tr>
-      <td class="table-left">Table left column</td>
-      <td>
-        <p>Table right column, first line</p>
-        <p>Table right column, second line</p>
-        <p class="menu02">Table right column, thrid line, small text</p>
-      </td>
-    </tr>
-    <tr>
-      <td class="table-left">Table left column</td>
-      <td>
-        <p>Table right column, first line</p>
-        <p>Table right column, second line</p>
-        <p class="menu02">Table right column, thrid line, small text</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<hr/>-->
-
-
 
 

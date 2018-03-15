@@ -21,6 +21,8 @@ export class ResearchPublicateIndividualComponent implements OnInit {
   pubs$: Observable<any[]>;
   pubs;
 
+  URL;
+
   constructor(
     private activatedRoute:ActivatedRoute,
     private publicationService:PublicationsService
@@ -39,6 +41,8 @@ export class ResearchPublicateIndividualComponent implements OnInit {
     // this.datas = this.mockDataService.publication_individual;
 
     // this.individual$ = this.projectpageHttpService.findById(this.id);
+    // this.URL = "https://youtu.be/KKut3sHrK_4";
+    this.URL = this.pubs[0].video;
   }
 
 }

@@ -3,9 +3,11 @@
 .logo {
     padding-left:1rem;
     padding-bottom: 1rem;
+    width: 100%;
 }
 .publication-title {
     margin-bottom: 3.5rem;
+    max-width: 1000px;
 }
 .row {
     margin: 3.5rem 4rem 6rem 4rem;
@@ -35,10 +37,6 @@
             flex-flow: row wrap;
             .authors {
                 margin-bottom: 1rem;
-                h5 {
-                    display: inline;
-                    padding-right: 0.5rem;
-                }
             }
         }
         .imgDiv {
@@ -49,6 +47,25 @@
         }
     }
 }
+
+.abstract {
+    max-width: 1000px;
+    line-height: 2;
+}
+
+.videos {
+    cursor:pointer;
+}
+.video-item {
+    width:100%;
+    max-width: 1000px;
+    margin-top: 20px;
+    margin-bottom: 1.5rem;
+    img {
+        width: 100%;
+    }
+}
+
 
 @media (max-width: 991px) {
     .display-2 {

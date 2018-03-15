@@ -25,9 +25,9 @@ export class PublicationsService {
       .valueChanges()
       .mergeMap(arr => Observable.from(arr)
         .groupBy( event => event['year'] )
-        .mergeMap(group => group.toArray()).map(arr => arr.sort().reverse())
+        .mergeMap(group => group.toArray()).map(arr => arr.sort(compare))
         .toArray()
-        // .map(arr => arr.reverse()) //??????
+        .map(arr => arr.reverse()) 
       )
   }
 
@@ -36,4 +36,19 @@ export class PublicationsService {
     .valueChanges()
     .first()
   }
+}
+
+function compare(a, b) {
+
+  let idA =  a.graduation_date
+  let idB =  b.graduation_date
+  let comparison = 0;
+
+  if (idA > idB) {
+    comparison = 1;
+  } else if (idA < idB) {
+    comparison = -1;
+  }
+
+  return comparison;
 }

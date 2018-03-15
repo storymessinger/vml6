@@ -1,0 +1,96 @@
+@import '../../../../assets/css/_variables.scss';
+
+p, td {
+    color: rgba(0,0,0,0.54);
+}
+
+.row {
+    justify-content: flex-start;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+@media (max-width: 1560px) {
+    .row {
+        margin: 3.5rem;
+    }
+
+}
+
+@media (min-width: 1250px) {
+    .row {
+        justify-content: center;
+    }
+}
+
+.person-img {
+    width: 100%;
+    max-width: 400px;
+    padding-right: 3.5rem;
+    margin-bottom: 3.5rem;
+    
+    .personimg {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .book {
+        width: 50%;
+    }
+}
+
+
+.person-desc {
+    max-width: 700px;
+    margin-right:-3.5rem;
+
+    flex-grow: 1;
+    min-height: 100vh;
+    hr {
+        margin-bottom: 1.5rem;
+    }
+    .topics {
+        margin-bottom: 0.3rem;
+    }
+    table {
+        margin-bottom: 3.5rem;
+
+        .table-left {
+            width: 10rem;
+            padding-left: 0;
+            font-size:0.81rem;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .projects {
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        // padding: 0 1.5rem;
+        width:100%;
+        h5 {
+            padding-top: 1rem;
+        }
+        .videos {
+            cursor:pointer;
+        }
+        .project-item {
+            width:330px;
+            margin-bottom: 1.5rem;
+            img {
+                width: 100%;
+            }
+        }
+        .video-item {
+            width:220px;
+            margin-bottom: 1.5rem;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+      

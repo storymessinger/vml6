@@ -24,7 +24,7 @@ export class MembersService {
     return this.db.list('people', ref => ref.orderByChild('type').equalTo(status))
     // .map( data => data[0])
     .valueChanges()
-    .map(arr => arr.sort().reverse())
+    .map(arr => arr.sort(compare).reverse())
     .do(console.log)
     .first()
   }
@@ -40,14 +40,29 @@ export class MembersService {
 
 function compare(a, b) {
 
-  const dateA =  a.graduation_date.slice(0,4)
-  const dateB =  b.graduation_date.slice(0,4)
-
+  let dateA;
+  let dateB;
   let comparison = 0;
-  if (dateA > dateB) {
-    comparison = 1;
-  } else if (dateA < dateB) {
-    comparison = -1;
+
+  if(a.graduation_date && b.graduation_date) {
+    dateA =  a.graduation_date
+    dateB =  b.graduation_date
+
+    if (dateA > dateB) {
+      comparison = 1;
+    } else if (dateA < dateB) {
+      comparison = -1;
+    }
+  } else {
+    dateA =  a.admission_date
+    dateB =  b.admission_date
+
+    if (dateA > dateB) {
+      comparison = -1;
+    } else if (dateA < dateB) {
+      comparison = 1;
+    }
   }
+
   return comparison;
 }

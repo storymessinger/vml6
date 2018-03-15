@@ -22,7 +22,7 @@ export class ProffessorComponent implements OnInit {
   appointment$: Observable<any>;
   present$: Observable<any>;
 
-  imgPath
+  imgPath:string = './assets/Contents/';
 
   constructor(
     private db:AngularFireDatabase,
@@ -30,7 +30,7 @@ export class ProffessorComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.person$ = this.membersService.findMemberById(0)
+    this.person$ = this.membersService.findMemberById(1)
     this.interest$ = this.findByType('interest')
     this.education$ = this.findByType('education')
     this.appointment$ = this.findByType('appointment')
