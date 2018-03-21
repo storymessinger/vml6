@@ -34,14 +34,14 @@
         </p>
 
         <div class="imgDiv">
-          <img default="./assets/imgs/no_image.jpg" [srcset]=" imgPath + pubs[0].img" [src]=" imgPath + pubs[0].img" class="max-img">
+          <img default="./assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + pubs[0].img" [src]=" imgPath + pubs[0].img" class="max-img">
         </div>
       </div>
 
       <!-- Examples -->
 
       <div class="col-12 abstract">
-        <p class="display-4">Abstact</p>
+        <p class="h2">Abstact</p>
         <p>{{pubs[0].abstract}}</p>
       </div>
       
@@ -49,11 +49,22 @@
         <iframe width="1280" height="720" src="https://www.youtube.com/embed/ZVEAHutpv0M" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
       </div> -->
 
-    <div class="col-12 video-item">
-        <p class="display-4">Video</p>
-        <img videoThumbnail [videoUrl]='URL' 
-            sizes="(min-width:990px) 300px, 800px" class="videos">
-    </div>
+      <div class="embed-responsive embed-responsive-16by9" *ngIf="pubs[0].video?.length > 0" >
+        <iframe class="videoURL embed-responsive-item" [src]="safeURL" allowfullscreen></iframe>
+      </div>
+
+      <div class="imgDiv" *ngIf="pubs[0].subimg?.length > 0" >
+        <img default="./assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + pubs[0].subimg" [src]=" imgPath + pubs[0].subimg" class="max-img">
+      </div>
+
+      <div class="col-12 abstract" *ngIf="pubs[0].subimg_description?.length > 0">
+        <p>{{pubs[0]?.subimg_description}}</p>
+      </div>
+
+      <div class="col-12 abstract">
+        <p class="h2">License</p>
+        <p>All data is under <a href="https://creativecommons.org/licenses/by-nc/4.0/">a Creative Commons Attribution-Noncommercial 4.0 International License</a></p>
+      </div>
 
     </div>
   </div>

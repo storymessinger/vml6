@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PublicationsService } from '../../../services/publications.service';
 // import { MockDataService } from './../../../shared/mockdata.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-research-publicate-individual',
@@ -21,11 +22,16 @@ export class ResearchPublicateIndividualComponent implements OnInit {
   pubs$: Observable<any[]>;
   pubs;
 
-  URL;
+  videoURL = 'https://www.youtube.com/embed/QYHuXiTzNl8?rel=0';
+  safeURL;
+
+  subImg;
+
 
   constructor(
     private activatedRoute:ActivatedRoute,
-    private publicationService:PublicationsService
+    private publicationService:PublicationsService,
+    private _sanitizer: DomSanitizer
     // private projectpageHttpService:ProjectpageHttpService
     ) { 
     this.subscription = this.activatedRoute.params //
@@ -33,16 +39,20 @@ export class ResearchPublicateIndividualComponent implements OnInit {
         let ID :number = parseInt(param['id']);
         this.pubs$ = this.publicationService.findPublicationById(ID)
       })
+
   }
 
   ngOnInit() {
-    this.pubs$.subscribe( val => this.pubs = val);
+    this.pubs$.subscribe( val => {
+      this.pubs = val;
+    });
     // this.mockDataService.getPublication('whole',this.id);
     // this.datas = this.mockDataService.publication_individual;
 
     // this.individual$ = this.projectpageHttpService.findById(this.id);
-    // this.URL = "https://youtu.be/KKut3sHrK_4";
-    this.URL = this.pubs[0].video;
+    this.videoURL = this.pubs[0].video;
+    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
+    // this.URL = this.pubs[0].video;
   }
 
 }

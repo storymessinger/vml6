@@ -77,7 +77,7 @@
             margin-left:2rem;
             padding:0;
             .menu02 {
-                margin: 0.5rem 0;
+                margin: 0.5rem 0 0 0;
             }
         }
     }
@@ -185,4 +185,9 @@
     display:flex;
     margin: 0;
     
+}
+
+.teamLeader {
+    background-color: rgba(245,245,245,0.87);
+    border: 1px solid #c7c5c3;
 }

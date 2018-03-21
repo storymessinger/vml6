@@ -39,12 +39,14 @@
                 margin-bottom: 1rem;
             }
         }
-        .imgDiv {
-            margin: 3.5rem 0 6rem 0;
-            .max-img {
-                width: 100%;
-            }
-        }
+    }
+}
+
+.imgDiv {
+    margin: 3.5rem 0 3.5rem 0;
+    width:100%;
+    .max-img {
+        width: 100%;
     }
 }
 
@@ -76,59 +78,7 @@
     }
 }
 
-table {
-    a:link {
-        color: #F05A29;
-        text-decoration :none;
-    }
 
-    a:visited {
-        color: #FAAF40;
-        text-decoration :none;
-    }
-
-    a:active {
-        color: #0000FF;
-        text-decoration :none;
-    }
-
-    a:hover {
-        color: #FF3300;
-        text-decoration :none;
-    }
-
-    body {
-        font-family: 'Noto Sans KR';
-        font-size: 11pt;
-        margin: 80px;
-        margin-top: 70px;
-        margin-bottom: 70px;
-        color: #5a5a5a;
-    }
-
-    h1 {
-        font-size: 200%;
-        margin-top : 20px;
-        margin-bottom: 20px;
-        color: #645367;
-    }
-
-    h2 {
-        font-size: 150%;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        color: #645367;
-    }
-
-    h3 {
-        font-size: 120%;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    p {
-        margin-top: 0em;
-        margin-bottom: 5px;
-    }
-
+.videoURL {
+    margin-bottom: 100px;
 }

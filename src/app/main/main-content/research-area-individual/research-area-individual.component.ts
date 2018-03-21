@@ -16,6 +16,10 @@ export class ResearchAreaIndividualComponent implements OnInit {
   id:any;
   team$: Observable<any[]>;
 
+  order = "year";
+  order2 = "id";
+  ascending = false;
+
   constructor(
     private router:Router,
     // private mockDataService:MockDataService,

@@ -40,14 +40,14 @@ export class PublicationsService {
 
 function compare(a, b) {
 
-  let idA =  a.graduation_date
-  let idB =  b.graduation_date
+  let idA =  a.id
+  let idB =  b.id
   let comparison = 0;
 
   if (idA > idB) {
-    comparison = 1;
-  } else if (idA < idB) {
     comparison = -1;
+  } else if (idA < idB) {
+    comparison = 1;
   }
 
   return comparison;

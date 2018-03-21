@@ -17,7 +17,7 @@
       <div class="col-sm-12 related">
         <h2>Related Thesis</h2>
 
-        <div *ngFor='let publication of team.publications'>
+        <div *ngFor='let publication of team.publications| orderBy:order:ascending' >
           <a [routerLink]="['/main/international/individual/' + publication.id]" class="links">{{publication.title}},
             <span>{{publication.year}}</span>
           </a>
@@ -28,7 +28,7 @@
       <div class="col-sm-12 related">
         <h2>Related Projects</h2>
 
-        <div *ngFor='let project of team.projects'>
+        <div *ngFor='let project of team.projects| orderBy:order2:ascending'>
           <a *ngIf="project.fullname" [routerLink]="['/main/projects/individual/' + project.id]" class="links">{{project.fullname}},
             <span>{{project.year}}</span>
           </a>
@@ -44,21 +44,23 @@
         </h2>
 
         <div class="box-flex row">
-          <div (click)="routing(person.id)" *ngFor="let person of team.people" class="people-box pad col-sm-12 col-md-6">
+          <div [ngClass]="{'teamLeader': (person.status.length > 0) }" (click)="routing(person.id)" *ngFor="let person of team.people" class="people-box pad col-sm-12 col-md-6">
             <div class="people-img">
               <div class="people-img-box">
                 <img default="./../../../../assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
               </div>
             </div>
 
-            <h5 class="people-text">
+            <div class="people-text" >
               <p class="menu02">name</p>
-              {{person.name}}
+              <h5>{{person.name}} </h5> 
               <p class="menu02">topics</p>
               <p>{{person.topics}}</p>
               <p class="menu02">email</p>
               {{person.email}}
-            </h5>
+              <p class="menu02" *ngIf="person.status?.length > 0">status</p>
+              {{person.status}}
+            </div>
           </div>
         </div>
 
