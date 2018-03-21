@@ -2,7 +2,7 @@
     <div class="sidebarInner">
       <nav>
         <dl *ngFor="let link of sbLinks">
-          <dt class="menu01" (click)="toggleMenu(link.firstLink[1])">{{link.firstLink[1] | uppercase}}</dt>
+          <dt class="menu01" [routerLink]="link.firstLink[0]" (click)="toggleMenu(link.firstLink[1])">{{link.firstLink[1] | uppercase}}</dt>
           <div class="hideOverflow">
             <dd [ngClass]="{'open': activeLink == link.firstLink[1]}" >
               <dl (click)="toggleSubMenu(subLink.data, subLink.scroll)" routerLinkActive="active" *ngFor="let subLink of link.secondLink" >

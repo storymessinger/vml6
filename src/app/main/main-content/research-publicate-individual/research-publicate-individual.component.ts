@@ -45,14 +45,11 @@ export class ResearchPublicateIndividualComponent implements OnInit {
   ngOnInit() {
     this.pubs$.subscribe( val => {
       this.pubs = val;
+      this.videoURL = this.pubs[0].youtube;
+      if( this.videoURL ) {
+        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
+      }
     });
-    // this.mockDataService.getPublication('whole',this.id);
-    // this.datas = this.mockDataService.publication_individual;
-
-    // this.individual$ = this.projectpageHttpService.findById(this.id);
-    this.videoURL = this.pubs[0].video;
-    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
-    // this.URL = this.pubs[0].video;
   }
 
 }

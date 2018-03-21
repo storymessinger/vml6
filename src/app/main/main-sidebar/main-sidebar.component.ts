@@ -99,7 +99,7 @@ export class MainSidebarComponent implements AfterViewInit {
       secondLink: [
         { 
           url: "area",
-          data: "Research Area",
+          data: "Teams",
           innerLink: []
         },
         { 
@@ -145,7 +145,7 @@ export class MainSidebarComponent implements AfterViewInit {
       ]
     },
     {
-      firstLink: ["archive", "Archive", []],
+      firstLink: ["seminar", "Archive", []],
       secondLink: [
         { 
           url: "seminar",
