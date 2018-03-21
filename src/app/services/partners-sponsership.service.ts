@@ -19,7 +19,6 @@ export class PartnersSponsershipService {
     return this.db.list('partners', ref => ref.orderByChild('main').equalTo(1))
     .valueChanges()
     .first()
-    .do(console.log)
   
   }
 

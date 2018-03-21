@@ -24,8 +24,8 @@ export class AboutPartnersComponent implements OnInit {
 
   ngOnInit() {
     this.partners_government$ = this.partnersSponsershipService.findPartner('Government');
-    this.partners_institutions$ = this.partnersSponsershipService.findPartner('Institutions');
-    this.partners_academies$ = this.partnersSponsershipService.findPartner('Academies');
-    this.partners_productions$ = this.partnersSponsershipService.findPartner('Productions');
+    this.partners_institutions$ = this.partnersSponsershipService.findPartner('Corporation');
+    this.partners_academies$ = this.partnersSponsershipService.findPartner('Academy');
+    this.partners_productions$ = this.partnersSponsershipService.findPartner('Production');
   }
 }
