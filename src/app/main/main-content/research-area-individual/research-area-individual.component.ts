@@ -17,7 +17,6 @@ export class ResearchAreaIndividualComponent implements OnInit {
   team$: Observable<any[]>;
 
   order = "year";
-  order2 = "id";
   ascending = false;
 
   constructor(

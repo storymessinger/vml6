@@ -28,7 +28,7 @@
       <div class="col-sm-12 related">
         <h2>Related Projects</h2>
 
-        <div *ngFor='let project of team.projects| orderBy:order2:ascending'>
+        <div *ngFor='let project of team.projects| orderBy:order:ascending'>
           <a *ngIf="project.fullname" [routerLink]="['/main/projects/individual/' + project.id]" class="links">{{project.fullname}},
             <span>{{project.year}}</span>
           </a>

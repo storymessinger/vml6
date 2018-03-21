@@ -49,6 +49,10 @@ export class ProffessorComponent implements OnInit {
     .do(console.log)
   }
 
+  navigateToBook() {
+    window.location.href = 'http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788956244501&orderClick=JAj';
+  }
+
 }
 
 function compareID(a, b) {
