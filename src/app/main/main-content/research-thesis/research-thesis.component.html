@@ -17,16 +17,17 @@
         </div>
         <div class="data-desc">
           <h3>{{publication.title}}</h3>
-          <div class="people_name"v>>
+          <div class="people_name">
             <p *ngFor="let author of publication.authors; let isLast=last">
               {{author}}{{isLast ? '' : ', '}}
             </p>
           </div>
 
           <p class="menu01">
-            <a href='./../../../../assets/test.html' target="_blank">Open Project Page</a>
+            {{publication.thesisInfo}}
+            <!-- <a href='./../../../../assets/test.html' target="_blank">Open Project Page</a>
             <a *ngIf="publication.paper" target="_blank" download type="application/octet-stream" [href]='imgPath + publication.paper'
-              target="_blank"> / Paper</a>
+              target="_blank"> / Paper</a> -->
           </p>
         </div>
       </div>

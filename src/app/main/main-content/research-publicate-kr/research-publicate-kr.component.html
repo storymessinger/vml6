@@ -22,11 +22,6 @@
           </div>
           <p *ngIf="publication.conference" class="menu01">Conference: {{publication.conference}}</p>
           <p class="menu01">Journal: {{publication.journal}}</p>
-          <p class="menu01">
-            <a href='./../../../../assets/test.html' target="_blank">Open Project Page</a>
-            <a *ngIf="publication.paper" target="_blank" download type="application/octet-stream" [href]='imgPath + publication.paper'
-              target="_blank"> / Paper</a>
-          </p>
         </div>
       </div>
 
