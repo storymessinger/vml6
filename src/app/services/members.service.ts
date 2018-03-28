@@ -25,7 +25,6 @@ export class MembersService {
     // .map( data => data[0])
     .valueChanges()
     .map(arr => arr.sort(compare).reverse())
-    .do(console.log)
     .first()
   }
 

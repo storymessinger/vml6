@@ -41,12 +41,10 @@ export class ProffessorComponent implements OnInit {
   // interest, education, appointment, Present
   
   findByType(type:string): Observable<any[]> {
-    console.log('test');
     return this.db.list('professor', ref => ref.orderByChild('type').equalTo(type))
     .valueChanges()
     .map(arr => arr.sort(compareID).reverse())
     .first()
-    .do(console.log)
   }
 
   navigateToBook() {

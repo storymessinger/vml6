@@ -2,7 +2,7 @@
 
 //modal
 .modal-lg {
-    max-width: 1200px;
+    max-width: 60vw;
 }
 
 .modal-content {
@@ -92,5 +92,11 @@ hr {
     }
     .data-img {
         width:100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-lg {
+        width: unset;
     }
 }

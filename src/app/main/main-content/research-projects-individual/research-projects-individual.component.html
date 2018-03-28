@@ -41,7 +41,7 @@
       </div>
 
       <div *ngIf="pro.partners" class="project-partners col-12">
-        <h5 class="column-title">Funding Partners</h5>
+        <h5 class="column-title">Partners</h5>
         <div *ngFor="let partner of pro.partners " (click)="navigateTo('partner', 0, partner.link)" class="pad people-box">
           <div class="people-img">  
             <div class="people-img-box">
@@ -53,6 +53,23 @@
           <h5 class="people-text">
             <p class="menu02">name</p>
             {{partner.name}}
+          </h5>
+        </div>
+      </div>
+
+      <div *ngIf="pro.funding" class="project-partners col-12">
+        <h5 class="column-title">Funding</h5>
+        <div *ngFor="let fund of pro.funding" (click)="navigateTo('partner', 0, fund.link)" class="pad people-box">
+          <div class="people-img">  
+            <div class="people-img-box">
+              <img default="./../../../../assets/Contents/imgs/no_image.jpg"  
+              [srcset]=" imgPath + fund.logo"
+              [src]=" imgPath + fund.logo">
+            </div>
+          </div>
+          <h5 class="people-text">
+            <p class="menu02">name</p>
+            {{fund.name}}
           </h5>
         </div>
       </div>

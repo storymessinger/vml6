@@ -71,6 +71,22 @@
                     data-toggle="modal" data-target="#selectedImageModal"
                     (click)=setSelectedImage(lifes.image4)>
               </div>
+              <div *ngIf="lifes.image5" class="card">
+               <img default="./../../../../assets/Contents/imgs/no_image.jpg"
+                      class="card-img img-fluid" 
+                      [srcset] ="imgPath + lifes.image5" 
+                      [src] ="imgPath + lifes.image5" 
+                    data-toggle="modal" data-target="#selectedImageModal"
+                    (click)=setSelectedImage(lifes.image5)>
+              </div>
+              <div *ngIf="lifes.image6" class="card">
+               <img default="./../../../../assets/Contents/imgs/no_image.jpg"
+                      class="card-img img-fluid" 
+                      [srcset] ="imgPath + lifes.image6" 
+                      [src] ="imgPath + lifes.image6" 
+                    data-toggle="modal" data-target="#selectedImageModal"
+                    (click)=setSelectedImage(lifes.image6)>
+              </div>
           </div>
         </div>
 

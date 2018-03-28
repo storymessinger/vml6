@@ -23,7 +23,6 @@ export class DownloadsService {
       .toArray()
       .map(arr => arr.reverse())
     )
-    .do(console.log)
   }
 
 }

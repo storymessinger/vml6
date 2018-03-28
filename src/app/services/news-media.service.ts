@@ -27,7 +27,6 @@ export class NewsMediaService {
       .valueChanges()
       .first()
       .map(array => array.reverse())
-      .do(console.log);
   }
 
   findAllLife(): Observable<any[]> {

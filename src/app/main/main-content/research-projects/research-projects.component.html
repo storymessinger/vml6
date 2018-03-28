@@ -21,7 +21,7 @@
               <tr>
                 <td class="table-year">Full name</td>
                 <td>
-                  {{project.name}}
+                  {{project.fullname}}
                 </td>
               </tr>
 
@@ -46,16 +46,22 @@
                 </td>
               </tr>
 
+              <tr>
+                <td class="table-year">Funding</td>
+                <td *ngIf="project.partners">
+                  {{ project.funding[0].name }}
+                </td>
+              </tr>
+
             </tbody>
           </table>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-5 project-img" (click)="navigateTo(project.id)">
-          <img src="./../../../../assets/Contents/imgs/no_image.jpg" > 
-          <!--<img default="./assets/imgs/no_image.jpg"
-              [srcset]= 'imgPath + project.img + " 800w, " +
-                        imgPath+ project.smallimg + " 300w "'
-              sizes="(min-width:767px) 300px, 800px">-->
+          <!-- <img src="./../../../../assets/Contents/imgs/no_image.jpg" >  -->
+          <img default="./../../../../assets/Contents/imgs/no_image.jpg"
+              [srcset]= 'imgPath + project.img'
+              [src]= 'imgPath + project.img'>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-2 project-funding">
@@ -64,7 +70,9 @@
           <a [href]='project.funding?.link' class="menu02">{{project.funding?.name}}</a> -->
           <hr/>
           <p class="menu01">Manager</p>
-          <a *ngIf="project.people" [routerLink]='["../people", "person", project.people.id]'>{{project.people?.name}}</a>
+          <div *ngFor="let person of project.people">
+            <a [routerLink]='["../people", "person", person.id]'>{{person.name}}</a>
+          </div>
         </div>
 
       </div>

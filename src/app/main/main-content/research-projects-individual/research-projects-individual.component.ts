@@ -43,16 +43,11 @@ export class ResearchProjectsIndividualComponent implements OnInit, AfterViewIni
   ngOnInit() {
     this.project$.subscribe(item => {
       this.project = item;
-      console.log(this.project[0]['demo4']);
-      console.log(typeof(this.project[0]['demo4']));
-
       if (this.project[0]['demo1'] !== '') { this.demo1=this.safeCheck(this.project[0]['demo1']) }
       if (this.project[0]['demo2'] !== '') { this.demo2=this.safeCheck(this.project[0]['demo2']) }
       if (this.project[0]['demo3'] !== '') { this.demo3=this.safeCheck(this.project[0]['demo3']) }
       if (this.project[0]['demo4'] !== '') { this.demo4=this.safeCheck(this.project[0]['demo4']) }
       if (this.project[0]['demo5'] !== '') { this.demo5=this.safeCheck(this.project[0]['demo5']) }
-
-      console.log(this.project);
     })
 
   }
@@ -72,10 +67,8 @@ export class ResearchProjectsIndividualComponent implements OnInit, AfterViewIni
   }
 
   safeCheck(input){
-      console.log(input)
       let key = input.split('/').reverse()[0];
       let url = 'https://www.youtube.com/embed/' + key + '?rel=0';
-      console.log(url);
       return this._sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
