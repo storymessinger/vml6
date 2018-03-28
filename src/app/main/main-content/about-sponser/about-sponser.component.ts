@@ -25,9 +25,10 @@ export class AboutSponserComponent implements OnInit {
     this.silver$ = this.partnersSponsorshipService.findSponsor("silver")
   }
 
-  navigateTo(link, arg) {
+  navigateTo(id, link, arg) {
     if (arg == 'people') {
-      this.router.navigate([link]);
+      this.router.navigate(['/main/people/person', id]);
+
     } else if (arg == 'partners') {
       window.location.href = link;
     }

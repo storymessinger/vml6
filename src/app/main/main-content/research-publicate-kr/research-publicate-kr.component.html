@@ -10,15 +10,15 @@
       <div *ngFor="let publication of data" class="data-box">
         <div class="data-img">
           <img default="./../../../../assets/Contents/imgs/no_image.jpg" [srcset]='imgPath + publication.img + " 800w, " +
-                        imgPath+ publication.smallimg + " 300w "' sizes="(min-width:990px) 300px, 800px">
+                        imgPath+ publication.smallImg + " 300w "' sizes="(min-width:990px) 300px, 800px">
 
         </div>
         <div class="data-desc">
           <h3>{{publication.title}}</h3>
           <div class="people_name">
-            <p *ngFor="let author of publication.authors; let isLast=last">
-              {{author}}{{isLast ? '' : ', '}}
-            </p>
+            <a [routerLink]='["/main/people/person", author.id]' *ngFor="let author of publication.authors; let isLast=last" >
+              {{author.name}}{{isLast ? '' : ', '}}
+            </a>
           </div>
           <p *ngIf="publication.conference" class="menu01">Conference: {{publication.conference}}</p>
           <p class="menu01">Journal: {{publication.journal}}</p>

@@ -16,6 +16,10 @@ export class AboutPartnersComponent implements OnInit {
   partners_academies$: Observable<any[]>;
   partners_productions$: Observable<any[]>;
  
+  partners_government
+  partners_institutions
+  partners_academies
+  partners_productions
 
   constructor(
     private partnersSponsershipService:PartnersSponsershipService

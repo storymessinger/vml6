@@ -47,7 +47,7 @@ export class ResearchPublicateIndividualComponent implements OnInit {
       this.pubs = val;
       this.videoURL = this.pubs[0].youtube;
       if( this.videoURL ) {
-        let key = this.videoURL.split('=')[1]
+        let key = this.videoURL.split('/').reverse()[0]
         let URL = 'https://www.youtube.com/embed/' + key + '?rel=0';
         this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(URL);
       }

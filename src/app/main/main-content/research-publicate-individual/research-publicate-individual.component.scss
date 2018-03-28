@@ -33,11 +33,8 @@
     
     .desc {
         .author-box {
-            display:flex;
-            flex-flow: row wrap;
-            .authors {
-                margin-bottom: 1rem;
-            }
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
     }
 }

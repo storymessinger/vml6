@@ -10,9 +10,9 @@
 
       <div class="desc col-12">
         <div class="author-box">
-          <p *ngFor="let author of pubs[0].authors; let isLast=last" class="authors">
-            {{author}}{{isLast ? '' : ', '}}
-          </p>
+          <a [routerLink]='["/main/people/person", author.id]' *ngFor="let author of pubs[0].authors; let isLast=last" >
+            {{author.name}}{{isLast ? '' : ', '}}
+          </a>
         </div>
 
         <h5 *ngIf="pubs[0].journal">Journal: {{pubs[0].journal}}</h5>
@@ -64,6 +64,7 @@
       <div class="col-12 abstract" *ngIf="pubs[0].subimg_description?.length > 0">
         <p>{{pubs[0]?.subimg_description}}</p>
       </div>
+
 
       <div class="col-12 abstract">
         <p class="h2">License</p>

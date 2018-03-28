@@ -6,7 +6,7 @@
     <div class="row">
       <div class="partners col-sm-12">
         <h2 class="partners-title col-sm-12">Government</h2>
-        <div *ngFor="let partner of partners_government$ | async" class="partner-box col-sm-12 col-md-4 col-lg-3">
+        <div *ngFor="let partner of partners_government$ | async" class="partner-box col-sm-12 col-md-3 col-lg-2">
           <a [href]='partner.link' class="partner-img">
             <img default='./../../../../assets/Contents/imgs/no_image.jpg' [srcset]=" imgPath + partner.logo" [src]=" imgPath + partner.logo">
           </a>
@@ -19,7 +19,7 @@
     <div class="row">
       <div class="partners col-sm-12">
         <h2 class="partners-title col-sm-12">Institutions</h2>
-        <div *ngFor="let partner of partners_institutions$ | async" class="partner-box col-sm-12 col-md-4 col-lg-3">
+        <div *ngFor="let partner of partners_institutions$ | async" class="partner-box col-sm-12 col-md-3 col-lg-2">
           <a [href]='partner.link' class="partner-img">
             <img default='./../../../../assets/Contents/imgs/no_image.jpg' [srcset]=" imgPath + partner.logo" [src]=" imgPath + partner.logo">
           </a>
@@ -33,7 +33,7 @@
     <div class="row">
       <div class="partners col-sm-12">
         <h2 class="partners-title col-sm-12">Academies</h2>
-        <div *ngFor="let partner of partners_academies$ | async" class="partner-box col-sm-12 col-md-4 col-lg-3">
+        <div *ngFor="let partner of partners_academies$ | async" class="partner-box col-sm-12 col-md-3 col-lg-2">
           <a [href]='partner.link' class="partner-img">
             <img default='./../../../../assets/Contents/imgs/no_image.jpg' [srcset]=" imgPath + partner.logo" [src]=" imgPath + partner.logo">
           </a>
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="partners col-sm-12">
         <h2 class="partners-title col-sm-12">Productions</h2>
-        <div *ngFor="let partner of partners_productions$ | async" class="partner-box col-sm-12 col-md-4 col-lg-3">
+        <div *ngFor="let partner of partners_productions$ | async" class="partner-box col-sm-12 col-md-3 col-lg-2">
           <a [href]='partner.link' class="partner-img">
             <img default='./../../../../assets/Contents/imgs/no_image.jpg' [srcset]=" imgPath + partner.logo" [src]=" imgPath + partner.logo">
           </a>

@@ -2,7 +2,8 @@
 
 //modal
 .modal-lg {
-    max-width: 1200px;
+    // max-width: 1200px;
+    max-width: 50vw;
 }
 
 .modal-content {
@@ -68,6 +69,7 @@ hr {
         min-height:180px;
         img {
             width: 100%;
+            cursor: pointer;
         }
     }
 

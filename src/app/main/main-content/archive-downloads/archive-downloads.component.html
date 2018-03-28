@@ -18,7 +18,7 @@
         </div>
         <div class="data-type">
           <h5 *ngIf="download.file"><a  [href]='imgPath + download.file' target="_blank">{{download.type | uppercase }}</a><mat-icon class="material-icons">file_download</mat-icon></h5>
-          <h5 *ngIf="download.link"><a [routerLink]='download.link' >{{download.type | uppercase }}</a></h5>
+          <h5 *ngIf="download.link"><a [href]='imgPath + download.link'  target="_blank">{{download.type | uppercase }}</a></h5>
           
           <p class="menu01">
             {{download.additional}}

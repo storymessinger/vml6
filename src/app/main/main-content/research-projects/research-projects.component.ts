@@ -19,7 +19,6 @@ export class ResearchProjectsComponent implements OnInit {
   imgPath:string = './assets/Contents/';
   projects$: Observable<any[]>;
 
-
   constructor(
     private scrollAbleService: SidebarScrollService,
     private projectsService:ProjectsService,
@@ -35,6 +34,7 @@ export class ResearchProjectsComponent implements OnInit {
     //   })
    }
 
+
   ngOnInit() {
     // this.mockDataService.getProjects();
     // this.datas = this.mockDataService.projects;
@@ -48,8 +48,6 @@ export class ResearchProjectsComponent implements OnInit {
   // }
 
   ngOnDestroy() {
-      // unsubscribe to ensure no memory leaks
-      // this.subscription.unsubscribe();
   }
 
   navigateTo(id) {

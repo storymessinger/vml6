@@ -25,13 +25,13 @@ export class PartnersSponsershipService {
   findPartner(category): Observable<any[]> {
     return this.db.list('partners', ref => ref.orderByChild('type').equalTo(category))
       .valueChanges()
+      .map(items => items.filter(val => val['mou'] === 1))
       .first()
   }
 
   findSponsor(category){
     return this.db.list('sponsorship/' + category)
       .valueChanges()
-      
       .mergeMap(arr => Observable.from(arr)
       .groupBy( event => event['year'] )
       .mergeMap(group => group.toArray()).map(arr => arr.sort().reverse())

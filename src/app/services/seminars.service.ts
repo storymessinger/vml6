@@ -15,9 +15,9 @@ export class SeminarsService {
     .valueChanges()
       .mergeMap(arr => Observable.from(arr)
         .groupBy( event => event['year'] )
-        .mergeMap(group => group.toArray()).map(arr => arr.sort().reverse())
+        .mergeMap(group => group.toArray()).map(arr => arr.sort(compare))
         .toArray()
-        // .map(arr => arr.reverse()) 
+        .map(arr => arr.reverse()) 
       )
   }
 }

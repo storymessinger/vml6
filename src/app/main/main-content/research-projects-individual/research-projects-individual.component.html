@@ -1,34 +1,41 @@
 <div class="flex-content">
-  <div *ngFor="let pro of project$ | async" class="content col-sm container-fluid">
-    <div class="front-image-max">
-      <img src="./../../../../assets/Contents/imgs/no_image.jpg" >
-    </div> 
+
+  <div *ngFor ="let pro of project" class="content col-sm container-fluid">
+
 
     <div class="row no-gutters">
+
+      <div class="col-12">
+        <p class="h3" style="color:orange">{{pro.status}}</p>
+      </div>
+
       <div class="project-desc col-12">
         <p class="display-4">{{pro.fullname}}</p>
         <p>{{pro.description}}</p>
+        <p>{{pro.start}} - {{pro.end}}</p>
       </div>
+
     </div>
+
 
     <div class="divider"></div>
     <div class="row no-gutters">
 
-      <div class="project-manager col-12">
-        <h5 class="column-title">Project Manager</h5>
-        <div (click)="navigateTo('people', pro.people.id)" class="pad people-box">
+      <div *ngIf="pro.people" class="project-manager col-12">
+        <h5 class="column-title">Project Managers</h5>
+        <div *ngFor="let person of pro.people" (click)="navigateTo('people', person.id)" class="pad people-box col-sm-12 col-md-6" >
           <div class="people-img">
             <div class="people-img-box">
               <img default="./../../../../assets/Contents/imgs/no_image.jpg"  
-              [srcset]=" imgPath + pro.people.img"
-              [src]=" imgPath + pro.people.img">
+              [srcset]=" imgPath + person.img"
+              [src]=" imgPath + person.img">
             </div>
           </div>
           <h5 class="people-text">
             <p class="menu02">name</p> 
-            {{pro.people.name}}
+            {{person.name}}
             <p class="menu02">email</p> 
-            {{pro.people.email}}
+            {{person.email}}
           </h5>
         </div>
       </div>
@@ -53,13 +60,43 @@
     </div>
     <div class="divider"></div>
 
-    <div class="row no-gutters">
-      <h5 class="column-title col-12">Related Projects</h5>
-      <div (click)="navigateTo('project', pro.id)" *ngFor="let project of related_datas" class="project-desc pad col-12 col-md-5">
+    <div class="col-12">
+      <h5 class="column-title col-12">Related Videos</h5>
+      
+      <div *ngIf="demo1 != null" class="video-box col-sm-6 col-md-6">
+        <div class="embed-responsive embed-responsive-16by9 ">
+          <iframe class="videoURL embed-responsive-item" [src]="demo1" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div *ngIf="demo2 != null" class="video-box col-sm-6 col-md-6">
+        <div class="embed-responsive embed-responsive-16by9 ">
+          <iframe class="videoURL embed-responsive-item" [src]="demo2" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div *ngIf="demo3 != null" class="video-box col-sm-6 col-md-6">
+        <div class="embed-responsive embed-responsive-16by9 ">
+          <iframe class="videoURL embed-responsive-item" [src]="demo3" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div *ngIf="demo4 != null" class="video-box col-sm-6 col-md-6">
+        <div class="embed-responsive embed-responsive-16by9 ">
+          <iframe class="videoURL embed-responsive-item" [src]="demo4" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div *ngIf="demo5 != null" class="video-box col-sm-6 col-md-6">
+        <div class="embed-responsive embed-responsive-16by9 ">
+          <iframe class="videoURL embed-responsive-item" [src]="demo5" allowfullscreen></iframe>
+        </div>
+      </div>
+      <!-- <div (click)="navigateTo('project', pro.id)" *ngFor="let project of related_datas" class="project-desc pad col-12 col-md-5">
         <p class="menu02">{{pro.year}}</p>
         <h2>{{pro.name}}</h2>
         <p class="menu01">{{pro.description}}</p>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

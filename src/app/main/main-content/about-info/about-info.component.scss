@@ -7,6 +7,7 @@
     img {
         margin-left:0;
         width: 100vw;
+        padding-left: $sidebar-width;
     }
     .front-title {
         margin-left:0;
@@ -18,11 +19,13 @@
     }
 }
 
+
 // 임시 조치. 나중에 바꿔볼것
 @media (max-width: 1479px) {
     .front-image-max {
         img {
             margin-left:$sidebar-width;
+            padding-left:0px;
         }
         .front-title {
             left: 5rem;

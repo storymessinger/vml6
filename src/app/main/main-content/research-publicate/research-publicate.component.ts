@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DOCUMENT} from '@angular/common';
 import { PageScrollService, PageScrollConfig, PageScrollInstance } from 'ng2-page-scroll';
 import { Component, Inject, ViewChild, ElementRef, OnInit } from '@angular/core';
@@ -28,6 +29,7 @@ export class ResearchPublicateComponent implements OnInit {
     private sidebarScrollService:SidebarScrollService,
     private publicationsService:PublicationsService,
     private pageScrollService: PageScrollService,
+    private router:Router,
     @Inject(DOCUMENT) private document: any
     ) {
     PageScrollConfig.defaultScrollOffset = 110;
@@ -47,6 +49,10 @@ export class ResearchPublicateComponent implements OnInit {
     let scrollTo = '#' + name;
     let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, scrollTo);
     this.pageScrollService.start(pageScrollInstance);
+  }
+
+  navigateTo(link) {
+    this.router.navigate(['main/people/person', link]);
   }
 
 }
