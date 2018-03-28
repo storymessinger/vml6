@@ -34,8 +34,8 @@ export class SearchResultComponent implements OnInit, DoCheck {
       minMatchCharLength: 2,
       keys: [
         "title",
-        "teams.shortname",
-        "authors"
+        "teams.name",
+        "authors.name"
     ]
   } 
   private projects_options= { 
@@ -47,7 +47,7 @@ export class SearchResultComponent implements OnInit, DoCheck {
       minMatchCharLength: 2,
       keys: [
         "name",
-        "teams.shortname",
+        "team.shortname",
         "people.name",
         "partner.name"
     ]

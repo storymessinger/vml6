@@ -15,6 +15,7 @@
                 <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
               </div>
             </div>
+
             <h5 class="name">{{person.name}}</h5>
             <p class="menu02">
               {{person.topics}} 
@@ -27,15 +28,21 @@
       <div class="list-box col-sm-12">
         <h2 class="list-title col-sm-12">PUBLICATIONS</h2>
 
-        <!-- <div (click)='routing("publications", publication.id, publication.type)'  -->
-        <a [routerLink]='["main/international/individual/" , result_publications.id]' target="_blank" 
-        *ngFor="let publication of result_publications" class="object-box col-sm-12 col-md-6 col-lg-6 col-xl-2">
+        <!-- <a [routerLink]='["main/international/individual/" , result_publications.id]' target="_blank" 
+        *ngFor="let publication of result_publications" class="object-box col-sm-12 col-md-6 col-lg-6 col-xl-2"> -->
+
+        <div (click)='routing("publications", publication.id, publication.type)'
+        *ngFor="let publication of result_publications"
+        class="object-box col-sm-12 col-md-6 col-lg-6 col-lg-6 col-xl-2"
+        >
+          
           <div class="object-desc">
             <h5>{{publication.title}}</h5>
             <p class="menu02">{{publication.year}}</p>
           </div>
-        <!-- </div> -->
-        </a>
+
+        </div>
+        <!-- </a> -->
       </div>
 
 

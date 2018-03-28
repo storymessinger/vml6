@@ -42,14 +42,14 @@
               <tr>
                 <td class="table-year">Partners</td>
                 <td *ngIf="project.partners">
-                  {{ project.partners[0].name }}
+                  {{ project.partners[0]?.name }}
                 </td>
               </tr>
 
               <tr>
                 <td class="table-year">Funding</td>
                 <td *ngIf="project.partners">
-                  {{ project.funding[0].name }}
+                  {{ project.funding[0]?.name }}
                 </td>
               </tr>
 
