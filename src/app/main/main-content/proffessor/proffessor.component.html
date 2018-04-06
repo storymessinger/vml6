@@ -22,7 +22,7 @@
       <div class="person-desc">
         <div *ngFor="let person of person$ | async">
           <h1>{{person.name}}</h1>
-          <p>{{person.type | typeChange}}</p>
+          <p>Professor</p>
           <div *ngIf="person.affiliation;then content else other_content">here is ignored</div>
 
           <ng-template #content><p>{{person.affiliation}}</p></ng-template>

@@ -14,7 +14,7 @@ export class PublicationsService {
   constructor(private db:AngularFireDatabase) { }
 
   findPublicationsForHome(arg): Observable<any[]> {
-    return this.db.list('publications', ref => ref.orderByChild('type').equalTo('international').limitToLast(3))
+    return this.db.list('publications', ref => ref.orderByChild('type').equalTo('international').limitToLast(5))
       .valueChanges()
       .first()
       .map(array => array.reverse())

@@ -19,10 +19,11 @@ export class ProjectsService {
     .valueChanges()
     
     .mergeMap(arr => Observable.from(arr)
-      .groupBy( event => event['year'] )
+      .groupBy( event => event['start'] )
       .mergeMap(group => group.toArray()).map(arr => arr.sort().reverse())
       .toArray()
       .map(arr => arr.reverse())
+      .do(console.log)
     )
   }
 

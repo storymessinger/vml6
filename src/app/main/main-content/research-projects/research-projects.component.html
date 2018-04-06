@@ -3,8 +3,9 @@
 
     <div *ngFor="let project of projects$ | async" class="row project-list no-gutters">
 
-      <div class="col-sm-12 project-year display-4" [id]='project[0].year'>
-        {{project[0].year}}
+      <div class="col-sm-12 project-year display-4" [id]='project[0].start'>
+        {{project[0].start}}
+
       </div>
 
       <hr/>
@@ -48,8 +49,8 @@
 
               <tr>
                 <td class="table-year">Funding</td>
-                <td *ngIf="project.partners">
-                  {{ project.funding[0]?.name }}
+                <td *ngIf="project.funding">
+                  {{ project.funding?.name }}
                 </td>
               </tr>
 
@@ -60,8 +61,8 @@
         <div class="col-sm-12 col-md-6 col-lg-5 project-img" (click)="navigateTo(project.id)">
           <!-- <img src="./../../../../assets/Contents/imgs/no_image.jpg" >  -->
           <img default="./../../../../assets/Contents/imgs/no_image.jpg"
-              [srcset]= 'imgPath + project.img'
-              [src]= 'imgPath + project.img'>
+              [srcset]= 'imgPath +project.teaser_img'
+              [src]= 'imgPath +project.teaser_img'>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-2 project-funding">

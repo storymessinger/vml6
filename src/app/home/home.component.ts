@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     private partnersSponsershipService:PartnersSponsershipService,
     private teamsService: TeamsService,
     private el:ElementRef,
-    private router:Router
+    private router:Router,
     ) { 
   }
 
@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
     this.teams$ = this.teamsService.findAllTeams();
     this.partners$ = this.partnersSponsershipService.findMainPartner();
   }
+
 
   arrowMove() {
     let arrowBtn = document.getElementById("arrowBtn");
@@ -88,6 +89,7 @@ export class HomeComponent implements OnInit {
     //             .addTo(controller);
     var new_id = '#' + id + 'Place';
     // controller.scrollTo(new_id);
+    console.log('moveTo');
     TweenLite.to(window, 1.3, {scrollTo:{y:new_id}, ease:Power2.easeOut})
   }
 }
