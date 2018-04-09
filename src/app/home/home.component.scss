@@ -53,6 +53,7 @@
     }
   } // flexbox
   display: flex;
+  justify-content: space-between;
   flex-flow:row;
   align-items: center; // material-like shadow
   @include card(1);
@@ -93,7 +94,6 @@
     top: 2rem;
   }
   .navbar {
-    .navbar-brand,
     .navbar-nav {
       display: none;
     }
