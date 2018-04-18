@@ -79,6 +79,8 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/main/area/teams', id])
     } else if (arg == 1) {
       this.router.navigate(['/main/international/individual', id]);
+    } else if (arg ==2) {
+      this.router.navigate(['/main/news'])
     }
   }
 

@@ -17,6 +17,7 @@
       <div class="person-desc">
         <h1>{{person.name}}</h1>
         <p>{{person.type | typeChange}}</p>
+        <p>{{person.teams_name}}</p>
         <div *ngIf="person.affiliation_name;then content else other_content">here is ignored</div>
 
         <ng-template #content><p>{{person.affiliation_name}}</p></ng-template>

@@ -1,3 +1,4 @@
+import { dateChangePipe } from './pipes/date-change.pipe';
 import { TeamsService } from './services/teams.service';
 import { PublicationsService } from './services/publications.service';
 import { NewsMediaService } from './services/news-media.service';
@@ -40,6 +41,7 @@ import { PartnersSponsershipService } from './services/partners-sponsership.serv
     HomeComponent,
     TestComponent,
     // VideoThumbnailDirective
+    dateChangePipe
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),

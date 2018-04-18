@@ -143,13 +143,13 @@
           </div>
 
           <div class="card-columns">
-            <div *ngFor="let issue of issues | async" class="card issueCard">
+            <div *ngFor="let issue of issues | async" class="card issueCard" (click)='navigateTo( issue.id, 2)' >
               <img class="news-img card-img-top img-fluid" [src]="imgPath + issue.img" [srcset]="issue.img ?  imgPath + issue.img : defaultImage  ">
               <div class="card-block">
                 <h4 class="card-title">{{issue.title}}</h4>
                 <p class="card-text desc">{{issue.desc}}</p>
                 <p class="card-text">
-                  <small class="text-muted">{{issue.date}}</small>
+                  <small class="text-muted">{{issue.date | dateChange}}</small>
                 </p>
               </div>
             </div>
