@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { Subscription } from 'rxjs/Rx';
+import { ActivatedRoute } from '@angular/router';
+// import { MockDataService } from './shared/mockdata.service';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,9 +11,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  private subscription:Subscription;
+  snapshot:any;
 
-  ngOnInit() {
+  private redirect:any[] = [];
+  private found:any;
+
+  constructor(
+    private activatedRoute:ActivatedRoute,
+    private db:AngularFireDatabase
+    // private mockDataService:MockDataService
+  ) { 
+    this.subscription = activatedRoute.params //
+      .subscribe(
+        (param:any) => {
+          this.snapshot = activatedRoute.snapshot.url;
+        })
+
+    this.db.list('redirect')
+      .valueChanges()
+      .first()
+      .subscribe( val => {
+        this.redirectBetweenThree(val);
+      })
   }
 
+  ngOnInit() {
+
+  }
+
+  redirectBetweenThree(val) {
+    this.redirect = val;
+
+    this.found = this.redirect.find( item => {
+      return item.old == this.snapshot.join('/') 
+    }) 
+
+    if(this.snapshot[0].path == 'home' || this.snapshot[0].path == 'main') {
+      console.log('home or main');
+      //nothing
+      //show this not-found-page
+    } else if (this.found == undefined) {
+      console.log('not found');
+      //relocate to old homepage, with original address
+      // window.location.href="http://vml2.kaist.ac.kr/" + this.snapshot.join('/');
+    } else {
+      //relocate to new homepage, with different address
+      console.log('found');
+      window.location.href= this.found.new;
+    }
+
+
+  }
+
+
 }
+
