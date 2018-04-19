@@ -50,6 +50,9 @@
 .abstract {
     max-width: 1000px;
     line-height: 2;
+    p {
+        text-align: justify;
+    }
 }
 
 .videos {

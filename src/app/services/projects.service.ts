@@ -20,7 +20,7 @@ export class ProjectsService {
     
     .mergeMap(arr => Observable.from(arr)
       .groupBy( event => event['start'] )
-      .mergeMap(group => group.toArray()).map(arr => arr.sort().reverse())
+      .mergeMap(group => group.toArray()).map(arr => arr.sort(compare))
       .toArray()
       .map(arr => arr.reverse())
       .do(console.log)
@@ -34,5 +34,20 @@ export class ProjectsService {
     .first()
   }
 
+}
+
+function compare(a, b) {
+
+  let idA =  a.date_start;
+  let idB =  b.date_start;
+  let comparison = 0;
+
+  if (idA > idB) {
+    comparison = -1;
+  } else if (idA < idB) {
+    comparison = 1;
+  }
+
+  return comparison;
 }
 

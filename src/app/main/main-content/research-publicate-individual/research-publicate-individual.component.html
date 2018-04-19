@@ -57,11 +57,27 @@
         <iframe class="videoURL embed-responsive-item" [src]="safeURL" allowfullscreen></iframe>
       </div>
 
-      <div class="imgDiv" *ngIf="pubs[0].subimg?.length > 0" >
+      <div class="imgDiv" *ngIf="pubs[0].subimg1?.length > 0" >
         <img default="./assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + pubs[0].subimg" [src]=" imgPath + pubs[0].subimg" class="max-img">
       </div>
 
-      <div class="col-12 abstract" *ngIf="pubs[0].subimg_description?.length > 0">
+      <div class="col-12 abstract" *ngIf="pubs[0].subimg_description1?.length > 0">
+        <p>{{pubs[0]?.subimg_description}}</p>
+      </div>
+      j
+      <div class="imgDiv" *ngIf="pubs[0].subimg2?.length > 0" >
+        <img default="./assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + pubs[0].subimg" [src]=" imgPath + pubs[0].subimg" class="max-img">
+      </div>
+
+      <div class="col-12 abstract" *ngIf="pubs[0].subimg_description2?.length > 0">
+        <p>{{pubs[0]?.subimg_description}}</p>
+      </div>
+
+      <div class="imgDiv" *ngIf="pubs[0].subimg3?.length > 0" >
+        <img default="./assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + pubs[0].subimg" [src]=" imgPath + pubs[0].subimg" class="max-img">
+      </div>
+
+      <div class="col-12 abstract" *ngIf="pubs[0].subimg_description3?.length > 0">
         <p>{{pubs[0]?.subimg_description}}</p>
       </div>
 

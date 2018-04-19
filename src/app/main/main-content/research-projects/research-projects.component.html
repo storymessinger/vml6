@@ -8,8 +8,6 @@
 
       </div>
 
-      <hr/>
-
       <div *ngFor="let project of project" class="col-sm-12 project">
         <a [routerLink]="[ '/main/projects/individual/', project.id ]" class="col-sm-12 project-title h2">
           {{project.name}}
