@@ -10,7 +10,7 @@ export class TeamsService {
   constructor(private db:AngularFireDatabase) { }
 
   findAllTeams(): Observable<any[]> {
-    return this.db.list('teams', ref => ref.limitToFirst(3))
+    return this.db.list('teams', ref => ref.orderByChild('type').equalTo('research'))
     .valueChanges()
     .first()
     

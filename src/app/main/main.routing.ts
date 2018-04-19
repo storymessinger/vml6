@@ -65,7 +65,7 @@ const APP_ROUTES: Routes = [
             },
             {   path: 'area', 
                 component: ResearchAreaComponent, 
-                data: { breadcrumb: "Research Areas" },
+                data: { breadcrumb: "Teams" },
                 pathMatch: 'full'
             },
             {   path: 'area', 
@@ -135,7 +135,7 @@ const APP_ROUTES: Routes = [
             },
             {   path: 'media', 
                 component: IssuesMediaComponent, 
-                data: { breadcrumb: "Media" }
+                data: { breadcrumb: "Media Reports" }
             },
             {   path: 'life', 
                 component: IssuesLifeComponent, 

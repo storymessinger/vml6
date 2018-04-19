@@ -202,7 +202,10 @@
   }
   .Heading {
     padding: 6rem 0 4rem 0;
-    h1 { font-weight: 600 }
+    h1 { 
+      font-weight: 600;
+      cursor: pointer; 
+    }
   }
   .card-deck-wrapper {
     margin: auto;
