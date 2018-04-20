@@ -55,9 +55,11 @@ export class PageNotFoundComponent implements OnInit {
       console.log('not found');
       //relocate to old homepage, with original address
       // window.location.href="http://vml2.kaist.ac.kr/" + this.snapshot.join('/');
+    } else if (this.found.old == "intra") {
+      //relocate to intra
+      window.location.href = "http://vml.kaist.ac.kr:3000/intra";
     } else {
       //relocate to new homepage, with different address
-      console.log('found');
       window.location.href= this.found.new;
     }
 
