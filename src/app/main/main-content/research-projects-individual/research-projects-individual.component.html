@@ -21,6 +21,27 @@
     <div class="divider"></div>
     <div class="row no-gutters">
 
+      <!-- <div class="box-flex row">
+        <div (click)="navigateTo('people', person.id)"  *ngFor="let person of pro.people" class="people-box pad col-sm-12 col-md-6">
+          <div class="people-img">
+            <div class="people-img-box">
+              <img default="./../../../../assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + person.img" [src]=" imgPath + person.img">
+            </div>
+          </div>
+
+          <div class="people-text" >
+            <p class="menu02">name</p>
+            <h5>{{person.name}} </h5> 
+            <p class="menu02">topics</p>
+            <p>{{person.topics}}</p>
+            <p class="menu02">email</p>
+            {{person.email}}
+            <p class="menu02" *ngIf="person.status?.length > 0">status</p>
+            {{person.status}}
+          </div>
+        </div>
+      </div> -->
+        
       <div *ngIf="pro.people" class="project-manager col-12">
         <h5 class="column-title">Project Managers</h5>
         <div *ngFor="let person of pro.people" (click)="navigateTo('people', person.id)" class="pad people-box col-sm-12 col-md-6" >
@@ -59,17 +80,17 @@
 
       <div *ngIf="pro.funding" class="project-partners col-12">
         <h5 class="column-title">Funding</h5>
-        <div *ngFor="let fund of pro.funding" (click)="navigateTo('partner', 0, fund.link)" class="pad people-box">
+        <div (click)="navigateTo('partner', 0, pro.funding.link)" class="pad people-box">
           <div class="people-img">  
             <div class="people-img-box">
               <img default="./../../../../assets/Contents/imgs/no_image.jpg"  
-              [srcset]=" imgPath + fund.logo"
-              [src]=" imgPath + fund.logo">
+              [srcset]=" imgPath + pro.funding.logo"
+              [src]=" imgPath + pro.funding.logo">
             </div>
           </div>
           <h5 class="people-text">
             <p class="menu02">name</p>
-            {{fund.name}}
+            {{pro.funding.name}}
           </h5>
         </div>
       </div>

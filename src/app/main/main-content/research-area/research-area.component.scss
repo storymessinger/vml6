@@ -9,7 +9,7 @@
 
     display:flex;
     flex-flow:column;
-    min-height: 33vh;
+    min-height: calc(33vh-25);
     justify-content: center;
     h2 {
         color: rgba(255,255,255,0.8);

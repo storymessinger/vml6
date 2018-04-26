@@ -28,6 +28,9 @@ const APP_ROUTES: Routes = [
         component: MainComponent,
         data: {}
         ,children: [
+            // {
+
+            // },
             {   path: 'info', 
                 component: AboutInfoComponent,
                 data: { breadcrumb: "About us" }

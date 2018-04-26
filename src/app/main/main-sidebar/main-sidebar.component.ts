@@ -125,7 +125,7 @@ export class MainSidebarComponent implements AfterViewInit {
       ]
     },
     {
-      firstLink: ["news", "News"],
+      firstLink: ["news", "News & Event"],
       secondLink: [
         { 
           url: "news",

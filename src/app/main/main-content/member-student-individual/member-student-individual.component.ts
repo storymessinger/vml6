@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 // import { IndividualHttpService } from '../../../shared/individual-http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs/Rx';
@@ -24,6 +25,7 @@ export class MemberStudentIndividualComponent implements OnInit {
 
   constructor(
     // private mockDataService:MockDataService,
+    private router:Router,
     private activatedRoute:ActivatedRoute,
     private membersService:MembersService
     // private individualHttpService:IndividualHttpService
@@ -38,6 +40,15 @@ export class MemberStudentIndividualComponent implements OnInit {
         let ID :number = parseInt(param['id']);
         this.person$ = this.membersService.findMemberById(ID)
       })
+  }
+
+  navigateTo(url, id) {
+    if (id == "external") {
+      window.location.href = url;
+    } else {
+      let dest = url + '/' + id
+      this.router.navigateByUrl(dest);
+    }
   }
 
 }

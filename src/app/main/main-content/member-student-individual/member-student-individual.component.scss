@@ -59,6 +59,9 @@ p, td {
             margin-bottom: 0;
         }
     }
+    .person-desc__about {
+        margin-bottom: 0.5rem;
+    }
     .projects {
         display:flex;
         flex-flow: row wrap;
@@ -89,3 +92,10 @@ p, td {
 }
 
       
+.link {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
