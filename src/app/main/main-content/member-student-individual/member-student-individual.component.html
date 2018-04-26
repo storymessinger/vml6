@@ -43,7 +43,7 @@
           <table class="table">
             <tbody>
               <tr *ngFor="let pub of person.publications | orderBy:order:ascending">
-                <td class="table-left">{{pub.conference}}</td>
+                <td class="table-left">{{pub.header}}</td>
                 <td>
                   <p class="link" (click)='navigateTo("main/international/individual", pub.id )'>{{pub.title}}</p>
                 </td>

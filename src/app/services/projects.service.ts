@@ -22,6 +22,7 @@ export class ProjectsService {
       .groupBy( event => event['start'] )
       .mergeMap(group => group.toArray()).map(arr => arr.sort(compare))
       .toArray()
+      .do(console.log)
       .map(arr => arr.reverse())
       .do(console.log)
     )
@@ -38,8 +39,8 @@ export class ProjectsService {
 
 function compare(a, b) {
 
-  let idA =  a.date_start;
-  let idB =  b.date_start;
+  let idA =  a.date_start.slice(0,10).split('-').join('');
+  let idB =  b.date_start.slice(0,10).split('-').join('');
   let comparison = 0;
 
   if (idA > idB) {

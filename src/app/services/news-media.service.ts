@@ -23,9 +23,11 @@ export class NewsMediaService {
   }
 
   findAllIssues(): Observable<any[]> {
-    return this.db.list('issues/news', ref => ref.limitToLast(6))
+    return this.db.list('issues', ref => ref.limitToLast(6))
       .valueChanges()
+      .map(arr => arr.sort(compare))
       .first()
+      .do(console.log)
       .map(array => array.reverse())
   }
 
@@ -42,7 +44,8 @@ export class NewsMediaService {
     // .map(arr => arr.reverse())
     
 
-    return this.db.list('issues/' + category)
+    // return this.db.list('issues/' + category)
+    return this.db.list('issues', ref => ref.orderByChild('type').equalTo(category))
     // return this.db.list('issues/' + category, ref => ref.orderByChild('date'))
     .valueChanges()
     
