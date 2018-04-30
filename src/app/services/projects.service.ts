@@ -33,6 +33,7 @@ export class ProjectsService {
     return this.db.list('projects', ref => ref.orderByChild('id').equalTo(id))
     .valueChanges()
     .first()
+    
   }
 
 }

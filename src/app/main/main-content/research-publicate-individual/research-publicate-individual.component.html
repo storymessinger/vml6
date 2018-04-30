@@ -22,11 +22,11 @@
         <!-- <h5 *ngIf="pubs[0].thesisInfo">{{pubs[0].thesisInfo}}</h5> -->
 
         <p>
-          <a *ngIf="pubs[0].paper" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].paper' target="_blank">Paper</a>  
-          <a *ngIf="pubs[0].slides" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].slides' target="_blank">/ Slides</a>  
-          <a *ngIf="pubs[0].video" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].video' target="_blank">/ Video</a>  
-          <a *ngIf="pubs[0].dateset" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].dataset' target="_blank">/ Dataset</a>  
-          <a *ngIf="pubs[0].supplementary_material" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].supplementary_material' target="_blank">/ Supplementary Material</a>  
+          <a *ngIf="pubs[0].paper" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].paper' target="_blank">Paper <mat-icon class="material-icons">file_download</mat-icon></a>  
+          <a *ngIf="pubs[0].slides" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].slides' target="_blank">/ Slides <mat-icon class="material-icons">file_download</mat-icon></a>  
+          <a *ngIf="pubs[0].video" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].video' target="_blank">/ Video <mat-icon class="material-icons">file_download</mat-icon></a>  
+          <a *ngIf="pubs[0].dateset" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].dataset' target="_blank">/ Dataset <mat-icon class="material-icons">file_download</mat-icon></a>  
+          <a *ngIf="pubs[0].supplementary_material" target="_blank" download type="application/octet-stream" [href]='imgPath +pubs[0].supplementary_material' target="_blank">/ Supplementary Material <mat-icon class="material-icons">file_download</mat-icon></a>  
           <a *ngIf="pubs[0].project_page" target="_blank" [href]='imgPath +pubs[0].project_page' target="_blank">/ Open Project Page</a>  
 
           <!--<a href="#">Slides (PPTX, 204.3MB)</a> / 

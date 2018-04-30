@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ResearchProjectsIndividualComponent implements OnInit, AfterViewInit {
 
-  imgPath:string = './../../../..//assets/Contents/';
+  public imgPath:string = "./../../assets/Contents/";
   subscription: Subscription;
   id: number;
   project$: Observable<any[]>;
