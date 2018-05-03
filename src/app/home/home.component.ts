@@ -5,7 +5,6 @@ import { NewsMediaService } from '../services/news-media.service';
 import { PublicationsService } from './../services/publications.service';
 import { TeamsService } from '../services/teams.service';
 import { PartnersSponsershipService } from '../services/partners-sponsership.service';
-import * as $ from 'jquery';
 
 declare var TweenLite, TweenMax, TimelineMax, Ease, Expo, ScrollMagic, Power2 :any;
 
