@@ -1,3 +1,4 @@
+import { WINDOW_PROVIDERS } from './services/window.service';
 import { dateChangePipe } from './pipes/date-change.pipe';
 import { TeamsService } from './services/teams.service';
 import { PublicationsService } from './services/publications.service';
@@ -30,6 +31,7 @@ import { TestComponent } from './test/test.component';
 // import { VideoThumbnailDirective } from './directives/video-thumbnail.directive';
 import { MainModule } from './main/main.module';
 import { PartnersSponsershipService } from './services/partners-sponsership.service';
+import { ErrorComponent } from './error/error.component';
 //import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
@@ -41,7 +43,8 @@ import { PartnersSponsershipService } from './services/partners-sponsership.serv
     HomeComponent,
     TestComponent,
     // VideoThumbnailDirective
-    dateChangePipe
+    dateChangePipe,
+    ErrorComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -59,7 +62,8 @@ import { PartnersSponsershipService } from './services/partners-sponsership.serv
     NewsMediaService,
     PublicationsService,
     TeamsService,
-    PartnersSponsershipService
+    PartnersSponsershipService,
+    WINDOW_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })

@@ -13,7 +13,7 @@
         {{ data[0].date| slice:0:4 }}
       </div> -->
 
-      <div *ngFor="let seminar of data" class="data-box">
+      <div *ngFor="let seminar of data" class="data-box col-sm-12">
 
         <div class="data-img">
           <img videoThumbnail [videoUrl]='seminar.link' 
@@ -28,9 +28,9 @@
 
           </div>
         </div>
-        <div class="data-type">
+        <!-- <div class="data-type"> -->
           <!-- <img default="./../../../../assets/Contents/imgs/default_person.png" [srcset]=" imgPath + seminar.people.img" [src]=" imgPath + seminar.people.img"> -->
-        </div>
+        <!-- </div> -->
       </div>
 
       <hr/>

@@ -26,7 +26,7 @@ export class VideoThumbnailDirective implements OnInit {
     // if you find 'youtube' wihtin the arr, get the thumbnail like...
     if ( urlArr.some( item => item === "youtu.be") ) {
       const videoId = (urlArr[urlArr.length -1 ]);
-      const smallImg = "https://img.youtube.com/vi/" + videoId + "/sddefault.jpg";
+      const smallImg = "https://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg";
       // const bigImg = "https://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg";
       // this.srcset = bigImg + " 800w, " + smallImg + " 300w ";
       this.srcset = smallImg;

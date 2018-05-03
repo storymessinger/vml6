@@ -11,7 +11,7 @@
 }
 
 .project-list {
-    max-width: 1200px;
+    max-width: 1600px;
     .project-year {
         margin-bottom: 3.5rem;
     }
@@ -48,10 +48,12 @@
 }
 
 .project-img {
+    min-height: 400px;
+
     cursor: pointer;
     // max-height: 500px;
-    width: 300px;
-    max-width: 300px;
+    // width: 300px;
+    // max-width: 300px;
     padding: 0;
     position: relative;
     overflow: hidden;

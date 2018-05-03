@@ -99,3 +99,16 @@ p, td {
         text-decoration: underline;
     }
 }
+
+.email-right {
+    display: none;
+}
+
+@media (max-width: 1155px) {
+    .email-left {
+        display: none;
+    }
+    .email-right {
+        display: unset;
+    }
+}

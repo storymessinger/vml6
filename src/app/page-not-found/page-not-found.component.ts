@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs/Rx';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 // import { MockDataService } from './shared/mockdata.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -19,7 +19,8 @@ export class PageNotFoundComponent implements OnInit {
 
   constructor(
     private activatedRoute:ActivatedRoute,
-    private db:AngularFireDatabase
+    private db:AngularFireDatabase,
+    private router:Router
     // private mockDataService:MockDataService
   ) { 
     this.subscription = activatedRoute.params //
@@ -49,12 +50,13 @@ export class PageNotFoundComponent implements OnInit {
 
     if(this.snapshot[0].path == 'home' || this.snapshot[0].path == 'main') {
       console.log('home or main');
+      this.router.navigateByUrl('error');
       //nothing
       //show this not-found-page
     } else if (this.found == undefined) {
       console.log('not found');
       //relocate to old homepage, with original address
-      // window.location.href="http://vml2.kaist.ac.kr/" + this.snapshot.join('/');
+      window.location.href="http://vml.kaist.ac.kr:3000/" + this.snapshot.join('/');
     } else if (this.found.old == "intra") {
       //relocate to intra
       window.location.href = "http://vml.kaist.ac.kr:3000/intra";

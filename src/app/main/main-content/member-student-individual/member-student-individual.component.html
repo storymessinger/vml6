@@ -9,13 +9,14 @@
             [src]=" imgPath + person.img"
             >
 
-        <h3 *ngIf="person.email">E-mail</h3>
-        <p>{{person.email}}</p>
+        <h3 class="email-left" *ngIf="person.email">E-mail</h3>
+        <p class="email-left">{{person.email}}</p>
 
       </div>
 
       <div class="person-desc">
         <h1>{{person.name}}</h1>
+        <p class="email-right">{{person.email}}</p>
         <p class="person-desc__about">{{person.type | typeChange}}</p>
         <p class=" person-desc__about link" (click)='navigateTo("main/area/teams", person.teams_id)'>{{person.teams_name}}</p>
         <div *ngIf="person.affiliation_name;then content else other_content">here is ignored</div>

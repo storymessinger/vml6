@@ -5,8 +5,13 @@ import { NewsMediaService } from '../services/news-media.service';
 import { PublicationsService } from './../services/publications.service';
 import { TeamsService } from '../services/teams.service';
 import { PartnersSponsershipService } from '../services/partners-sponsership.service';
+import * as $ from 'jquery';
 
 declare var TweenLite, TweenMax, TimelineMax, Ease, Expo, ScrollMagic, Power2 :any;
+
+import { WINDOW } from "../services/window.service";
+
+
 
 @Component({
   selector: 'app-home',
@@ -30,6 +35,7 @@ export class HomeComponent implements OnInit {
     private teamsService: TeamsService,
     private el:ElementRef,
     private router:Router,
+    @Inject(WINDOW) private window: Window
     ) { 
   }
 
@@ -91,7 +97,8 @@ export class HomeComponent implements OnInit {
     //             .addTo(controller);
     var new_id = '#' + id + 'Place';
     // controller.scrollTo(new_id);
-    console.log('moveTo');
-    TweenLite.to(window, 1.3, {scrollTo:{y:new_id}, ease:Power2.easeOut})
+    console.log(new_id);
+    // TweenLite.to(document.body, 1.3, {scrollTo:{y:new_id}, ease:Power2.easeOut})
+    // TweenLite.to(document.body, 1, {scrollTop: 200});
   }
 }

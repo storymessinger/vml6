@@ -27,7 +27,7 @@ p, td {
     width: 100%;
     max-width: 400px;
     padding-right: 3.5rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1rem;
     
     .personimg {
         width: 100%;
@@ -97,3 +97,18 @@ p, td {
 .prof__book {
     cursor: pointer;
 }
+
+
+.email-right {
+    display: none;
+}
+
+@media (max-width: 1155px) {
+    .email-left {
+        display: none;
+    }
+    .email-right {
+        display: unset;
+    }
+}
+

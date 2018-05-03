@@ -9,12 +9,12 @@
             [src]=" imgPath + person.img"
             >
 
-        <h5 *ngIf="person.email">E-mail</h5>
-        <p>{{person.email}}</p>
+        <h5 class="email-left" *ngIf="person.email">E-mail</h5>
+        <p class="email-left">{{person.email}}</p>
 
-        <h5 *ngIf="person.email">Book</h5>
-        <p>틀을 깨려는 용기가 필요해 </p>
-        <img style="cursor:pointer;"class="prof__book"(click)="navigateToBook()" src="http://image.kyobobook.co.kr/images/book/large/501/l9788956244501.jpg" class="book">
+        <h5 class="email-left" *ngIf="person.email">Book</h5>
+        <p class="email-left">틀을 깨려는 용기가 필요해 </p>
+        <img style="cursor:pointer;" class="email-left prof__book book"(click)="navigateToBook()" src="http://image.kyobobook.co.kr/images/book/large/501/l9788956244501.jpg" >
 
       </div>
 
@@ -22,6 +22,7 @@
       <div class="person-desc">
         <div *ngFor="let person of person$ | async">
           <h1>{{person.name}}</h1>
+          <p class="email-right">{{person.email}}</p>
           <p>Professor</p>
           <div *ngIf="person.affiliation;then content else other_content">here is ignored</div>
 
@@ -29,6 +30,8 @@
           <ng-template #other_content><p>Visual Media Lab <br> Graduate School of Culture and Technology, KAIST</p></ng-template>
 
           
+          <p (click)="navigateToBook()" class="link email-right">BOOK : 틀을 깨려는 용기가 필요해 </p>
+
           <hr/>
 
           <h3>Research Interest</h3>
