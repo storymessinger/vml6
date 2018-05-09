@@ -21,6 +21,7 @@ import { ResearchPublicateKrComponent } from './main-content/research-publicate-
 import { ResearchThesisComponent } from './main-content/research-thesis/research-thesis.component';
 import { ArchiveDownloadsComponent } from './main-content/archive-downloads/archive-downloads.component';
 import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-seminar.component';
+import { AboutEquipComponent } from './main-content/about-equip/about-equip.component';
 
 const APP_ROUTES: Routes = [
      { 
@@ -34,6 +35,11 @@ const APP_ROUTES: Routes = [
             {   path: 'info', 
                 component: AboutInfoComponent,
                 data: { breadcrumb: "About us" }
+            },
+            {
+                path: 'equip',
+                component: AboutEquipComponent,
+                data: { breadcrumb: "Equipments"}
             },
             {   path: 'admission', 
                 component: AboutAdmissionComponent,

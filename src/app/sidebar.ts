@@ -6,6 +6,11 @@ export let Links: any[] = [{
         innerLink: []
       },
       {
+        url: "equip",
+        data: "Equipments",
+        innerLink: []
+      },
+      {
         url: "admission",
         data: "Admission",
         innerLink: []

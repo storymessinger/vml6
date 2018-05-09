@@ -67,6 +67,7 @@ import { ArchiveSeminarComponent } from './main-content/archive-seminar/archive-
 import { SearchResultComponent } from './main-content/search-result/search-result.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import { ProffessorComponent } from './main-content/proffessor/proffessor.component';
+import { AboutEquipComponent } from './main-content/about-equip/about-equip.component';
 // import { SearchResultComponent } from './main-content/search-result/search-result.component';
 // import { MainComponent } from './main.component';
 
@@ -113,7 +114,8 @@ import { ProffessorComponent } from './main-content/proffessor/proffessor.compon
     TypeChangePipe,
     SafeHtmlPipe,
     OrderBy,
-    ProffessorComponent
+    ProffessorComponent,
+    AboutEquipComponent
     ],
   imports: [
     FormsModule,
