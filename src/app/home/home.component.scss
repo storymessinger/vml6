@@ -289,10 +289,6 @@
   overflow:hidden; 
 }
 
-.width300 {
-  max-width: 300px;
-}
-
 .pub-pad {
   padding: 0 !important;
   
@@ -346,6 +342,7 @@
   // display:block;
   display:flex;
   flex-flow:row wrap;
+  max-width: 1500px;
 }
 
 .img-fluid {

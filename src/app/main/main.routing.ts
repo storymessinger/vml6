@@ -39,7 +39,7 @@ const APP_ROUTES: Routes = [
             {
                 path: 'equip',
                 component: AboutEquipComponent,
-                data: { breadcrumb: "Equipments"}
+                data: { breadcrumb: "Equipments and Devices"}
             },
             {   path: 'admission', 
                 component: AboutAdmissionComponent,

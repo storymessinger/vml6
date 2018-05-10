@@ -9,11 +9,14 @@
       </div>
 
       <div *ngFor="let project of project" class="col-sm-12 project">
-        <a [routerLink]="[ '/main/projects/individual/', project.id ]" class="col-sm-12 project-title h2">
+        <!-- <a [routerLink]="[ '/main/projects/individual/', project.id ]" class="col-sm-12 project-title h2">
           {{project.name}}
-          <!--<mat-icon class="material-icons">forward</mat-icon>-->
-        </a>
+        </a> -->
+
         <div class="col-sm-12 col-lg-6 project-desc">
+          <a [routerLink]="[ '/main/projects/individual/', project.id ]" class="col-sm-12 project-title h2">
+            {{project.name}}
+          </a>
           <table class="table menu01">
             <tbody>
 

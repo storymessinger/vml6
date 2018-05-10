@@ -8,15 +8,15 @@
       </div>
 
       <div *ngFor="let publication of data" class="data-box">
-        <div class="data-img">
+        <a target="_blank" download type="application/octet-stream" [href]='imgPath +publication.paper' target="_blank" class="data-img">
           <img default="./../../../../assets/Contents/imgs/no_image.jpg" 
               [srcset]= 'imgPath + publication.img + " 800w, " +
                         imgPath+ publication.smallImg + " 300w "'
               sizes="(min-width:990px) 300px, 800px">
           <!-- <img default="./assets/imgs/no_image.jpg" [srcset]=" imgPath + publication.img" [src]=" imgPath + publication.img"> -->
-        </div>
+        </a>
         <div class="data-desc">
-          <h3>{{publication.title}}</h3>
+          <a target="_blank" download type="application/octet-stream" [href]='imgPath +publication.paper' target="_blank" class="h3">{{publication.title}}</a>
           <div class="people_name">
             <a [routerLink]='["/main/people/person", author.id]' *ngFor="let author of publication.authors; let isLast=last" >
               {{author.name}}{{isLast ? '' : ', '}}

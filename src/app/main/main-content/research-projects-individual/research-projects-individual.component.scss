@@ -33,6 +33,7 @@
         font-weight: 500;
     }
     .display-4 {
+        font-size: 2rem;
         margin-bottom: 2rem;
     }
 }
@@ -58,6 +59,7 @@
         filter: grayscale(100%) contrast(80%);
     }
 }
+
 
 .project-manager, .project-partners {
     .people-box {
@@ -100,7 +102,16 @@
 }
 
 .project-img-box {
+    max-height: 60vh;
+    overflow-y: hidden;
+    padding: 0;
+
     img { 
         width: 100%;
     }
+}
+
+.divider {
+    margin: 0 2rem;
+    margin-bottom: 2rem;
 }

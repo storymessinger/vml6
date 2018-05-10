@@ -85,7 +85,13 @@ export class HomeComponent implements OnInit {
     } else if (arg == 1) {
       this.router.navigate(['/main/international/individual', id]);
     } else if (arg ==2) {
-      this.router.navigate(['/main/news'])
+        if ( id == 'news') {
+          this.router.navigate(['/main/news'])
+        } else if (id== 'media') {
+          this.router.navigate(['/main/media'])
+        } else {
+          this.router.navigate(['/main/news'])
+        }
     }
   }
 

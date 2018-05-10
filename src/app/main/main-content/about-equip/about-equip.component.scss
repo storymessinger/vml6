@@ -1,0 +1,47 @@
+@import '../../../../assets/css/_variables.scss';
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    .row {
+        height:50%;
+    }
+
+}
+
+.row {
+    padding: 2rem 3rem 3rem;
+    flex-flow:column;
+}
+.equipment {
+    // row
+    display: flex;
+    flex-wrap:wrap;
+    max-width: 1250px;
+    padding: 0 0 2rem 0;
+
+    .equipment-title {
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+        padding-left: 0rem;
+    }
+    .equipment-box {
+        margin-bottom: 2rem;
+        padding-left: 0;
+
+        img:hover {
+            -webkit-filter: grayscale(100%) contrast(80%);
+        }
+
+        // .equip-img {
+        //     display: flex;
+        //     overflow:hidden;
+        //     flex-flow: column;
+        //     align-items: center;
+
+        //     img {
+        //         width: 100%;
+        //         min-height:1px;
+        //     }
+        // }
+    }
+}

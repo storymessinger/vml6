@@ -1,18 +1,19 @@
 <div class="flex-content">
 
   <div *ngFor="let pro of project" class="content col-sm container-fluid">
+    
+    <div class="project-img-box col-12">
+      <img default="./../../../../assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + pro.teaser_img" [src]=" imgPath + pro.teaser_img">
+    </div>
 
     <div class="row">
 
-      <div class="project-img-box col-12">
-        <img default="./../../../../assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + pro.teaser_img" [src]=" imgPath + pro.teaser_img">
-      </div>
 
       <div class="col-12">
 
 
         <div class="col-12">
-          <p class="h3">
+          <p>
             <span style="color:orange">
               {{pro.status}}
             </span>
@@ -22,10 +23,13 @@
           </p>
         </div>
 
+        <div class="col-12">
+          <p>{{pro.start}} - {{pro.end}}</p>
+        </div>
+
         <div class="project-desc col-12">
           <p class="display-4">{{pro.fullname}}</p>
-          <p>{{pro.description}}</p>
-          <p>{{pro.start}} - {{pro.end}}</p>
+          <p [innerHTML]='pro.description'></p>
         </div>
 
         <!-- <div class="project-img-box">
@@ -106,8 +110,6 @@
             </h5>
           </div>
         </div>
-
-        <div class="divider"></div>
 
         <div class="col-12">
           <h5 class="column-title col-12">Related Videos</h5>
