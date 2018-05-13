@@ -42,30 +42,31 @@ export class PageNotFoundComponent implements OnInit {
   }
 
   redirectBetweenThree(val) {
-    this.redirect = val;
 
-    this.found = this.redirect.find( item => {
+
+    this.found = val.find( item => {
       return item.old == this.snapshot.join('/') 
     }) 
 
-    if(this.snapshot[0].path == 'home' || this.snapshot[0].path == 'main') {
-      console.log('home or main');
-      this.router.navigateByUrl('error');
-      //nothing
-      //show this not-found-page
-    } else if (this.found == undefined) {
-      console.log('not found');
-      //relocate to old homepage, with original address
-      window.location.href="http://vml.kaist.ac.kr:3000/" + this.snapshot.join('/');
-    } else if (this.found.old == "intra") {
-      //relocate to intra
-      window.location.href = "http://vml.kaist.ac.kr:3000/intra";
+    if ( this.snapshot[0] == ":3000") {
+      // nothing
     } else {
-      //relocate to new homepage, with different address
-      window.location.href= this.found.new;
+      if ( this.found.type == "Intra") {
+        let relocate = "http://vml.kaist.ac.kr" + this.found.new;
+        window.location.href = relocate;
+        //Intra
+      } else if(this.snapshot[0].path == 'home' || this.snapshot[0].path == 'main') {
+        this.router.navigateByUrl('error');
+        //nothing
+        //show this not-found-page
+      } else if (this.found == undefined) {
+        window.location.href="http://vml.kaist.ac.kr:3000/" + this.snapshot.join('/');
+        //relocate to old homepage, with original address
+      } else {
+        window.location.href= this.found.new;
+        //relocate to new homepage, with different address
+      }
     }
-
-
   }
 
 

@@ -16,14 +16,14 @@
       </div>
     </div>
 
-    <!-- <div *ngFor="let data of lifes$ | async" class="row life-row"> -->
-    <div class="row life-row">
+    <div *ngFor="let data of lifes$ | async" class="row life-row">
+    <!-- <div class="row life-row"> -->
 
-      <!-- <div class="col-12 year display-4" [id]='data[0].year'>
+      <div class="col-12 year display-4" [id]='data[0].year'>
         {{data[0].year}}
-      </div> -->
+      </div>
 
-      <div *ngFor="let lifes of lifes$ | async" class="life-row col-12">
+      <div *ngFor="let lifes of data" class="life-row col-12">
 
         <h3 class="life-title">{{lifes.title}}</h3>
 

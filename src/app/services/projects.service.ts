@@ -20,11 +20,12 @@ export class ProjectsService {
     
     .mergeMap(arr => Observable.from(arr)
       .groupBy( event => event['start'] )
-      .mergeMap(group => group.toArray()).map(arr => arr.sort(compare))
+      // .do(console.log)
+      // .map(item => item.sort());
+      .mergeMap(group => group.toArray())
+      .map(arr => arr.sort(compare))
       .toArray()
-      .do(console.log)
-      .map(arr => arr.reverse())
-      .do(console.log)
+      .map(arr => arr.sort(compare_start))
     )
   }
 
@@ -36,6 +37,18 @@ export class ProjectsService {
     
   }
 
+}
+
+function compare_start(a, b) {
+  let idA =  a[0].start;
+  let idB =  b[0].start;
+  let comparison = 0;
+  if (idA > idB) {
+    comparison = -1;
+  } else if (idA < idB) {
+    comparison = 1;
+  }
+  return comparison;
 }
 
 function compare(a, b) {

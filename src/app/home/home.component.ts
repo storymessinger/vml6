@@ -102,7 +102,6 @@ export class HomeComponent implements OnInit {
     //             .addTo(controller);
     var new_id = '#' + id + 'Place';
     // controller.scrollTo(new_id);
-    console.log(new_id);
     // TweenLite.to(document.body, 1.3, {scrollTo:{y:new_id}, ease:Power2.easeOut})
     // TweenLite.to(document.body, 1, {scrollTop: 200});
   }

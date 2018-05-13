@@ -22,7 +22,8 @@ export class ArchiveSeminarComponent implements OnInit {
 
   constructor(
     private sidebarScrollService:SidebarScrollService,
-    private seminarsService:SeminarsService
+    private seminarsService:SeminarsService,
+    private router:Router
     // private pageScrollService: PageScrollService,
     // @Inject(DOCUMENT) private document: any
   ) { 
@@ -44,5 +45,9 @@ export class ArchiveSeminarComponent implements OnInit {
   //   let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, scrollTo);
   //   this.pageScrollService.start(pageScrollInstance);
   // }
+
+  navigateTo(url) {
+    window.location.href = url;
+  }
 }
 

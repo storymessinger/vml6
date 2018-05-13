@@ -21,7 +21,7 @@
 
         </div>
         <div class="data-desc">
-          <h3 >{{seminar.title}}</h3>
+          <h3 (click)="navigateTo(seminar.link)" >{{seminar.title}}</h3>
           <div>
             <a [routerLink]="['/main/people/person/', seminar.people.id ]"> Presenter: {{seminar.people.name}} <span class="menu02">({{seminar.people.type | typeChange}})</span> </a>
             <p class="menu01">{{seminar.date}}</p>

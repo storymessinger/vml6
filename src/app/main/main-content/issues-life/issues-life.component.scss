@@ -27,7 +27,7 @@ hr {
 
 .card-columns {
     margin-bottom: 5rem;
-    max-width:1000px;
+    max-width:1600px;
     .card {
         cursor:pointer;
         img{
@@ -60,9 +60,7 @@ hr {
 
     .life-content {
         display:flex;
-        flex-flow:row;
-
-        max-height:700px;
+        flex-flow:row wrap;
         overflow:scroll;
 
         .data-date {

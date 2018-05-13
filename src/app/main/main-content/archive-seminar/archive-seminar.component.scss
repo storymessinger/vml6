@@ -35,6 +35,9 @@ hr {
     }
 
     .data-desc {
+        h3 {
+            cursor: pointer;
+        }
         flex-grow:1;
         // margin: 0 1.5rem;
         margin-left: 2rem;

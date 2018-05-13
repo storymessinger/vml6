@@ -27,14 +27,18 @@ export class NewsMediaService {
       .valueChanges()
       .map(arr => arr.sort(compare))
       .first()
-      .do(console.log)
       .map(array => array.reverse())
   }
 
   findAllLife(): Observable<any[]> {
   return this.db.list('lifes', ref => ref.orderByChild('year'))
     .valueChanges()   
-    .map(array => array.sort(compare).reverse())
+    .mergeMap(arr => Observable.from(arr)
+      .groupBy( event => event['year'] )
+      .mergeMap(group => group.toArray()).map(arr => arr.sort(compare).reverse())
+      .toArray()
+      .map(arr => arr.reverse())
+    )
   }
   
   
