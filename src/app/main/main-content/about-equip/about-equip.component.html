@@ -1,6 +1,22 @@
 <div class="flex-content">
   <div class="content col-sm container-fluid">
 
+    <div class="modal fade" id="selectedImageModal" >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img *ngIf="selectedImage" default="./assets/imgs/no_image.jpg" [srcset]="selectedImage">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
     <!-- <div *ngFor="let key of datas | keys" class="row"> -->
     <div class="row">
 
@@ -8,7 +24,11 @@
         <h3 class="equipment-title col-sm-12">Multi Projection Theater</h3>
 
         <div class="equipment-box col-sm-12 col-md-4 col-lg-3">
-          <img (click)="navigateTo('')" class="img-fluid" src="http://vml.kaist.ac.kr:3000/img/life/pictures/Equipments_and_Devices/mpt/mpt1.jpg">
+          <img class="img-fluid" src="http://vml.kaist.ac.kr:3000/img/life/pictures/Equipments_and_Devices/mpt/mpt1.jpg" 
+              data-toggle="modal" 
+              data-target="#selectedImageModal" 
+              (click)='setSelectedImage("http://vml.kaist.ac.kr:3000/img/life/pictures/Equipments_and_Devices/mpt/mpt1.jpg")'
+              >
         </div>
         <div class="equipment-box col-sm-12 col-md-4 col-lg-3">
           <img class="img-fluid" src="http://vml.kaist.ac.kr:3000/img/life/pictures/Equipments_and_Devices/mpt/mpt2.jpg">

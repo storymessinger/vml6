@@ -1,5 +1,33 @@
 @import '../../../../assets/css/_variables.scss';
 
+//modal
+.modal-lg {
+    max-width: 60vw;
+}
+
+.modal-content {
+    width: 100%;
+
+    .modal-header {
+        justify-content: flex-end;
+    }
+
+    .modal-body {
+        img {
+            width:100%;
+        }
+    }
+}
+//
+
+@media (max-width: 576px) {
+    .modal-lg {
+        width: unset;
+    }
+}
+
+
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
     .row {

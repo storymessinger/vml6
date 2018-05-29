@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutEquipComponent implements OnInit {
 
+  selectedImage;
+
   constructor(private router:Router) { }
 
   ngOnInit() {
@@ -17,5 +19,10 @@ export class AboutEquipComponent implements OnInit {
   navigateTo(url) {
     this.router.navigateByUrl(url);
   }
+
+  setSelectedImage(image){
+      this.selectedImage = image;	
+      console.log(image)
+   }
 
 }

@@ -60,8 +60,10 @@
                 <!-- <td *ngIf="project.funding">
                   {{ project.funding?.name }}
                 </td> -->
-                <td *ngFor="let person of project.people">
-                  <a [routerLink]='["../people", "person", person.id]'>{{person.name}}</a>
+                <td>
+                  <span *ngFor="let person of project.people" style="margin-right:15px">
+                    <a [routerLink]='["../people", "person", person.id]'>{{person.name}}</a>
+                  </span>
                 </td>
               </tr>
 
