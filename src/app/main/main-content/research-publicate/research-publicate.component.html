@@ -1,4 +1,5 @@
 <div class="flex-content">
+
   <div class="content col-sm container-fluid">
 
     <div *ngFor="let data of pubs$ | async" class="row list">
@@ -13,7 +14,7 @@
               [srcset]= 'imgPath + publication.img + " 800w, " +
                         imgPath+ publication.smallImg + " 300w "'
               sizes="(min-width:990px) 300px, 800px"> -->
-          <img default="./assets/imgs/no_image.jpg" [srcset]=" imgPath + publication.smallImg" [src]=" imgPath + publication.smallImg">
+          <img (click)='navigateTo(publication.id)' default="./assets/Contents/imgs/no_image.jpg" [srcset]=" imgPath + publication.smallImg" [src]=" imgPath + publication.smallImg">
         </div>
         <div class="data-desc">
           <a [routerLink]='[ "individual", publication.id]' class="h3" >{{publication.title}}</a>

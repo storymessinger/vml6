@@ -52,7 +52,7 @@ export class ResearchPublicateComponent implements OnInit {
   }
 
   navigateTo(link) {
-    this.router.navigate(['main/people/person', link]);
+    this.router.navigate(['main/international/individual', link]);
   }
 
 }
