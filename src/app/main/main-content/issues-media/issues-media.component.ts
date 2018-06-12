@@ -56,7 +56,8 @@ export class IssuesMediaComponent implements OnInit, OnDestroy {
   }
 
   setSelectedImage(image){
-      this.selectedImage = image;	
+      // this.selectedImage = image;	
+      this.selectedImage = image.split('_thumb')[0]+'.jpg';
    }
 
 }

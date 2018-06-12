@@ -37,10 +37,10 @@
         <div class="data-img">
 
           <img default="./assets/imgs/no_image.jpg" 
-          [srcset]=" imgPath + media.img"
-          [src]=" imgPath + media.img"
+          [srcset]=" imgPath + media.smallImg"
+          [src]=" imgPath + media.smallImg"
           data-toggle="modal" data-target="#selectedImageModal"
-          (click)=setSelectedImage(media.img)>
+          (click)=setSelectedImage(media.smallImg)>
         </div>
 
         <div class="data-desc">

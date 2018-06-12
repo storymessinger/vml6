@@ -55,7 +55,8 @@ export class IssuesNewsComponent implements OnInit,  OnDestroy {
       // this.subscription.unsubscribe();
   }
   setSelectedImage(image){
-      this.selectedImage = image;	
+      // this.selectedImage = image;	
+      this.selectedImage = image.split('_thumb')[0]+'.jpg';
    }
 
 

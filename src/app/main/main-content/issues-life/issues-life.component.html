@@ -27,6 +27,7 @@
 
         <h3 class="life-title">{{lifes.title}}</h3>
 
+
         <div class="life-content">
           <div class="data-date">
             <h2 class="text-center date">{{lifes.day}}</h2>
@@ -39,53 +40,53 @@
                     sizes="(min-width:990px) 300px, 800px">
 
               </div>
-              <div *ngIf="lifes.image1" class="card">
+              <div *ngIf="lifes.smallImg1" class="card">
                <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
-                      [srcset] ="imgPath + lifes.image1" 
-                      [src] ="imgPath + lifes.image1" 
+                      [srcset] ="imgPath + lifes.smallImg1" 
+                      [src] ="imgPath + lifes.smallImg1" 
                     data-toggle="modal" data-target="#selectedImageModal"
-                    (click)=setSelectedImage(lifes.image1)>
+                    (click)=setSelectedImage(lifes.smallImg1)>
               </div>
-              <div *ngIf="lifes.image2" class="card">
+              <div *ngIf="lifes.smallImg2" class="card">
                <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
-                      [srcset] ="imgPath + lifes.image2" 
-                      [src] ="imgPath + lifes.image2" 
+                      [srcset] ="imgPath + lifes.smallImg2" 
+                      [src] ="imgPath + lifes.smallImg2" 
                     data-toggle="modal" data-target="#selectedImageModal"
-                    (click)=setSelectedImage(lifes.image2)>
+                    (click)=setSelectedImage(lifes.smallImg2)>
               </div>
-              <div *ngIf="lifes.image3" class="card">
+              <div *ngIf="lifes.smallImg3" class="card">
                <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
-                      [srcset] ="imgPath + lifes.image3" 
-                      [src] ="imgPath + lifes.image3" 
+                      [srcset] ="imgPath + lifes.smallImg3" 
+                      [src] ="imgPath + lifes.smallImg3" 
                     data-toggle="modal" data-target="#selectedImageModal"
-                    (click)=setSelectedImage(lifes.image3)>
+                    (click)=setSelectedImage(lifes.smallImg3)>
               </div>
-              <div *ngIf="lifes.image4" class="card">
+              <div *ngIf="lifes.smallImg4" class="card">
                <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
-                      [srcset] ="imgPath + lifes.image4" 
-                      [src] ="imgPath + lifes.image4" 
+                      [srcset] ="imgPath + lifes.smallImg4" 
+                      [src] ="imgPath + lifes.smallImg4" 
                     data-toggle="modal" data-target="#selectedImageModal"
-                    (click)=setSelectedImage(lifes.image4)>
+                    (click)=setSelectedImage(lifes.smallImg4)>
               </div>
-              <div *ngIf="lifes.image5" class="card">
+              <div *ngIf="lifes.smallImg5" class="card">
                <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
-                      [srcset] ="imgPath + lifes.image5" 
-                      [src] ="imgPath + lifes.image5" 
+                      [srcset] ="imgPath + lifes.smallImg5" 
+                      [src] ="imgPath + lifes.smallImg5" 
                     data-toggle="modal" data-target="#selectedImageModal"
-                    (click)=setSelectedImage(lifes.image5)>
+                    (click)=setSelectedImage(lifes.smallImg5)>
               </div>
-              <div *ngIf="lifes.image6" class="card">
+              <div *ngIf="lifes.smallImg6" class="card">
                <img default="./../../../../assets/Contents/imgs/no_image.jpg"
                       class="card-img img-fluid" 
-                      [srcset] ="imgPath + lifes.image6" 
-                      [src] ="imgPath + lifes.image6" 
+                      [srcset] ="imgPath + lifes.smallImg6" 
+                      [src] ="imgPath + lifes.smallImg6" 
                     data-toggle="modal" data-target="#selectedImageModal"
-                    (click)=setSelectedImage(lifes.image6)>
+                    (click)=setSelectedImage(lifes.smallImg6)>
               </div>
           </div>
         </div>

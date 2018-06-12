@@ -48,7 +48,8 @@ export class IssuesLifeComponent implements OnInit, OnDestroy {
 
 
   setSelectedImage(image){
-      this.selectedImage = image;	
+      this.selectedImage = image.split('_thumb')[0]+'.jpg';
+
    }
 
   ngOnDestroy() {
