@@ -28,6 +28,7 @@
 
 
 
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
     .row {
@@ -46,11 +47,13 @@
     flex-wrap:wrap;
     max-width: 1250px;
     padding: 0 0 2rem 0;
+    margin-bottom: 3.5rem;
 
     .equipment-title {
-        font-size: 1.2rem;
+        font-size: 2rem;
         padding-bottom: 1rem;
         padding-left: 0rem;
+        margin-bottom: 3.5rem;
     }
     .equipment-box {
         margin-bottom: 2rem;

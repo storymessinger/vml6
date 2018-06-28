@@ -51,4 +51,21 @@ export class MemberStudentIndividualComponent implements OnInit {
     }
   }
 
+  navi(url, id, type) {
+    if (type == "international") {
+      if (id == "external") {
+        window.location.href = url;
+      } else {
+        let dest = url + '/' + id
+        this.router.navigateByUrl(dest);
+      }
+    } else if (type == "domestic") {
+      this.router.navigateByUrl("main/domestic")
+    } else if (type =="thesis"){
+      this.router.navigateByUrl("main/thesis")
+    }
+
+
+  }
+
 }

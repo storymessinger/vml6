@@ -46,7 +46,9 @@
               <tr *ngFor="let pub of person.publications | orderBy:order:ascending">
                 <td class="table-left">{{pub.header}}</td>
                 <td>
-                  <p class="link" (click)='navigateTo("main/international/individual", pub.id )'>{{pub.title}}</p>
+                  <p *ngIf="pub.type == 'international' " class="link" (click)='navigateTo("main/international/individual", pub.id )'>{{pub.title}}</p>
+                  <a *ngIf="pub.type !== 'international' " target="_blank" download type="application/octet-stream" [href]='imgPath +pub.paper' target="_blank" class="link">{{pub.title}}</a>
+                  <!-- <p class="link" (click)='navi("main/international/individual", pub.id, pub.type )'>{{pub.title}}</p> -->
                 </td>
               </tr>
             </tbody>

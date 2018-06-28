@@ -94,7 +94,9 @@ p, td {
       
 .link {
     cursor: pointer;
-
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1rem;
+    
     &:hover {
         text-decoration: underline;
     }
